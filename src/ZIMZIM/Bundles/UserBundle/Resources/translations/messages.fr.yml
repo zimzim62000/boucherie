@@ -13,3 +13,8 @@ views:
         registration:
             register:
                  title: "Inscrivez-vous"
+form:
+    user:
+        registrationtype:
+            plainPassword:
+                label: "Mot de passe :"

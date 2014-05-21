@@ -8225,13 +8225,4 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/*hack foundation top bar*/
-/* line 6, ../scss/css.scss */
-.top-bar .name {
-  line-height: 45px;
-}
-/* line 8, ../scss/css.scss */
-.top-bar .name a {
-  color: #FFF;
-  padding: 0 1rem;
-}
+/*@import "../../app/css/animate/animate";*/

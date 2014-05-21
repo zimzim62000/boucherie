@@ -29,6 +29,8 @@ span.circle-loading {
   border-radius: 25px;
   border: 1.5px SOLID transparent;
   border-top-color: #001f3f;
+  border-left-color: #0074d9;
+  border-bottom-color: #7fdbff;
   -webkit-animation: spinzim linear 1s infinite;
   animation: spinzim linear 1s infinite;
 }
@@ -44,6 +46,8 @@ span.circle-loading:after {
   border-radius: 25px;
   border: 1.5px SOLID transparent;
   border-top-color: #001f3f;
+  border-left-color: #0074d9;
+  border-bottom-color: #7fdbff;
   -webkit-animation: spinzim linear 5s infinite;
   animation: spinzim linear 5s infinite;
 }
@@ -59,6 +63,8 @@ span.circle-loading:before {
   border-radius: 25px;
   border: 1.5px SOLID transparent;
   border-top-color: #001f3f;
+  border-left-color: #0074d9;
+  border-bottom-color: #7fdbff;
   -webkit-animation: spinzim linear 2.5s infinite;
   animation: spinzim linear 2.5s infinite;
 }

@@ -34,8 +34,8 @@ span.circle-loading {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    //border-left-color: $blue;
-    //border-bottom-color: $aqua;
+    border-left-color: $blue;
+    border-bottom-color: $aqua;
     animation: spinzim linear 1s infinite;
 }
 
@@ -49,8 +49,8 @@ span.circle-loading:after {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    //border-left-color: $blue;
-    //border-bottom-color: $aqua;
+    border-left-color: $blue;
+    border-bottom-color: $aqua;
     animation: spinzim linear 5s infinite;
 }
 
@@ -64,8 +64,8 @@ span.circle-loading:before {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    //border-left-color: $blue;
-    //border-bottom-color: $aqua;
+    border-left-color: $blue;
+    border-bottom-color: $aqua;
     animation: spinzim linear 2.5s infinite;
 }
 

@@ -11,7 +11,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder->remove('username');
         $builder->remove('plainPassword');
-        $builder->add('plainPassword', 'password', array('label' => 'totpo'));
+        $builder->add('plainPassword', 'password', array('label' => 'form.user.registrationtype.plainPassword.label'));
         $builder->add('submit', 'submit', array('label' => 'button.register'));
     }
 
@@ -20,7 +20,8 @@ class RegistrationFormType extends AbstractType
         return 'zimzim_user_registration';
     }
 
-    public function getParent(){
+    public function getParent()
+    {
         return 'fos_user_registration';
     }
 }

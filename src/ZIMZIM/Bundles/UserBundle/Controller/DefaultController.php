@@ -2,9 +2,9 @@
 
 namespace ZIMZIM\Bundles\UserBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use ZIMZIM\Controller\ZimzimController;
 
-class DefaultController extends Controller
+class DefaultController extends ZimzimController
 {
     public function indexAction()
     {

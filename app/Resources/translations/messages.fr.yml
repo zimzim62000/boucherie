@@ -1,2 +1,12 @@
 button:
     register: "S'inscrire"
+
+views:
+    navbar:
+        title: "La meilleure boucherie"
+        menu: "Menu"
+        back: "Retour"
+        login: "Connexion"
+        register: "Inscription"
+        logout: "Déconnexion"
+        identity: "S'identifier"

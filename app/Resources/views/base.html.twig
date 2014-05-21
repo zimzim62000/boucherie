@@ -26,6 +26,7 @@
     {% block body %}
         {% block container %}
             {% block nav %}
+                {% include '::navbar.html.twig' %}
             {% endblock nav %}
             {% block page %}
             {% endblock page %}
@@ -37,10 +38,13 @@
         {% if app.environment == 'prod' %}
             <script type="text/javascript" src="{{ asset('built/js/min.js') }}"></script>
         {% else %}
-            {% javascripts 'app/js/jquery.min.js' 'app/js/hammer.jquery.js'  'app/js/modernizr.js' 'app/js/app.js' %}
+            {% javascripts 'app/js/jquery.min.js' 'app/js/hammer.jquery.js'  'app/js/modernizr.js' 'app/js/app.js' 'app/js/foundation.min.js' 'app/js/foundation.topbar.js'%}
             <script type="text/javascript" src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endif %}
+        <script>
+            $(document).foundation();
+        </script>
     {% endblock %}
     </body>
 </html>

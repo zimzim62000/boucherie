@@ -1,4 +1,12 @@
 @import "settings";
 @import "normalize";
 @import "foundation";
-/*@import "animate/animate";*/
+
+/*******hack foundation top bar*******/
+.top-bar .name{
+    line-height: 45px;
+    a{
+        color: #FFF;
+        padding: 0 1rem;
+    }
+}
