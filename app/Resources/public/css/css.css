@@ -8225,7 +8225,7 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/*hack foundation top bar*/
+/*******hack foundation top bar*******/
 /* line 6, ../scss/css.scss */
 .top-bar .name {
   line-height: 45px;
@@ -8234,4 +8234,9 @@ th.hide-for-touch {
 .top-bar .name a {
   color: #FFF;
   padding: 0 1rem;
+}
+
+/* line 14, ../scss/css.scss */
+.full-width {
+  max-width: 100%;
 }

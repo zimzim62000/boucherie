@@ -1,0 +1,13 @@
+
+<div class="row">
+    <div class="small-12 large-12 columns">
+        <h1 class="text-center title">{{ 'views.user.profile.edit.title'|trans }}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 large-12 columns">
+        <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+            {{ form_widget(form) }}
+        </form>
+    </div>
+</div>

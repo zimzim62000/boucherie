@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 
             new ZIMZIM\Bundles\UserBundle\ZIMZIMBundlesUserBundle(),
+            new ZIMZIM\Bundles\AddressBundle\ZIMZIMBundlesAddressBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,8 @@
+parameters:
+#    zimzim_bundles_address.example.class: ZIMZIM\Bundles\AddressBundle\Example
+
+services:
+    zimzim_address.address.form.type:
+        class: ZIMZIM\Bundles\AddressBundle\Form\AddressType
+        tags:
+            - { name: form.type, alias: zimzim_address_address }

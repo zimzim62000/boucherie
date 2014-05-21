@@ -5,3 +5,6 @@ fos_user:
     registration:
         form:
             type: zimzim_user_registration
+    profile:
+        form:
+            type: zimzim_user_profile

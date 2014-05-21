@@ -1,5 +1,6 @@
 button:
     register: "S'inscrire"
+    update: "Modifier"
 
 views:
     navbar:
@@ -10,3 +11,4 @@ views:
         register: "Inscription"
         logout: "Déconnexion"
         identity: "S'identifier"
+        edit: "Mes infos"

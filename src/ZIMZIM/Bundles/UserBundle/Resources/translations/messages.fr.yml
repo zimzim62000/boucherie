@@ -13,8 +13,16 @@ views:
         registration:
             register:
                  title: "Inscrivez-vous"
+        profile:
+            edit:
+                title: "Modifier mes informations"
+            show:
+                title: "Mes Informations"
 form:
     user:
         registrationtype:
             plainPassword:
                 label: "Mot de passe :"
+        profiletype:
+            firstname: "Prénom :"
+            lastname: "Nom :"
