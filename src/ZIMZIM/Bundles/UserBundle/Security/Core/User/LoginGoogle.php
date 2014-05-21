@@ -7,7 +7,6 @@ class LoginGoogle extends Login{
     {
         $user = $this->initialiseUser();
         $data = $this->response->getResponse();
-        //@todo implement this picture -> $data['picture'];
         $user->setUsername($this->response->getRealName());
         $user->setFirstname($data['given_name']);
         $user->setLastname($data['family_name']);

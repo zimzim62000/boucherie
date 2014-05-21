@@ -10,9 +10,9 @@ class ProfileFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->remove('current_password')
-            ->add('firstname', null, array('label' => 'form.user.profiletype.firstname'))
-            ->add('lastname', null, array('label' => 'form.user.profiletype.lastname'))
-            ->add('address', 'zimzim_address_address', array('attr' => array('label-inline' => 'label-inline')))
+            ->add('firstname', null, array('label' => 'form.user.profiletype.firstname', 'attr' => array( 'required' => false)))
+            ->add('lastname', null, array('label' => 'form.user.profiletype.lastname', 'attr' => array('required' => false)))
+            ->add('address', 'zimzim_address_address', array('attr' => array('label-inline' => 'label-inline', 'required' => false)))
             ->add('submit', 'submit', array('label' => 'button.update'));
     }
 

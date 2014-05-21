@@ -7,7 +7,6 @@ class LoginFacebook extends Login{
     {
         $user = $this->initialiseUser();
         $data = $this->response->getResponse();
-        //@todo implement this picture -> ??????
         $user->setUsername($this->response->getRealName());
         $user->setFirstname($data['first_name']);
         $user->setLastname($data['last_name']);

@@ -249,14 +249,6 @@ class User extends BaseUser
     }
 
     /**
-     * @param string $twitter_id
-     */
-    public function setTwitter_id($twitter_id)
-    {
-        $this->twitter_id = $twitter_id;
-    }
-
-    /**
      * @return string
      */
     public function getTwitterId()

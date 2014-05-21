@@ -12,12 +12,12 @@ parameters:
     mailer_password:   ~
 
     locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            ThisTokenIsNotSoSecretChangeItZZ
 
-    google_id: ThisTokenIsNotSoSecretChangeIt
-    google_secret: ThisTokenIsNotSoSecretChangeIt
-    google_scope: ThisTokenIsNotSoSecretChangeIt
-    facebook_id: ThisTokenIsNotSoSecretChangeIt
-    facebook_secret: ThisTokenIsNotSoSecretChangeIt
-    twitter_id: ThisTokenIsNotSoSecretChangeIt
-    twitter_secret: ThisTokenIsNotSoSecretChangeIt
+    google_id: ThisTokenIsNotSoSecretChangeItZZ
+    google_secret: ThisTokenIsNotSoSecretChangeItZZ
+    google_scope: ThisTokenIsNotSoSecretChangeItZZ
+    facebook_id: ThisTokenIsNotSoSecretChangeItZZ
+    facebook_secret: ThisTokenIsNotSoSecretChangeItZZ
+    twitter_id: ThisTokenIsNotSoSecretChangeItZZ
+    twitter_secret: ThisTokenIsNotSoSecretChangeItZZ

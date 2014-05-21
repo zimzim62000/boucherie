@@ -30,8 +30,6 @@ class LoginTwitter extends Login{
     public function logMe()
     {
         $user = $this->initialiseUser();
-        //$data = $this->response->getResponse();
-        //@todo implement this picture -> $data['picture']; @todo need recup email user by a form!
         $user->setUsername($this->response->getRealName());
         $user->setEmail($this->response->getRealName());
         $user->setPlainPassword($this->response->getRealName());

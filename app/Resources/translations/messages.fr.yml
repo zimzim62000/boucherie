@@ -1,7 +1,6 @@
 button:
     register: "S'inscrire"
     update: "Modifier"
-
 views:
     navbar:
         title: "La meilleure boucherie"
