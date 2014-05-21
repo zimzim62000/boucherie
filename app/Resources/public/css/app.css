@@ -220,22 +220,6 @@ span.title {
     -ms-transform: skew(0deg, 0deg);
     transform: skew(0deg, 0deg);
   }
-
-  /* line 148, ../scss/app.scss */
-  60% {
-    -webkit-perspective: 50px;
-    -ms-perspective: 50px;
-    -o-perspective: 50px;
-    perspective: 50px;
-  }
-
-  /* line 151, ../scss/app.scss */
-  80% {
-    -webkit-perspective: 0px;
-    -ms-perspective: 0px;
-    -o-perspective: 0px;
-    perspective: 0px;
-  }
 }
 
 @keyframes zimzim-bounce {
@@ -287,40 +271,24 @@ span.title {
     -ms-transform: skew(0deg, 0deg);
     transform: skew(0deg, 0deg);
   }
-
-  /* line 148, ../scss/app.scss */
-  60% {
-    -webkit-perspective: 50px;
-    -ms-perspective: 50px;
-    -o-perspective: 50px;
-    perspective: 50px;
-  }
-
-  /* line 151, ../scss/app.scss */
-  80% {
-    -webkit-perspective: 0px;
-    -ms-perspective: 0px;
-    -o-perspective: 0px;
-    perspective: 0px;
-  }
 }
 
 @-webkit-keyframes bounce-scalex {
-  /* line 157, ../scss/app.scss */
+  /* line 151, ../scss/app.scss */
   0%, 40%, 80%, 95%, 100% {
     -webkit-transform: translateX(128px);
     -ms-transform: translateX(128px);
     transform: translateX(128px);
   }
 
-  /* line 160, ../scss/app.scss */
+  /* line 154, ../scss/app.scss */
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
   }
 
-  /* line 163, ../scss/app.scss */
+  /* line 157, ../scss/app.scss */
   20%, 60% {
     -webkit-transform: translateX(-128px);
     -ms-transform: translateX(-128px);
@@ -329,21 +297,21 @@ span.title {
 }
 
 @keyframes bounce-scalex {
-  /* line 157, ../scss/app.scss */
+  /* line 151, ../scss/app.scss */
   0%, 40%, 80%, 95%, 100% {
     -webkit-transform: translateX(128px);
     -ms-transform: translateX(128px);
     transform: translateX(128px);
   }
 
-  /* line 160, ../scss/app.scss */
+  /* line 154, ../scss/app.scss */
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
   }
 
-  /* line 163, ../scss/app.scss */
+  /* line 157, ../scss/app.scss */
   20%, 60% {
     -webkit-transform: translateX(-128px);
     -ms-transform: translateX(-128px);
@@ -352,21 +320,21 @@ span.title {
 }
 
 @-webkit-keyframes bounce-scaley {
-  /* line 169, ../scss/app.scss */
+  /* line 163, ../scss/app.scss */
   0%, 40%, 80%, 100% {
     -webkit-transform: scaleY(4);
     -ms-transform: scaleY(4);
     transform: scaleY(4);
   }
 
-  /* line 172, ../scss/app.scss */
+  /* line 166, ../scss/app.scss */
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: scaleY(0);
     -ms-transform: scaleY(0);
     transform: scaleY(0);
   }
 
-  /* line 175, ../scss/app.scss */
+  /* line 169, ../scss/app.scss */
   20%, 60% {
     -webkit-transform: scaleY(-4);
     -ms-transform: scaleY(-4);
@@ -375,21 +343,21 @@ span.title {
 }
 
 @keyframes bounce-scaley {
-  /* line 169, ../scss/app.scss */
+  /* line 163, ../scss/app.scss */
   0%, 40%, 80%, 100% {
     -webkit-transform: scaleY(4);
     -ms-transform: scaleY(4);
     transform: scaleY(4);
   }
 
-  /* line 172, ../scss/app.scss */
+  /* line 166, ../scss/app.scss */
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: scaleY(0);
     -ms-transform: scaleY(0);
     transform: scaleY(0);
   }
 
-  /* line 175, ../scss/app.scss */
+  /* line 169, ../scss/app.scss */
   20%, 60% {
     -webkit-transform: scaleY(-4);
     -ms-transform: scaleY(-4);

@@ -145,12 +145,6 @@ span.title {
     70%{
         @include skew(0deg, 0deg);
     }
-    60% {
-        @include perspective(50px);
-    }
-    80% {
-        @include perspective(0px);
-    }
 }
 
 @keyframes bounce-scalex {
