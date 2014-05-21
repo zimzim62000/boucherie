@@ -26,7 +26,8 @@ framework:
     trusted_hosts:   ~
     trusted_proxies: ~
     session:
-        handler_id: lameilleureboucherie
+        handler_id: ~
+        name: lameilleureboucherie
     fragments:       ~
     http_method_override: true
 
