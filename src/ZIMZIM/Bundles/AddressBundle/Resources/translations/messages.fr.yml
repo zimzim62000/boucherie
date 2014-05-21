@@ -1,0 +1,11 @@
+form:
+    address:
+        addresstype:
+            address:
+                label: "Rue :"
+            city:
+                label: "Ville :"
+            cp:
+                label: "Code postal :"
+            country:
+                label: "Pays :"
