@@ -10,7 +10,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 /**
  * User
  *
- * @ORM\Table(name="savingsmoke_user")
+ * @ORM\Table(name="boucherie_user")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */

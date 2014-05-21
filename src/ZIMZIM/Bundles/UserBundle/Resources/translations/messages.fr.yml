@@ -7,3 +7,9 @@ views:
                 register: "Inscription"
                 login: "Connexion"
                 tiers: "Founisseur tiers"
+        security:
+            login:
+                 title: "Connectez-vous"
+        registration:
+            register:
+                 title: "Inscrivez-vous"

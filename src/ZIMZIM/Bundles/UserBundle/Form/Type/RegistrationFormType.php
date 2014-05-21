@@ -3,21 +3,24 @@
 namespace ZIMZIM\Bundles\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
+use Symfony\Component\Form\AbstractType;
 
-class RegistrationFormType extends BaseType
+class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        parent::buildForm($builder, $options);
-
         $builder->remove('username');
         $builder->remove('plainPassword');
-        $builder->add('plainPassword', 'password');
+        $builder->add('plainPassword', 'password', array('label' => 'totpo'));
+        $builder->add('submit', 'submit', array('label' => 'button.register'));
     }
 
     public function getName()
     {
         return 'zimzim_user_registration';
+    }
+
+    public function getParent(){
+        return 'fos_user_registration';
     }
 }

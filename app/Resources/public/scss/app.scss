@@ -7,7 +7,7 @@
 $navy: #001f3f;
 $blue: #0074d9;
 $aqua: #7fdbff;
-$circle-width: 100px;
+$circle-width: 25px;
 
 div.section {
     height: 200px;
@@ -34,8 +34,8 @@ span.circle-loading {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    border-left-color: $blue;
-    border-bottom-color: $aqua;
+    //border-left-color: $blue;
+    //border-bottom-color: $aqua;
     animation: spinzim linear 1s infinite;
 }
 
@@ -49,8 +49,8 @@ span.circle-loading:after {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    border-left-color: $blue;
-    border-bottom-color: $aqua;
+    //border-left-color: $blue;
+    //border-bottom-color: $aqua;
     animation: spinzim linear 5s infinite;
 }
 
@@ -64,8 +64,8 @@ span.circle-loading:before {
     border-radius: $circle-width;
     border: 1.5px SOLID transparent;
     border-top-color: $navy;
-    border-left-color: $blue;
-    border-bottom-color: $aqua;
+    //border-left-color: $blue;
+    //border-bottom-color: $aqua;
     animation: spinzim linear 2.5s infinite;
 }
 
@@ -144,29 +144,5 @@ span.title {
     }
     70%{
         @include skew(0deg, 0deg);
-    }
-}
-
-@keyframes bounce-scalex {
-    0%, 40%, 80%, 95%, 100% {
-        @include translateX(128px);
-    }
-    10%, 30%, 50%, 70%, 90% {
-        @include translateX(0px);
-    }
-    20%, 60% {
-        @include translateX(-128px);
-    }
-}
-
-@keyframes bounce-scaley {
-    0%, 40%, 80%, 100% {
-        @include scaleY(4);
-    }
-    10%, 30%, 50%, 70%, 90% {
-        @include scaleY(0);
-    }
-    20%, 60% {
-        @include scaleY(-4);
     }
 }

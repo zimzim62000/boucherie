@@ -18,7 +18,8 @@
     <div class="row">
         <div class="small-12 large-12 columns text-center section">
             {% include '::Animate/Tigrou.html.twig' with {'id' : 'toto1'} %}
-            {% include '::Animate/Tigrou.html.twig' with {'id' : 'toto2'} %}
+            {#{% include '::Animate/Tigrou.html.twig' with {'id' : 'toto2'} %}#}
+            {% include '::Animate/Circle.html.twig' %}
             {#
                 {% include '::Animate/Circle.html.twig' %}
                 {% include '::Animate/Tigrou.html.twig' with {'id' : 'toto2'} %}
@@ -52,8 +53,11 @@
             }
         }
 
-        var Anim = new Animation($('#toto1'));
-        Anim.rebuildElement();
+        var Anim1 = new Animation($('#toto1'));
+        Anim1.rebuildElement();
+
+        var Anim2 = new Animation($('#toto2'));
+        Anim2.rebuildElement();
 
     </script>
 

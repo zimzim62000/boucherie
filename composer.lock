@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "0f8e65bd10f49245e288e791cfbea43d",
+    "hash": "03c2bcf1a0a643ec9ed9723047f06903",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -802,6 +802,109 @@
             "time": "2014-02-08 16:35:09"
         },
         {
+            "name": "egeloen/ordered-form",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egeloen/ivory-ordered-form.git",
+                "reference": "30718ea7b8fc0495205fda688641d01d50e3d9ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egeloen/ivory-ordered-form/zipball/30718ea7b8fc0495205fda688641d01d50e3d9ac",
+                "reference": "30718ea7b8fc0495205fda688641d01d50e3d9ac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/form": "~2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Ivory\\OrderedForm": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                }
+            ],
+            "description": "Provides a form ordering support with the Symfony2 form component.",
+            "keywords": [
+                "Symfony2",
+                "form",
+                "order"
+            ],
+            "time": "2014-05-16 19:32:47"
+        },
+        {
+            "name": "egeloen/ordered-form-bundle",
+            "version": "dev-master",
+            "target-dir": "Ivory/OrderedFormBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egeloen/IvoryOrderedFormBundle.git",
+                "reference": "361f67431bb40ff664e61ed57660646082f55da3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egeloen/IvoryOrderedFormBundle/zipball/361f67431bb40ff664e61ed57660646082f55da3",
+                "reference": "361f67431bb40ff664e61ed57660646082f55da3",
+                "shasum": ""
+            },
+            "require": {
+                "egeloen/ordered-form": "~1.0",
+                "php": ">=5.3.0",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Ivory\\OrderedFormBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                }
+            ],
+            "description": "Provides a form ordering support for your Symfony2 project.",
+            "keywords": [
+                "form",
+                "order"
+            ],
+            "time": "2014-05-16 19:40:42"
+        },
+        {
             "name": "friendsofsymfony/rest-bundle",
             "version": "dev-master",
             "target-dir": "FOS/RestBundle",
@@ -887,12 +990,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "13c173ff60eef8e32c10f76225eacca00a430826"
+                "reference": "3969d7fe39fd58398bf9a00110ca349c000fa05e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/13c173ff60eef8e32c10f76225eacca00a430826",
-                "reference": "13c173ff60eef8e32c10f76225eacca00a430826",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/3969d7fe39fd58398bf9a00110ca349c000fa05e",
+                "reference": "3969d7fe39fd58398bf9a00110ca349c000fa05e",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +1050,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-05-07 23:51:03"
+            "time": "2014-05-18 21:15:38"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2642,12 +2745,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git",
-                "reference": "35c8e2124ffa62b14f09dd357c78ade58ac444bc"
+                "reference": "8bac169e9839bb685a4b912f426600b3d7401ec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/35c8e2124ffa62b14f09dd357c78ade58ac444bc",
-                "reference": "35c8e2124ffa62b14f09dd357c78ade58ac444bc",
+                "url": "https://api.github.com/repos/whiteoctober/WhiteOctoberPagerfantaBundle/zipball/8bac169e9839bb685a4b912f426600b3d7401ec3",
+                "reference": "8bac169e9839bb685a4b912f426600b3d7401ec3",
                 "shasum": ""
             },
             "require": {
@@ -2687,7 +2790,7 @@
                 "page",
                 "paging"
             ],
-            "time": "2014-01-30 11:03:51"
+            "time": "2014-05-20 10:23:37"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
@@ -2731,16 +2834,16 @@
         },
         {
             "name": "willdurand/negotiation",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/Negotiation.git",
-                "reference": "cda64e26a980f433ce98200ba1b2301850489aab"
+                "reference": "a98fb6b9808610c1aa326c736893d3d77d9383b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/cda64e26a980f433ce98200ba1b2301850489aab",
-                "reference": "cda64e26a980f433ce98200ba1b2301850489aab",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/a98fb6b9808610c1aa326c736893d3d77d9383b6",
+                "reference": "a98fb6b9808610c1aa326c736893d3d77d9383b6",
                 "shasum": ""
             },
             "require": {
@@ -2777,7 +2880,7 @@
                 "header",
                 "negotiation"
             ],
-            "time": "2014-02-26 13:56:25"
+            "time": "2014-05-16 12:34:51"
         }
     ],
     "packages-dev": [
@@ -2796,7 +2899,8 @@
         "stof/doctrine-extensions-bundle": 20,
         "apy/datagrid-bundle": 20,
         "white-october/pagerfanta-bundle": 20,
-        "jasny/twig-extensions": 20
+        "jasny/twig-extensions": 20,
+        "egeloen/ordered-form-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

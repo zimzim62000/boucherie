@@ -8,11 +8,5 @@ services:
 
     zimzim_user.registration.form.type:
         class: ZIMZIM\Bundles\UserBundle\Form\Type\RegistrationFormType
-        arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: zimzim_user_registration }
-
-    zimzim_user.userupdate.form.type:
-        class: ZIMZIM\Bundles\UserBundle\Form\UserUpdateType
-        tags:
-            - { name: form.type, alias: zimzim_bundles_userbundle_userupdate }

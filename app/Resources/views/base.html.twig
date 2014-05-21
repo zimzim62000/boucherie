@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <META HTTP-EQUIV="Content-Language" content="fr">
         <META NAME="language" content="French">
-        <META NAME="identifier-url" CONTENT="http://www.default.com">
+        <META NAME="identifier-url" CONTENT="http://www.la-meilleure-boucherie.com">
         <META NAME="robots" CONTENT="index,follow">
         <META NAME="keywords" CONTENT="default">
         <META NAME="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -25,6 +25,8 @@
     <body>
     {% block body %}
         {% block container %}
+            {% block nav %}
+            {% endblock nav %}
             {% block page %}
             {% endblock page %}
         {% endblock container %}
