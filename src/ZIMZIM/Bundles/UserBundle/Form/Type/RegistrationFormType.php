@@ -10,8 +10,8 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->remove('username');
-        $builder->remove('plainPassword');
-        $builder->add('plainPassword', 'password', array('label' => 'form.user.registrationtype.plainPassword.label'));
+        //$builder->remove('plainPassword');
+        //$builder->add('plainPassword', 'password', array('label' => 'form.user.registrationtype.plainPassword.label'));
         $builder->add('submit', 'submit', array('label' => 'button.register'));
     }
 

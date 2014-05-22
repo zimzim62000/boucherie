@@ -8240,3 +8240,39 @@ th.hide-for-touch {
 .full-width {
   max-width: 100%;
 }
+
+/* line 18, ../scss/css.scss */
+.width-100 {
+  width: 100%;
+}
+
+/* line 22, ../scss/css.scss */
+span.logo-small-tiers {
+  width: 40px;
+  height: 40px;
+  background-size: 120px 40px;
+  display: inline-block;
+}
+
+/* line 28, ../scss/css.scss */
+.image-facebook {
+  background-image: url("../../images/logotiers.png");
+  background-position: 0;
+}
+
+/* line 32, ../scss/css.scss */
+.image-google {
+  background-image: url("../../images/logotiers.png");
+  background-position: 80px;
+}
+
+/* line 36, ../scss/css.scss */
+.image-twitter {
+  background-image: url("../../images/logotiers.png");
+  background-position: 40px;
+}
+
+/* line 40, ../scss/css.scss */
+.padding-top-10 {
+  padding-top: 10px;
+}

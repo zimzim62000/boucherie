@@ -255,4 +255,9 @@ class User extends BaseUser
     {
         return $this->twitter_id;
     }
+
+
+    public function getFullName(){
+        return $this->firstname.' '.$this->lastname;
+    }
 }

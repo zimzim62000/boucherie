@@ -18,6 +18,9 @@ views:
                 title: "Modifier mes informations"
             show:
                 title: "Mes Informations"
+        user:
+            index:
+                title: "Liste Utilisateur"
 form:
     user:
         registrationtype:

@@ -3,3 +3,7 @@ zimzim_bundles_user_homepage:
     defaults: { _controller: ZIMZIMBundlesUserBundle:Default:index }
     requirements:
         _method: GET
+
+zimzim_bundles_user_user:
+    resource: "@ZIMZIMBundlesUserBundle/Resources/config/routing/user.yml"
+    prefix: /user

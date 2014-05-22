@@ -1,5 +1,0 @@
-zimzim_bundles_address_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ZIMZIMBundlesAddressBundle:Default:index }
-    requirements:
-        _method: GET

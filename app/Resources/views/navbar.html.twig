@@ -31,7 +31,15 @@
                                 {{ 'views.navbar.logout'|trans }}
                             </a>
                         </li>
-                        <li class="divider"></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="divider"></li>
+                            <li class="">
+                                <a href="{{ path('zimzim_bundles_user_list') }}">
+                                    {{ 'views.navbar.userlist'|trans }}
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                        {% endif %}
                     </ul>
                 </li>
                 <li class="divider"></li>
@@ -39,23 +47,10 @@
         {% else %}
             <ul class="right">
                 <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a href="{{ path('fos_user_security_login') }}">
+                <li class="has-form">
+                    <a href="{{ path('hwi_oauth_connect') }}">
                         {{ 'views.navbar.login'|trans }}
                     </a>
-                    <ul class="dropdown">
-                        <li class="title back js-generated">
-                            <a href="javascript:void(0);">
-                                {{ 'views.navbar.back'|trans }}
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ path('fos_user_registration_register') }}">
-                                {{ 'views.navbar.register'|trans }}
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         {% endif %}
