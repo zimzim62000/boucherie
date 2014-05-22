@@ -11,4 +11,10 @@ form:
             id:
                 label: ID
             stars:
-                label: "nombres d'étoiles"
+                label: "Nombres d'étoiles"
+        typebutcherytype:
+            name:
+                label: "Type de boucherie"
+        typemeattype:
+            name:
+                label: "Type de viande"

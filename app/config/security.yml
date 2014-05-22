@@ -56,3 +56,4 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/list/, role: ROLE_ADMIN }
         - { path: ^/opinionlevel/, role: ROLE_ADMIN }
+        - { path: ^/typebutchery/, role: ROLE_ADMIN }

@@ -23,7 +23,7 @@ class Opinion
     private $id;
 
     /**
-     * @var ZIMZIM\Bundles\UserBundle\Entity\User
+     * @var \ZIMZIM\Bundles\UserBundle\Entity\User
      *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\UserBundle\Entity\User", inversedBy="opinions")
      * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
@@ -31,7 +31,7 @@ class Opinion
     private $user;
 
     /**
-     * @var OpinionLevel
+     * @var \ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel
      *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel")
      * @ORM\JoinColumn(name="id_opinion_level", referencedColumnName="id")
@@ -39,10 +39,10 @@ class Opinion
     private $opinionLevel;
 
     /**
-     * @var integer
+     * @var \ZIMZIM\Bundles\OpinionBundle\Entity\Butchery
      *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Butchery", inversedBy="opinions")
-     * @ORM\JoinColumn(name="id_butchery", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_butchery", referencedColumnName="id", nullable=true)
      */
     private $butchery;
 

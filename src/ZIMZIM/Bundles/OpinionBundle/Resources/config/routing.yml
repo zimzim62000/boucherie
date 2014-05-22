@@ -1,3 +1,13 @@
 ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinionlevel:
     resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinionlevel.yml"
     prefix:   /opinionlevel/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_typebutchery:
+        resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/typebutchery.yml"
+        prefix:   /typebutchery/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_typemeat:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/typemeat.yml"
+    prefix:   /typemeat/
+
+

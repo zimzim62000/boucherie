@@ -18,6 +18,9 @@ views:
         edit: "Mes infos"
         userlist: "Utilisateurs"
         opinionlevel: "Niveau Avis"
+        admin: "Administration"
+        typebutchery: "Type de boucherie"
+        typemeat: "Type de viande"
     HWIOAuthBundle:
         connect:
             login:

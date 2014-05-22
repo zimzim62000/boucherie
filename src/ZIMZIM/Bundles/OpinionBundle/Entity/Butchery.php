@@ -2,8 +2,10 @@
 
 namespace ZIMZIM\Bundles\OpinionBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ZIMZIM\Bundles\AddressBundle\Entity\Traits\AddressTrait;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Butchery
@@ -33,11 +35,20 @@ class Butchery
     private $name;
 
     /**
-     * @var integer
+     * @var \ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery
      *
-     * @ORM\Column(name="type", type="integer")
+     * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery")
+     * @ORM\JoinColumn(name="id_type_butchery", referencedColumnName="id")
      */
-    private $type;
+    private $typeButchery;
+
+    /**
+     * @var \ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat
+     *
+     * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat")
+     * @ORM\JoinColumn(name="id_type_meat", referencedColumnName="id")
+     */
+    private $typeMeat;
 
     /**
      * @var string
@@ -47,11 +58,41 @@ class Butchery
     private $text;
 
     /**
-     * @var ZIMZIM\Bundles\OpinionBundle\Entity\Opinion
+     * @var ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Opinion", mappedBy="butchery")
      */
     private $opinions;
+
+    /**
+     * @var \ZIMZIM\Bundles\UserBundle\Entity\User
+     *
+     * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\UserBundle\Entity\User", inversedBy="butchery")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     */
+    private $user;
+
+
+    public function __construct(){
+        $this->opinions = new ArrayCollection();
+    }
+
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updatedAt;
+
 
     /**
      * Get id
@@ -86,28 +127,6 @@ class Butchery
         return $this->name;
     }
 
-    /**
-     * Set type
-     *
-     * @param integer $type
-     * @return Butchery
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return integer 
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Set text
@@ -131,4 +150,112 @@ class Butchery
     {
         return $this->text;
     }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $opinions
+     */
+    public function setOpinions($opinions)
+    {
+        $this->opinions = $opinions;
+
+        return $this;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getOpinions()
+    {
+        return $this->opinions;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery $typeButchery
+     */
+    public function setTypeButchery($typeButchery)
+    {
+        $this->typeButchery = $typeButchery;
+
+        return $this;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery
+     */
+    public function getTypeButchery()
+    {
+        return $this->typeButchery;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat $typeMeat
+     */
+    public function setTypeMeat($typeMeat)
+    {
+        $this->typeMeat = $typeMeat;
+
+        return $this;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat
+     */
+    public function getTypeMeat()
+    {
+        return $this->typeMeat;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\OpinionBundle\Entity\ZIMZIM\Bundles\UserBundle\Entity\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\OpinionBundle\Entity\ZIMZIM\Bundles\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+
 }

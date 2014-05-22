@@ -5,40 +5,41 @@ namespace ZIMZIM\Bundles\OpinionBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use ZIMZIM\Controller\ZimzimController;
 
-use ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel;
+use ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery;
+use ZIMZIM\Bundles\OpinionBundle\Form\TypeButcheryType;
 
 /**
- * OpinionLevel controller.
+ * TypeButchery controller.
  *
  */
-class OpinionLevelController extends ZimzimController
+class TypeButcheryController extends ZimzimController
 {
 
     /**
-     * Lists all OpinionLevel entities.
+     * Lists all TypeButchery entities.
      *
      */
     public function indexAction()
     {
         $data = array(
-            'entity' => 'ZIMZIMBundlesOpinionBundle:OpinionLevel',
-            'show' => 'zimzim_opinion_opinionlevel_show',
-            'edit' => 'zimzim_opinion_opinionlevel_edit'
+            'entity' => 'ZIMZIMBundlesOpinionBundle:TypeButchery',
+            'show' => 'zimzim_opinion_typebutchery_show',
+            'edit' => 'zimzim_opinion_typebutchery_edit'
         );
 
         $this->gridList($data);
 
 
-        return $this->grid->getGridResponse('ZIMZIMBundlesOpinionBundle:OpinionLevel:index.html.twig');
+        return $this->grid->getGridResponse('ZIMZIMBundlesOpinionBundle:TypeButchery:index.html.twig');
     }
 
     /**
-     * Creates a new OpinionLevel entity.
+     * Creates a new TypeButchery entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new OpinionLevel();
+        $entity = new TypeButchery();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -50,12 +51,12 @@ class OpinionLevelController extends ZimzimController
             $em->flush();
 
             return $this->redirect(
-                $this->generateUrl('zimzim_opinion_opinionlevel_show', array('id' => $entity->getId()))
+                $this->generateUrl('zimzim_opinion_typebutchery_show', array('id' => $entity->getId()))
             );
         }
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:OpinionLevel:new.html.twig',
+            'ZIMZIMBundlesOpinionBundle:TypeButchery:new.html.twig',
             array(
                 'entity' => $entity,
                 'form' => $form->createView(),
@@ -64,19 +65,19 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Creates a form to create a OpinionLevel entity.
+     * Creates a form to create a TypeButchery entity.
      *
-     * @param OpinionLevel $entity The entity
+     * @param TypeButchery $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(OpinionLevel $entity)
+    private function createCreateForm(TypeButchery $entity)
     {
         $form = $this->createForm(
-            'zimzim_bundles_opinionbundle_opinionleveltype',
+            new TypeButcheryType(),
             $entity,
             array(
-                'action' => $this->generateUrl('zimzim_opinion_opinionlevel_create'),
+                'action' => $this->generateUrl('zimzim_opinion_typebutchery_create'),
                 'method' => 'POST',
             )
         );
@@ -87,16 +88,16 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Displays a form to create a new OpinionLevel entity.
+     * Displays a form to create a new TypeButchery entity.
      *
      */
     public function newAction()
     {
-        $entity = new OpinionLevel();
+        $entity = new TypeButchery();
         $form = $this->createCreateForm($entity);
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:OpinionLevel:new.html.twig',
+            'ZIMZIMBundlesOpinionBundle:TypeButchery:new.html.twig',
             array(
                 'entity' => $entity,
                 'form' => $form->createView(),
@@ -105,23 +106,23 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Finds and displays a OpinionLevel entity.
+     * Finds and displays a TypeButchery entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:OpinionLevel')->find($id);
+        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:TypeButchery')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find OpinionLevel entity.');
+            throw $this->createNotFoundException('Unable to find TypeButchery entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:OpinionLevel:show.html.twig',
+            'ZIMZIMBundlesOpinionBundle:TypeButchery:show.html.twig',
             array(
                 'entity' => $entity,
                 'delete_form' => $deleteForm->createView(),
@@ -130,24 +131,24 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Displays a form to edit an existing OpinionLevel entity.
+     * Displays a form to edit an existing TypeButchery entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:OpinionLevel')->find($id);
+        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:TypeButchery')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find OpinionLevel entity.');
+            throw $this->createNotFoundException('Unable to find TypeButchery entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:OpinionLevel:edit.html.twig',
+            'ZIMZIMBundlesOpinionBundle:TypeButchery:edit.html.twig',
             array(
                 'entity' => $entity,
                 'edit_form' => $editForm->createView(),
@@ -157,19 +158,19 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Creates a form to edit a OpinionLevel entity.
+     * Creates a form to edit a TypeButchery entity.
      *
-     * @param OpinionLevel $entity The entity
+     * @param TypeButchery $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createEditForm(OpinionLevel $entity)
+    private function createEditForm(TypeButchery $entity)
     {
         $form = $this->createForm(
-            'zimzim_bundles_opinionbundle_opinionleveltype',
+            new TypeButcheryType(),
             $entity,
             array(
-                'action' => $this->generateUrl('zimzim_opinion_opinionlevel_update', array('id' => $entity->getId())),
+                'action' => $this->generateUrl('zimzim_opinion_typebutchery_update', array('id' => $entity->getId())),
                 'method' => 'PUT',
             )
         );
@@ -180,17 +181,17 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Edits an existing OpinionLevel entity.
+     * Edits an existing TypeButchery entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:OpinionLevel')->find($id);
+        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:TypeButchery')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find OpinionLevel entity.');
+            throw $this->createNotFoundException('Unable to find TypeButchery entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -201,11 +202,11 @@ class OpinionLevelController extends ZimzimController
             $this->updateSuccess();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('zimzim_opinion_opinionlevel_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('zimzim_opinion_typebutchery_edit', array('id' => $id)));
         }
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:OpinionLevel:edit.html.twig',
+            'ZIMZIMBundlesOpinionBundle:TypeButchery:edit.html.twig',
             array(
                 'entity' => $entity,
                 'edit_form' => $editForm->createView(),
@@ -215,7 +216,7 @@ class OpinionLevelController extends ZimzimController
     }
 
     /**
-     * Deletes a OpinionLevel entity.
+     * Deletes a TypeButchery entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -225,10 +226,10 @@ class OpinionLevelController extends ZimzimController
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:OpinionLevel')->find($id);
+            $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:TypeButchery')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find OpinionLevel entity.');
+                throw $this->createNotFoundException('Unable to find TypeButchery entity.');
             }
 
             $em->remove($entity);
@@ -236,11 +237,11 @@ class OpinionLevelController extends ZimzimController
             $this->deleteSuccess();
         }
 
-        return $this->redirect($this->generateUrl('zimzim_opinion_opinionlevel'));
+        return $this->redirect($this->generateUrl('zimzim_opinion_typebutchery'));
     }
 
     /**
-     * Creates a form to delete a OpinionLevel entity by id.
+     * Creates a form to delete a TypeButchery entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -249,7 +250,7 @@ class OpinionLevelController extends ZimzimController
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('zimzim_opinion_opinionlevel_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('zimzim_opinion_typebutchery_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'button.delete'))
             ->getForm();

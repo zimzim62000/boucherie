@@ -1,0 +1,30 @@
+zimzim_opinion_typemeat:
+    pattern:  /
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:index" }
+
+zimzim_opinion_typemeat_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:show" }
+
+zimzim_opinion_typemeat_new:
+    pattern:  /new
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:new" }
+
+zimzim_opinion_typemeat_create:
+    pattern:  /create
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:create" }
+    requirements: { _method: post }
+
+zimzim_opinion_typemeat_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:edit" }
+
+zimzim_opinion_typemeat_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:update" }
+    requirements: { _method: post|put }
+
+zimzim_opinion_typemeat_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeMeat:delete" }
+    requirements: { _method: post|delete }

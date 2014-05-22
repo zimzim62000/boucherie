@@ -1,42 +1,31 @@
 <?php
 
-namespace {{ namespace }}\Form{{ entity_namespace ? '\\' ~ entity_namespace : '' }};
+namespace ZIMZIM\Bundles\OpinionBundle\Form;
 
-{% block use_statements %}
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-{% endblock use_statements %}
 
-{% block class_definition %}
-class {{ form_class }} extends AbstractType
-{% endblock class_definition %}
+class TypeMeatType extends AbstractType
 {
-{% block class_body %}
-    {% if fields|length > 0 %}
-    /**
+        /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        {%- for field in fields %}
-
-            ->add('{{ field }}')
-        {%- endfor %}
-
+            ->add('name')
         ;
     }
-    {% endif %}
-
+    
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => '{{ namespace }}\Entity{{ entity_namespace ? '\\' ~ entity_namespace : '' }}\{{ entity_class }}',
+            'data_class' => 'ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat',
             'attr' => array(
 
             )
@@ -48,7 +37,6 @@ class {{ form_class }} extends AbstractType
      */
     public function getName()
     {
-        return '{{ form_type_name }}type';
+        return 'zimzim_bundles_opinionbundle_typemeattype';
     }
-{% endblock class_body %}
 }

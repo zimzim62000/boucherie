@@ -1,0 +1,20 @@
+ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery:
+    Source:
+        columns:
+            id: ~
+            name: ~
+        groupBy: ~
+        filterable: ~
+    Columns:
+        id:
+            filterable: true
+            visible: true
+            id: id
+            title: id
+            operatorsVisible: false
+        name:
+            filterable: true
+            visible: true
+            id: name
+            title: form.opinion.typebutcherytype.name.label
+            operatorsVisible: false

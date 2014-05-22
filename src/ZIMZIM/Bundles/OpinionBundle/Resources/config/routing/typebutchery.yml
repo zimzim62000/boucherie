@@ -1,0 +1,30 @@
+zimzim_opinion_typebutchery:
+    pattern:  /
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:index" }
+
+zimzim_opinion_typebutchery_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:show" }
+
+zimzim_opinion_typebutchery_new:
+    pattern:  /new
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:new" }
+
+zimzim_opinion_typebutchery_create:
+    pattern:  /create
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:create" }
+    requirements: { _method: post }
+
+zimzim_opinion_typebutchery_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:edit" }
+
+zimzim_opinion_typebutchery_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:update" }
+    requirements: { _method: post|put }
+
+zimzim_opinion_typebutchery_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:TypeButchery:delete" }
+    requirements: { _method: post|delete }
