@@ -11,7 +11,6 @@ class UserController extends ZimzimController
     {
         $source = new Entity('ZIMZIMBundlesUserBundle:User');
 
-
         $grid = $this->container->get('grid');
 
         $source->manipulateRow(

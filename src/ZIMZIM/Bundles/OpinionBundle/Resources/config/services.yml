@@ -1,0 +1,7 @@
+parameters:
+#    zimzim_bundles_opinion.example.class: ZIMZIM\Bundles\OpinionBundle\Example
+
+services:
+#    zimzim_bundles_opinion.example:
+#        class: %zimzim_bundles_opinion.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

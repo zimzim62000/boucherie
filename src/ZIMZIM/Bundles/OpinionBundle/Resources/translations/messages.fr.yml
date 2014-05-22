@@ -1,0 +1,14 @@
+views:
+    opinion:
+        opinionlevel:
+            index:
+                title: Liste des niveaux
+form:
+    opinion:
+        opinionleveltype:
+            name:
+                label: "Libéllé du niveau"
+            id:
+                label: ID
+            stars:
+                label: "nombres d'étoiles"

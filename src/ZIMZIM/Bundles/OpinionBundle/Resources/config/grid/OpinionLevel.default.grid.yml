@@ -1,0 +1,27 @@
+ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel:
+    Source:
+        columns:
+            id: ~
+            name: ~
+            stars: ~
+        groupBy: ~
+        filterable: ~
+    Columns:
+        id:
+            filterable: true
+            visible: true
+            id: id
+            title: id
+            operatorsVisible: false
+        name:
+            filterable: true
+            visible: true
+            id: name
+            title: form.opinion.opinionleveltype.name.label
+            operatorsVisible: false
+        stars:
+            filterable: true
+            visible: true
+            id: stars
+            title: form.opinion.opinionleveltype.stars.label
+            operatorsVisible: false

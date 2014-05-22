@@ -18,7 +18,7 @@ class DefaultControllerTest extends ZimzimWebTestCase
 
     public function testIndex()
     {
-        $route = $this->router->generate('zimzim_bundles_user_list');
+        $route = $this->router->generate('zimzim_bundles_user_homepage');
         $crawler = $this->client->request('GET', $route);
         $this->assertEquals(
             200,

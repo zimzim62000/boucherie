@@ -1,0 +1,3 @@
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinionlevel:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinionlevel.yml"
+    prefix:   /opinionlevel/

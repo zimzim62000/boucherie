@@ -1,3 +1,7 @@
+zimzim_bundles_opinion:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing.yml"
+    prefix:   /
+
 zimzim_bundles_address:
     resource: "@ZIMZIMBundlesAddressBundle/Resources/config/routing.yml"
     prefix:   /

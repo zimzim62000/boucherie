@@ -1,9 +1,14 @@
 button:
     register: "S'inscrire"
     update: "Modifier"
+    create: Créer
+    show: Voir
+    delete: supprimer
+link:
+    return: "Retour à la liste"
 views:
     navbar:
-        title: "La meilleure boucherie"
+        title: default site #"La meilleure boucherie"
         menu: "Menu"
         back: "Retour"
         login: "Connexion"
@@ -11,7 +16,8 @@ views:
         logout: "Déconnexion"
         identity: "S'identifier"
         edit: "Mes infos"
-        userlist: "Liste U"
+        userlist: "Utilisateurs"
+        opinionlevel: "Niveau Avis"
     HWIOAuthBundle:
         connect:
             login:
@@ -24,3 +30,11 @@ grid:
     filter:
         disabled: "Cacher"
         enabled: "Filtrer"
+    generic:
+        nodata: "Pas encore de donnée"
+        nomessage: "Aucun résultat trouvé"
+flashbag:
+    success:
+        create: "Création réussit"
+        update: "Modification réussit"
+        delete: "Suppréssion réussit"

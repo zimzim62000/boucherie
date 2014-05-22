@@ -1,0 +1,30 @@
+zimzim_opinion_opinionlevel:
+    pattern:  /
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:index" }
+
+zimzim_opinion_opinionlevel_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:show" }
+
+zimzim_opinion_opinionlevel_new:
+    pattern:  /new
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:new" }
+
+zimzim_opinion_opinionlevel_create:
+    pattern:  /create
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:create" }
+    requirements: { _method: post }
+
+zimzim_opinion_opinionlevel_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:edit" }
+
+zimzim_opinion_opinionlevel_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:update" }
+    requirements: { _method: post|put }
+
+zimzim_opinion_opinionlevel_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:OpinionLevel:delete" }
+    requirements: { _method: post|delete }

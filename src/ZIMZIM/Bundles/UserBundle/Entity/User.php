@@ -11,7 +11,7 @@ use ZIMZIM\Bundles\AddressBundle\Entity\Traits\AddressTrait;
 /**
  * User
  *
- * @ORM\Table(name="boucherie_user")
+ * @ORM\Table(name="butchery_user")
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
@@ -84,6 +84,13 @@ class User extends BaseUser
      */
     private $twitterAccessToken;
 
+
+    /**
+     * @var ZIMZIM\Bundles\OpinionBundle\Entity\Opinion
+     *
+     * @ORM\OneToMany(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Opinion", mappedBy="user")
+     */
+    private $opinions;
 
     /**
      * @param string $googleAccessToken
