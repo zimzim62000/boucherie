@@ -55,4 +55,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/list/, role: ROLE_ADMIN }
-        - { path: ^/user/opinionlevel/, role: ROLE_ADMIN }
+        - { path: ^/opinionlevel/, role: ROLE_ADMIN }

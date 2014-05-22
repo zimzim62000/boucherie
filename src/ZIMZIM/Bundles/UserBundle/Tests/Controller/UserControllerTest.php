@@ -4,7 +4,7 @@ namespace ZIMZIM\Bundles\UserBundle\Tests\Controller;
 
 use ZIMZIM\Test\ZimzimWebTestCase;
 
-class DefaultControllerTest extends ZimzimWebTestCase
+class UserControllerTest extends ZimzimWebTestCase
 {
 
     public $client;
@@ -18,7 +18,7 @@ class DefaultControllerTest extends ZimzimWebTestCase
 
     public function testIndex()
     {
-        $route = $this->router->generate('zimzim_bundles_user_homepage');
+        $route = $this->router->generate('zimzim_bundles_user_list');
         $crawler = $this->client->request('GET', $route);
         $this->assertEquals(
             200,

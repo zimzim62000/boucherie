@@ -1,6 +1,6 @@
 <?php
 
-namespace ZZ\Bundles\AppBundle\DataFixtures\ORM;
+namespace ZIMZIM\Test\DataFixtures\ORM;
 
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
