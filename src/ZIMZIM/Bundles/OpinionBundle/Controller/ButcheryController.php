@@ -2,7 +2,6 @@
 
 namespace ZIMZIM\Bundles\OpinionBundle\Controller;
 
-use APY\DataGridBundle\Grid\Source\Entity;
 use Symfony\Component\HttpFoundation\Request;
 use ZIMZIM\Controller\ZimzimController;
 
