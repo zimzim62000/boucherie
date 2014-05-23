@@ -1,6 +1,6 @@
 <?php
 
-namespace ZZ\Bundles\AppBundle\DataFixtures\ORM;
+namespace ZIMZIM\Bundles\UserBundle\DataFixtures\ORM;
 
 
 use Doctrine\Common\DataFixtures\AbstractFixture;
@@ -17,6 +17,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
         $zimzim->setPlainPassword('170183');
         $zimzim->addRole('ROLE_ADMIN');
         $zimzim->setEnabled(true);
+        $zimzim->setFirstname('Fabien');
+        $zimzim->setLastname('Zimmermann');
 
         $om->persist($zimzim);
         $this->addReference('zimzim', $zimzim);

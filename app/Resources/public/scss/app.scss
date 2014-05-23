@@ -103,7 +103,8 @@ span.animation {
 span.tigrou {
     display: inline-block;
     position: absolute;
-    background-image: url('../../images/tigrou.png');
+    //background-image: url('../../images/tigrou.png');
+    background-image: url('../../images/globe.gif');
     top: 0;
     left: 0;
     right: 0;
@@ -120,14 +121,14 @@ span.title {
     left: 0;
     right: 0;
     bottom: 0;
-    animation: spinzim linear 2.5s infinite
+    animation: spinzim linear 2.5s 0;
 }
 
 @keyframes zimzim-bounce {
-    0%, 100% {
+    0% ,80%{
         @include translateX(128px);
     }
-    10% {
+    10%, 100% {
         @include translateX(0px);
     }
     20% {

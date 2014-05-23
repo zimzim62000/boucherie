@@ -1,0 +1,5 @@
+zimzim_bundles_user_list:
+    pattern:  /list/
+    defaults: { _controller: ZIMZIMBundlesUserBundle:User:index }
+    requirements:
+        _method: GET|POST

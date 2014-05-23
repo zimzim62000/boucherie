@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block page %}
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            <h1 class="text-center title">{{ 'views.user.user.index.title'|trans }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            {{ grid_search(grid) }}
+            {{ grid(grid) }}
+        </div>
+    </div>
+{% endblock page %}

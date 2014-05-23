@@ -150,7 +150,7 @@ span.animation {
 span.tigrou {
   display: inline-block;
   position: absolute;
-  background-image: url("../../images/tigrou.png");
+  background-image: url("../../images/globe.gif");
   top: 0;
   left: 0;
   right: 0;
@@ -159,7 +159,7 @@ span.tigrou {
   animation: zimzim-bounce linear 10s infinite;
 }
 
-/* line 116, ../scss/app.scss */
+/* line 117, ../scss/app.scss */
 span.title {
   display: inline-block;
   position: absolute;
@@ -167,54 +167,54 @@ span.title {
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-animation: spinzim linear 2.5s infinite;
-  animation: spinzim linear 2.5s infinite;
+  -webkit-animation: spinzim linear 2.5s 0;
+  animation: spinzim linear 2.5s 0;
 }
 
 @-webkit-keyframes zimzim-bounce {
-  /* line 127, ../scss/app.scss */
-  0%, 100% {
+  /* line 128, ../scss/app.scss */
+  0% ,80% {
     -webkit-transform: translateX(128px);
     -ms-transform: translateX(128px);
     transform: translateX(128px);
   }
 
-  /* line 130, ../scss/app.scss */
-  10% {
+  /* line 131, ../scss/app.scss */
+  10%, 100% {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
   }
 
-  /* line 133, ../scss/app.scss */
+  /* line 134, ../scss/app.scss */
   20% {
     -webkit-transform: scaleY(-1);
     -ms-transform: scaleY(-1);
     transform: scaleY(-1);
   }
 
-  /* line 136, ../scss/app.scss */
+  /* line 137, ../scss/app.scss */
   30% {
     -webkit-transform: scaleY(1);
     -ms-transform: scaleY(1);
     transform: scaleY(1);
   }
 
-  /* line 139, ../scss/app.scss */
+  /* line 140, ../scss/app.scss */
   40% {
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
   }
 
-  /* line 142, ../scss/app.scss */
+  /* line 143, ../scss/app.scss */
   50% {
     -webkit-transform: skew(15deg, 15deg);
     -ms-transform: skew(15deg, 15deg);
     transform: skew(15deg, 15deg);
   }
 
-  /* line 145, ../scss/app.scss */
+  /* line 146, ../scss/app.scss */
   70% {
     -webkit-transform: skew(0deg, 0deg);
     -ms-transform: skew(0deg, 0deg);
@@ -223,49 +223,49 @@ span.title {
 }
 
 @keyframes zimzim-bounce {
-  /* line 127, ../scss/app.scss */
-  0%, 100% {
+  /* line 128, ../scss/app.scss */
+  0% ,80% {
     -webkit-transform: translateX(128px);
     -ms-transform: translateX(128px);
     transform: translateX(128px);
   }
 
-  /* line 130, ../scss/app.scss */
-  10% {
+  /* line 131, ../scss/app.scss */
+  10%, 100% {
     -webkit-transform: translateX(0px);
     -ms-transform: translateX(0px);
     transform: translateX(0px);
   }
 
-  /* line 133, ../scss/app.scss */
+  /* line 134, ../scss/app.scss */
   20% {
     -webkit-transform: scaleY(-1);
     -ms-transform: scaleY(-1);
     transform: scaleY(-1);
   }
 
-  /* line 136, ../scss/app.scss */
+  /* line 137, ../scss/app.scss */
   30% {
     -webkit-transform: scaleY(1);
     -ms-transform: scaleY(1);
     transform: scaleY(1);
   }
 
-  /* line 139, ../scss/app.scss */
+  /* line 140, ../scss/app.scss */
   40% {
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);
     transform: scaleX(-1);
   }
 
-  /* line 142, ../scss/app.scss */
+  /* line 143, ../scss/app.scss */
   50% {
     -webkit-transform: skew(15deg, 15deg);
     -ms-transform: skew(15deg, 15deg);
     transform: skew(15deg, 15deg);
   }
 
-  /* line 145, ../scss/app.scss */
+  /* line 146, ../scss/app.scss */
   70% {
     -webkit-transform: skew(0deg, 0deg);
     -ms-transform: skew(0deg, 0deg);

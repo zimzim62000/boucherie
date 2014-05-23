@@ -1,0 +1,24 @@
+parameters:
+#    zimzim_bundles_opinion.example.class: ZIMZIM\Bundles\OpinionBundle\Example
+
+services:
+    zimzim_bundles_opinion.opinionleveltype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\OpinionLevelType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_opinionleveltype }
+    zimzim_bundles_opinion.starstype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\Type\StarsType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_starstype }
+    zimzim_bundles_opinion.typebutcherytype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\TypeButcheryType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_typebutcherytype }
+    zimzim_bundles_opinion.typemeattype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\TypeMeatType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_typemeattype }
+    zimzim_bundles_opinion.butcherytype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\ButcheryType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_butcherytype }

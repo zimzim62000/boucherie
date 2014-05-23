@@ -1,0 +1,52 @@
+ZIMZIM\Bundles\UserBundle\Entity\User:
+    Source:
+        columns:
+            id: ~
+            name: ~
+            email: ~
+            lastLogin: ~
+            roles: ~
+            address.city: ~
+        groupBy: ~
+        filterable: ~
+    Columns:
+        id:
+            filterable: false
+            visible: false
+            id: id
+            title: id
+        name:
+            filterable: false
+            visible: true
+            id: name
+            title: name
+            operatorsVisible: false
+        email:
+            filterable: true
+            visible: true
+            id: email
+            title: email
+            operatorsVisible: false
+        lastLogin:
+            filterable: false
+            visible: true
+            id: lastLogin
+            title: lastLogin
+            operatorsVisible: false
+        roles:
+            filterable: true
+            visible: true
+            id: roles
+            title: roles
+            operatorsVisible: false
+            source: true
+            filter: select
+        address.city:
+            filterable: true
+            visible: true
+            id: address.city
+            field: address.city
+            title: address.city
+            operatorsVisible: false
+            source: true
+            filter: select

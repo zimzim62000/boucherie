@@ -1,9 +1,14 @@
 button:
     register: "S'inscrire"
     update: "Modifier"
+    create: Créer
+    show: Voir
+    delete: supprimer
+link:
+    return: "Retour à la liste"
 views:
     navbar:
-        title: "La meilleure boucherie"
+        title: default site #"La meilleure boucherie"
         menu: "Menu"
         back: "Retour"
         login: "Connexion"
@@ -11,3 +16,30 @@ views:
         logout: "Déconnexion"
         identity: "S'identifier"
         edit: "Mes infos"
+        userlist: "Utilisateurs"
+        opinionlevel: "Niveau Avis"
+        admin: "Administration"
+        typebutchery: "Type de boucherie"
+        typemeat: "Type de viande"
+        butchery: "Boucheries"
+        opinion: "Les Avis"
+    HWIOAuthBundle:
+        connect:
+            login:
+                title1: "Connection"
+                title2: "Avec votre compte préféré !"
+                title3: "Ou "
+                login: "connexion"
+                register: "inscription"
+grid:
+    filter:
+        disabled: "Cacher"
+        enabled: "Filtrer"
+    generic:
+        nodata: "Pas encore de donnée"
+        nomessage: "Aucun résultat trouvé"
+flashbag:
+    success:
+        create: "Création réussit"
+        update: "Modification réussit"
+        delete: "Suppréssion réussit"

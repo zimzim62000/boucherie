@@ -3,26 +3,10 @@
 {% block title %}{{ 'views.user.default.index.title'|trans }}{% endblock %}
 
 {% block page %}
-    <dl class="sub-nav">
-        <dt>{{ 'views.user.default.index.join'|trans }}</dt>
-        <dd>
-            <a href="{{ path('fos_user_registration_register') }}">{{ 'views.user.default.index.register'|trans }}</a>
-        </dd>
-        <dd>
-            <a href="{{ path('fos_user_security_login') }}">{{ 'views.user.default.index.login'|trans }}</a>
-        </dd>
-        <dd>
-            <a href="{{ path('hwi_oauth_connect') }}">{{ 'views.user.default.index.tiers'|trans }}</a>
-        </dd>
-    </dl>
     <div class="row">
         <div class="small-12 large-12 columns text-center section">
             {% include '::Animate/Tigrou.html.twig' with {'id' : 'toto1'} %}
             {% include '::Animate/Circle.html.twig' %}
-            {#
-                {% include '::Animate/Circle.html.twig' %}
-                {% include '::Animate/Tigrou.html.twig' with {'id' : 'toto2'} %}
-            #}
         </div>
     </div>
 {% endblock page %}
@@ -54,8 +38,6 @@
         var Anim1 = new Animation($('#toto1'));
         Anim1.rebuildElement();
 
-        var Anim2 = new Animation($('#toto2'));
-        Anim2.rebuildElement();
 
     </script>
 

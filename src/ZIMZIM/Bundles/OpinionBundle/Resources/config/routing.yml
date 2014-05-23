@@ -1,0 +1,19 @@
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinionlevel:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinionlevel.yml"
+    prefix:   /opinionlevel/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_typebutchery:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/typebutchery.yml"
+    prefix:   /typebutchery/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_typemeat:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/typemeat.yml"
+    prefix:   /typemeat/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_butchery:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/butchery.yml"
+    prefix:   /butchery/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinion:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinion.yml"
+    prefix:   /opinion/

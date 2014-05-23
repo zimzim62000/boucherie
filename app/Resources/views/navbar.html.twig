@@ -9,54 +9,89 @@
     </ul>
 
     <section class="top-bar-section">
-        {% if is_granted('ROLE_USER') %}
-            <ul class="right">
-                <li class="divider"></li>
+        <ul class="right">
+            {% if is_granted('ROLE_ADMIN') %}
                 <li class="has-dropdown not-click">
-                    <a href="#">{{ app.user.username }}</a>
+                    <a href="#">{{ 'views.navbar.admin'|trans }}</a>
                     <ul class="dropdown">
                         <li class="title back js-generated">
                             <a href="javascript:void(0);">
                                 {{ 'views.navbar.back'|trans }}
                             </a>
                         </li>
+                        <li class="divider"></li>
                         <li class="">
-                            <a href="{{ path('fos_user_profile_show') }}">
-                                {{ 'views.navbar.edit'|trans }}
+                            <a href="{{ path('zimzim_bundles_user_list') }}">
+                                {{ 'views.navbar.userlist'|trans }}
                             </a>
                         </li>
                         <li class="divider"></li>
                         <li class="">
-                            <a href="{{ path('fos_user_security_logout') }}">
-                                {{ 'views.navbar.logout'|trans }}
+                            <a href="{{ path('zimzim_opinion_opinionlevel') }}">
+                                {{ 'views.navbar.opinionlevel'|trans }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="">
+                            <a href="{{ path('zimzim_opinion_typebutchery') }}">
+                                {{ 'views.navbar.typebutchery'|trans }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="">
+                            <a href="{{ path('zimzim_opinion_typemeat') }}">
+                                {{ 'views.navbar.typemeat'|trans }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="">
+                            <a href="{{ path('zimzim_opinion_opinion') }}">
+                                {{ 'views.navbar.opinion'|trans }}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="">
+                            <a href="{{ path('zimzim_opinion_butchery') }}">
+                                {{ 'views.navbar.butchery'|trans }}
                             </a>
                         </li>
                         <li class="divider"></li>
                     </ul>
                 </li>
                 <li class="divider"></li>
-            </ul>
+            {% endif %}
+            {% if is_granted('ROLE_USER') %}
+            <li class="divider"></li>
+            <li class="has-dropdown not-click">
+                <a href="#">{{ app.user.username }}</a>
+                <ul class="dropdown">
+                    <li class="title back js-generated">
+                        <a href="javascript:void(0);">
+                            {{ 'views.navbar.back'|trans }}
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('fos_user_profile_show') }}">
+                            {{ 'views.navbar.edit'|trans }}
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'views.navbar.logout'|trans }}
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+        </ul>
         {% else %}
-            <ul class="right">
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                    <a href="{{ path('fos_user_security_login') }}">
-                        {{ 'views.navbar.login'|trans }}
-                    </a>
-                    <ul class="dropdown">
-                        <li class="title back js-generated">
-                            <a href="javascript:void(0);">
-                                {{ 'views.navbar.back'|trans }}
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="{{ path('fos_user_registration_register') }}">
-                                {{ 'views.navbar.register'|trans }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            <li class="divider"></li>
+            <li class="has-form">
+                <a href="{{ path('hwi_oauth_connect') }}">
+                    {{ 'views.navbar.login'|trans }}
+                </a>
+            </li>
             </ul>
         {% endif %}
     </section>

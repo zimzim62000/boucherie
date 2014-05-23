@@ -1,0 +1,20 @@
+views:
+    opinion:
+        opinionlevel:
+            index:
+                title: Liste des niveaux
+form:
+    opinion:
+        opinionleveltype:
+            name:
+                label: "Libéllé du niveau"
+            id:
+                label: ID
+            stars:
+                label: "Nombres d'étoiles"
+        typebutcherytype:
+            name:
+                label: "Type de boucherie"
+        typemeattype:
+            name:
+                label: "Type de viande"

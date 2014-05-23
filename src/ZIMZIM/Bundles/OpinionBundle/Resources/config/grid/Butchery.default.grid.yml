@@ -1,0 +1,78 @@
+ZIMZIM\Bundles\OpinionBundle\Entity\Butchery:
+    Source:
+        columns:
+            id: ~
+            name: ~
+            typeButchery.name: ~
+            typeMeat.name: ~
+            text: ~
+            opinions: ~
+            username: ~
+            createdAt: ~
+            updatedAt: ~
+            address: ~        
+        groupBy: ~
+        filterable: ~
+    Columns:
+        id:
+            filterable: true
+            visible: true
+            id: id
+            title: id
+            operatorsVisible: false
+        name:
+            filterable: true
+            visible: true
+            id: name
+            title: name
+            operatorsVisible: false
+        typeButchery.name:
+            filterable: true
+            visible: true
+            id: typeButchery.name
+            field: typeButchery.name
+            title: typeButchery
+            operatorsVisible: false
+            source: true
+            filter: select
+        typeMeat.name:
+            filterable: true
+            visible: true
+            id: typeMeat.name
+            field: typeMeat.name
+            title: typeMeat
+            operatorsVisible: false
+            source: true
+            filter: select
+        text:
+            filterable: false
+            visible: false
+            id: text
+            title: text
+        opinions:
+            filterable: false
+            visible: false
+            id: opinions
+            title: opinions
+        username:
+            filterable: false
+            visible: true
+            id: username
+            title: username
+            operatorsVisible: false
+        createdAt:
+            filterable: false
+            visible: false
+            id: createdAt
+            title: createdAt
+        updatedAt:
+            filterable: false
+            visible: false
+            id: updatedAt
+            title: updatedAt
+        address:
+            filterable: false
+            visible: false
+            id: address
+            title: address
+        

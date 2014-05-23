@@ -2,16 +2,29 @@
 
 namespace ZIMZIM\Bundles\UserBundle\Tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use ZIMZIM\Test\ZimzimWebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class DefaultControllerTest extends ZimzimWebTestCase
 {
+
+    public $client;
+    public $router;
+
+    public function setUp()
+    {
+        $this->client = static::createClient(array(), $this->users['SuperAdmin']);
+        $this->router = $this->client->getContainer()->get('router');
+    }
+
     public function testIndex()
     {
-        $client = static::createClient();
+        $route = $this->router->generate('zimzim_bundles_user_homepage');
+        $crawler = $this->client->request('GET', $route);
+        $this->assertEquals(
+            200,
+            $this->client->getResponse()->getStatusCode(),
+            "Unexpected HTTP status code for GET " . $route
+        );
 
-        $crawler = $client->request('GET', '/hello/Fabien');
-
-        $this->assertTrue($crawler->filter('html:contains("Hello Fabien")')->count() > 0);
     }
 }
