@@ -21,6 +21,8 @@ views:
         admin: "Administration"
         typebutchery: "Type de boucherie"
         typemeat: "Type de viande"
+        butchery: "Boucheries"
+        opinion: "Les Avis"
     HWIOAuthBundle:
         connect:
             login:

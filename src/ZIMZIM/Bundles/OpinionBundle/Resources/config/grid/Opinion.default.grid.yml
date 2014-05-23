@@ -1,0 +1,61 @@
+ZIMZIM\Bundles\OpinionBundle\Entity\Opinion:
+    Source:
+        columns:
+            id: ~
+            username: ~
+            opinionLevel.name: ~
+            butchery.name: ~
+            text: ~
+            createdAt: ~
+            updatedAt: ~        
+        groupBy: ~
+        filterable: ~
+    Columns:
+        id:
+            filterable: false
+            visible: false
+            id: id
+            title: id
+            operatorsVisible: false
+        username:
+            filterable: true
+            visible: true
+            id: username
+            title: user
+        opinionLevel.name:
+            filterable: true
+            visible: true
+            id: opinionLevel.name
+            title: opinionLevel.name
+            field: opinionLevel.name
+            source: true
+            filter: select
+            operatorsVisible: false
+        butchery.name:
+            filterable: true
+            visible: true
+            id: butchery.name
+            title: butchery.name
+            field: butchery.name
+            source: true
+            filter: select
+            operatorsVisible: false
+        text:
+            filterable: true
+            visible: true
+            id: text
+            title: text
+            operatorsVisible: false
+        createdAt:
+            filterable: false
+            visible: false
+            id: createdAt
+            title: createdAt
+            operatorsVisible: false
+        updatedAt:
+            filterable: false
+            visible: false
+            id: updatedAt
+            title: updatedAt
+            operatorsVisible: false
+        

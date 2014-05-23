@@ -87,5 +87,7 @@ class OpinionLevel
         return $this->stars;
     }
 
-
+    public function __toString(){
+        return $this->name;
+    }
 }

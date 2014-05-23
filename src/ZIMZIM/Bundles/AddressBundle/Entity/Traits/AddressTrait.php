@@ -11,7 +11,7 @@ trait AddressTrait{
      * @var Address
      *
      * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\AddressBundle\Entity\Address", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="id_address", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_address", referencedColumnName="id", nullable=true)
      */
     private $address;
 

@@ -17,6 +17,8 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
         $zimzim->setPlainPassword('170183');
         $zimzim->addRole('ROLE_ADMIN');
         $zimzim->setEnabled(true);
+        $zimzim->setFirstname('Fabien');
+        $zimzim->setLastname('Zimmermann');
 
         $om->persist($zimzim);
         $this->addReference('zimzim', $zimzim);

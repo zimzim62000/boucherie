@@ -47,6 +47,13 @@ class Opinion
     private $butchery;
 
     /**
+     * @var String
+     *
+     * @ORM\Column(name="text", type="text", nullable=true)
+     */
+    private $text;
+
+    /**
      * @var \DateTime
      *
      * @Gedmo\Timestampable(on="create")
@@ -61,5 +68,133 @@ class Opinion
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
+
+    /**
+     * @param \ZIMZIM\Bundles\OpinionBundle\Entity\Butchery $butchery
+     */
+    public function setButchery($butchery)
+    {
+        $this->butchery = $butchery;
+
+        return $this;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\OpinionBundle\Entity\Butchery
+     */
+    public function getButchery()
+    {
+        return $this->butchery;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel $opinionLevel
+     */
+    public function setOpinionLevel($opinionLevel)
+    {
+        $this->opinionLevel = $opinionLevel;
+
+        return $this;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel
+     */
+    public function getOpinionLevel()
+    {
+        return $this->opinionLevel;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\UserBundle\Entity\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param String $text
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return String
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+
 
 }
