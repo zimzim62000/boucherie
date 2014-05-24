@@ -147,3 +147,14 @@ span.title {
         @include skew(0deg, 0deg);
     }
 }
+
+
+/**********************
+    transition
+/**********************/
+
+.animate1s{
+    transition-property: clip;
+    transition-duration: 2s;
+    transition-timing-fonction: linear;
+}

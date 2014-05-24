@@ -1,0 +1,5 @@
+zimzim_bundles_opinion_homepage:
+    pattern:  /
+    defaults: { _controller: ZIMZIMBundlesOpinionBundle:HomePage:index }
+    requirements:
+        _method: GET

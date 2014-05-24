@@ -1,7 +1,7 @@
 <nav data-topbar="" class="top-bar">
     <ul class="title-area">
         <li class="name">
-            <a href="{{ path('zimzim_bundles_user_homepage') }}">
+            <a href="{{ path('zimzim_bundles_opinion_homepage') }}">
                 {{ 'views.navbar.title'|trans }}
             </a>
         </li>
@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="{{ path('fos_user_security_logout') }}">
+                        <a class="medium button" href="{{ path('fos_user_security_logout') }}">
                             {{ 'views.navbar.logout'|trans }}
                         </a>
                     </li>
@@ -88,7 +88,7 @@
         {% else %}
             <li class="divider"></li>
             <li class="has-form">
-                <a href="{{ path('hwi_oauth_connect') }}">
+                <a class="medium button" href="{{ path('hwi_oauth_connect') }}">
                     {{ 'views.navbar.login'|trans }}
                 </a>
             </li>

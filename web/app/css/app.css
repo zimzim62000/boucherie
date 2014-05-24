@@ -272,3 +272,15 @@ span.title {
     transform: skew(0deg, 0deg);
   }
 }
+
+/**********************
+    transition
+/**********************/
+/* line 156, ../scss/app.scss */
+.animate1s {
+  -webkit-transition-property: clip;
+  transition-property: clip;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+  transition-timing-fonction: linear;
+}
