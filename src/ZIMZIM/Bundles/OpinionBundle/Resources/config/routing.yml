@@ -17,3 +17,7 @@ ZIMZIMBundlesOpinionBundle_zimzim_opinion_butchery:
 ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinion:
     resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinion.yml"
     prefix:   /opinion/
+
+ZIMZIMBundlesOpinionBundle_zimzim_opinion_homepage:
+    resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/homepage.yml"
+    prefix:   /

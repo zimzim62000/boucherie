@@ -8,7 +8,7 @@ link:
     return: "Retour à la liste"
 views:
     navbar:
-        title: default site #"La meilleure boucherie"
+        title: "La meilleure boucherie.com"
         menu: "Menu"
         back: "Retour"
         login: "Connexion"

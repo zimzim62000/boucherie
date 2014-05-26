@@ -11,6 +11,7 @@
         {% block headshare %}
         {% endblock %}
         <title>{% block title %}{% endblock %}</title>
+        <META NAME="description" CONTENT="{% block metadescription %}{% endblock metadescription %}">
         {% block stylesheets %}
             {% if app.environment == 'prod' %}
                 <link rel="stylesheet" href="{{ asset('built/css/min.css') }}"" />
