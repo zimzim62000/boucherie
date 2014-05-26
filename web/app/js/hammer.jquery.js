@@ -1,4 +1,4 @@
-/*! Hammer.JS - v1.1.3 - 2014-05-20
+/*! Hammer.JS - v1.1.2 - 2014-04-25
  * http://eightmedia.github.io/hammer.js
  *
  * Copyright (c) 2014 Jorik Tangelder <j.tangelder@gmail.com>;
@@ -37,7 +37,7 @@ var Hammer = function Hammer(element, options) {
  * @final
  * @type {String}
  */
-Hammer.VERSION = '1.1.3';
+Hammer.VERSION = '1.1.2';
 
 /**
  * default settings.
@@ -72,12 +72,12 @@ Hammer.defaults = {
 
         /**
          * Specifies whether and how a given region can be manipulated by the user (for instance, by panning or zooming).
-         * Used by Chrome 35> and IE10>. By default this makes the element blocking any touch event.
+         * Used by IE10>. By default this makes the element blocking any touch event.
          * @property defaults.behavior.touchAction
          * @type {String}
-         * @default: 'pan-y'
+         * @default: 'none'
          */
-        touchAction: 'pan-y',
+        touchAction: 'none',
 
         /**
          * Disables the default callout shown when you touch and hold a touch target.
@@ -712,7 +712,7 @@ var Event = Hammer.event = {
                 self.preventMouseEvents = false;
                 self.shouldDetect = true;
             } else if(isPointer && eventType == EVENT_START) {
-                self.shouldDetect = (ev.buttons === 1 || PointerEvent.matchType(POINTER_TOUCH, ev));
+                self.shouldDetect = (ev.buttons === 1);
             // just a valid start event, but no mouse
             } else if(!isMouse && eventType == EVENT_START) {
                 self.preventMouseEvents = true;
@@ -1098,7 +1098,11 @@ var Detection = Hammer.detection = {
         Utils.each(this.gestures, function triggerGesture(gesture) {
             // only when the instance options have enabled this gesture
             if(!this.stopped && inst.enabled && instOptions[gesture.name]) {
-                gesture.handler.call(gesture, eventData, inst);
+                // if a handler returns false, we stop with the detection
+                if(gesture.handler.call(gesture, eventData, inst) === false) {
+                    this.stopDetect();
+                    return false;
+                }
             }
         }, this);
 
@@ -1899,7 +1903,7 @@ Hammer.gestures.Swipe = {
                 break;
 
             case EVENT_END:
-                if(!Utils.inStr(ev.srcEvent.type, 'cancel') && ev.deltaTime < options.tapMaxTime && !hasMoved) {
+                if(ev.srcEvent.type != 'touchcancel' && ev.deltaTime < options.tapMaxTime && !hasMoved) {
                     // previous gesture, for the double tap since these are two different gesture detections
                     sincePrev = prev && prev.lastEvent && ev.timeStamp - prev.lastEvent.timeStamp;
                     didDoubleTap = false;
@@ -1918,7 +1922,6 @@ Hammer.gestures.Swipe = {
                         inst.trigger(current.name, ev);
                     }
                 }
-                break;
         }
     }
 
