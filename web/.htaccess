@@ -8,6 +8,21 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # RewriteCond %{HTTP_HOST} !^www. 
+    # RewriteRule ^(.*)$   http://%1/$1  [L]
+
+    RewriteCond %{HTTP_HOST}   ^la-meilleure-boucherie\.fr [NC]
+    RewriteRule ^/?(.*)         http://www.la-meilleure-boucherie.com/$1 [L,R=301]
+
+    RewriteCond %{HTTP_HOST}   ^www.la-meilleure-boucherie\.fr [NC]
+    RewriteRule ^/?(.*)         http://www.la-meilleure-boucherie.com/$1 [L,R=301]
+
+    RewriteCond %{HTTP_HOST}   ^la-meilleure-boucherie\.com [NC]
+    RewriteRule ^/?(.*)         http://www.la-meilleure-boucherie.com/$1 [L,R=301]
+
+    # RewriteCond %{HTTP_HOST} !^www\.la-meilleure-boucherie\.fr
+    # RewriteRule (.*) http://www.la-meilleure-boucherie.com/$1 [R=301,L]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper

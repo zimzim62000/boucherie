@@ -18,7 +18,7 @@ class FOSUBUserProvider extends BaseClass
         //on connect - get the access token and the user ID
         $service = $response->getResourceOwner()->getName();
 
-        $setter = 'set' . ucfirst($service);
+        $setter = 'set' . str_replace('_', '' ,ucfirst($service));
         $setter_id = $setter . 'Id';
         $setter_token = $setter . 'AccessToken';
 
@@ -45,7 +45,7 @@ class FOSUBUserProvider extends BaseClass
         $idservice = $response->getUsername();
         $user = $this->userManager->findUserBy(array($this->getProperty($response) => $idservice));
 
-        $classname = 'ZZ\Bundles\UserBundle\Security\Core\User\Login' . ucfirst($service);
+        $classname = 'ZIMZIM\Bundles\UserBundle\Security\Core\User\Login' . ucfirst($service);
         $login = new $classname($this->userManager, $response);
 
         /* @check if user is know in other oauth */
