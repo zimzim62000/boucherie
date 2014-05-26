@@ -5,14 +5,14 @@ views:
                 title: Liste des niveaux
         homepage:
             index:
-                title: "La meilleure boucherie.com, Les bonnes adresse çà se partage."
-                titlebis: "Les bonnes adresse, çà se partage."
+                title: "Trouver la meilleure boucherie, Partager vos meilleures adresses!"
+                titlebis: "que la meilleure boucherie gagne ..."
                 description: >
-                    La meilleure boucherie.com, Les bonnes adresse çà se partage.
+                    Avec la meilleure boucherie.com, trouvez la meilleure viande au meilleure prix prés de chez vous.
                     Les meilleures boucherie de votre ville, pour vous, sans se tromper, trouver les bonnes boucherie prés de chez vous.
-                h21: "Trouver la meilleure boucherie prés de chez vous."
+                h31: "Trouver la meilleure boucherie prés de chez vous."
                 p1: "Oh, j'en connais un rayon sur les boucheries. "
-                h22: "Partager nous vos meilleures viandes"
+                h32: "Partager nous vos meilleures viandes"
                 p2: "Oh, j'en connais un rayon sur les boucheries. "
 form:
     opinion:

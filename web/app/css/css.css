@@ -6236,3 +6236,18 @@ span.logo-small-tiers {
 html, body {
   background-image: url("../../images/butchery2.jpg");
 }
+
+/* line 48, ../scss/css.scss */
+h1.title-mini {
+  font-size: 1.85rem;
+}
+
+/* line 51, ../scss/css.scss */
+h2.title-mini {
+  font-size: 1.65rem;
+}
+
+/* line 54, ../scss/css.scss */
+h3.title-mini {
+  font-size: 1.45rem;
+}
