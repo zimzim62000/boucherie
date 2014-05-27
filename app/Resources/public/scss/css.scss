@@ -42,15 +42,25 @@ span.logo-small-tiers{
 }
 
 html, body{
-  background-image: url('../../images/butchery2.jpg');
+
 }
 
 h1.title-mini{
-    font-size: 1.85rem;
+    font-size: 1.35rem;
 }
 h2.title-mini{
-    font-size: 1.65rem;
+    font-size: 1.25rem;
 }
 h3.title-mini{
-    font-size: 1.45rem;
+    font-size: 1.15rem;
+}
+.case-home{
+    padding: 1rem;
+}
+.padding-top{
+    padding: 2rem 0;
+}
+
+.bg-vichi{
+    background-image: url('../../images/butchery2.jpg');
 }
