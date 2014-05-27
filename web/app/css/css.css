@@ -6232,22 +6232,32 @@ span.logo-small-tiers {
   padding-top: 10px;
 }
 
-/* line 44, ../scss/css.scss */
-html, body {
-  background-image: url("../../images/butchery2.jpg");
-}
-
 /* line 48, ../scss/css.scss */
 h1.title-mini {
-  font-size: 1.85rem;
+  font-size: 1.35rem;
 }
 
 /* line 51, ../scss/css.scss */
 h2.title-mini {
-  font-size: 1.65rem;
+  font-size: 1.25rem;
 }
 
 /* line 54, ../scss/css.scss */
 h3.title-mini {
-  font-size: 1.45rem;
+  font-size: 1.15rem;
+}
+
+/* line 57, ../scss/css.scss */
+.case-home {
+  padding: 1rem;
+}
+
+/* line 60, ../scss/css.scss */
+.padding-top {
+  padding: 2rem 0;
+}
+
+/* line 64, ../scss/css.scss */
+.bg-vichi {
+  background-image: url("../../images/butchery2.jpg");
 }

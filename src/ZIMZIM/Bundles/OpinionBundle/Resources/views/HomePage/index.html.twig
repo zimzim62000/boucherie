@@ -10,24 +10,29 @@
 
 {% block page %}
     <div class="row">
-        <div class="small-12 columns text-center">
+        <div class="small-12 columns text-center padding-top">
             <h1 class="title-mini">{{ 'views.opinion.homepage.index.title'|trans }}</h1>
             <h2 class="title-mini">{{ 'views.opinion.homepage.index.titlebis'|trans }}</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="small-6 columns">
-            <h3 class="text-center title-mini">{{ 'views.opinion.homepage.index.h31'|trans }}</h3>
-            <p>{{ 'views.opinion.homepage.index.p1'|trans }}</p>
-        </div>
-        <div class="small-6 columns">
-            <h3 class="text-center title-mini">{{ 'views.opinion.homepage.index.h32'|trans }}</h3>
-            <p>{{ 'views.opinion.homepage.index.p2'|trans }}</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns">
-            <p>{{ 'views.opinion.homepage.index.description'|trans }}</p>
+
+    <div class="full-width  bg-vichi">
+        <div class="row">
+            <div class="large-6 columns case-home text-center ">
+                <h3 class="title-mini">{{ 'views.opinion.homepage.index.find'|trans }}</h3>
+                <p>{{ 'views.opinion.homepage.index.findp'|trans }}</p>
+            </div>
+            <div class="large-6 columns case-home text-center ">
+                <h3 class="title-mini">{{ 'views.opinion.homepage.index.share'|trans }}</h3>
+                <p>{{ 'views.opinion.homepage.index.sharep'|trans }}</p>
+            </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="large-6 large-centered medium-9 medium-centered columns ">
+            <p class="padding-top">{{ 'views.opinion.homepage.index.description'|trans }}</p>
+        </div>
+    </div>
+
 {% endblock page %}

@@ -6,3 +6,5 @@ services:
         class: ZIMZIM\Bundles\AddressBundle\Form\AddressType
         tags:
             - { name: form.type, alias: zimzim_address_address }
+    zimzim_address.loader.loader_city_postcode:
+        class: ZIMZIM\Bundles\AddressBundle\Loader\LoaderCityPostCode
