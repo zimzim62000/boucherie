@@ -1,16 +1,11 @@
 <div id="form_city_post_code">
     {{ form_start(form) }}
-    <div class="row collapse padding-top">
-        <div class="medium-4 columns">
-            <span class="prefix">
-                {{ 'views.opinion.homepage.index.inputvile'|trans }}
-            </span>
+    <div class="row ">
+        <div class="medium-12 columns text-center">
+            <label class="input-up">{{ 'views.address.citypostcode.form.inputvile.label'|trans }}</label>
         </div>
-        <div class="medium-6 columns">
-                {{ form_widget(form.citypostcode) }}
-        </div>
-        <div class="medium-2 columns">
-            {{ form_widget(form.submit) }}
+        <div class="medium-12 columns text-center">
+            {{ form_widget(form.citypostcode) }}
         </div>
     </div>
     {{ form_end(form) }}

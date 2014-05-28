@@ -3,12 +3,17 @@
 @import "foundation";
 
 /*******hack foundation top bar*******/
+
 .top-bar .name{
     line-height: 45px;
     a{
         color: #FFF;
         padding: 0 1rem;
     }
+}
+
+.title-top-bar{
+    font-size: 0.75rem;
 }
 
 .full-width{
@@ -45,22 +50,34 @@ html, body{
 
 }
 
-h1.title-mini{
-    font-size: 1.35rem;
-}
+h1.headerpagehome{padding-top:3rem;padding-bottom: 2rem;}
+h1.title-mini{font-size: 1.82rem;}
 h2.title-mini{
     font-size: 1.25rem;
 }
 h3.title-mini{
-    font-size: 1.15rem;
+    font-size: 1.45rem;
+    font-weight: bold;
 }
 .case-home{
     padding: 1rem;
+    margin: 0 0;
+}
+.case-home-p{
+  padding: 2rem 3rem;
+  margin: 0 0;
+  font-size: 1.25rem;
+}
+label.input-up{
+
 }
 .padding-top{
     padding: 2rem 0;
 }
 
 .bg-vichi{
-    background-image: url('../../images/butchery2.jpg');
+    background-image: url('../../images/butchery3.png');
+}
+.bold{
+    font-weight: bold;
 }

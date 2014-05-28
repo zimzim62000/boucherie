@@ -11,4 +11,10 @@ form:
                 label: "Pays :"
         citypostcodetype:
             citypostcode:
-                placeholder: "ex: Arras, 62000, st etienne"
+                placeholder: "ex: Arras, 64210, ..."
+views:
+    address:
+        citypostcode:
+            form:
+                inputvile:
+                    label:  "Saississez votre ville ou code postal"

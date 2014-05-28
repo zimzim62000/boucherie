@@ -1,7 +1,10 @@
 <nav data-topbar="" class="top-bar">
     <ul class="title-area">
         <li class="name">
-            <a href="{{ path('zimzim_bundles_opinion_homepage') }}">
+            <a href="{{ path('zimzim_bundles_opinion_homepage') }}" class="hide-for-small">
+                {{ 'views.navbar.title'|trans }}
+            </a>
+            <a href="{{ path('zimzim_bundles_opinion_homepage') }}" class="show-for-small title-top-bar">
                 {{ 'views.navbar.title'|trans }}
             </a>
         </li>

@@ -4,6 +4,9 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@import url(http://fonts.googleapis.com/css?family=Merriweather|News+Cycle);
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Playball|Bangers|Gloria+Hallelujah|Rock+Salt);
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Playball|Bangers|Gloria+Hallelujah|Rock+Salt|Delius+Swash+Caps);
 /* line 9, ../../../../bower_components/foundation/scss/normalize.scss */
 html {
   font-family: sans-serif;
@@ -498,7 +501,7 @@ body {
   color: #222222;
   padding: 0;
   margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Delius Swash Caps", cursive;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -2698,7 +2701,7 @@ button, .button {
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Delius Swash Caps", cursive;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -4226,7 +4229,7 @@ kbd {
 /* line 91, ../../../../bower_components/foundation/scss/foundation/components/_labels.scss */
 .label {
   font-weight: normal;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Delius Swash Caps", cursive;
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -4448,7 +4451,7 @@ meta.foundation-mq-topbar {
 /* line 109, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .contain-to-grid {
   width: 100%;
-  background: #a61e36;
+  background: #bc0322;
 }
 /* line 113, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .contain-to-grid .top-bar {
@@ -4488,7 +4491,7 @@ meta.foundation-mq-topbar {
   height: 45px;
   line-height: 45px;
   position: relative;
-  background: #a61e36;
+  background: #bc0322;
   margin-bottom: 0;
 }
 /* line 152, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -4596,7 +4599,7 @@ meta.foundation-mq-topbar {
 }
 /* line 257, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .title-area {
-  background: #a61e36;
+  background: #bc0322;
 }
 /* line 260, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a {
@@ -4619,14 +4622,14 @@ meta.foundation-mq-topbar {
   width: 100%;
   height: auto;
   display: block;
-  background: #a61e36;
+  background: #bc0322;
   font-size: 16px;
   margin: 0;
 }
 /* line 292, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section .divider,
 .top-bar-section [role="separator"] {
-  border-top: solid 1px #530f1b;
+  border-top: solid 1px #5e0111;
   clear: both;
   height: 1px;
   width: 100%;
@@ -4638,11 +4641,11 @@ meta.foundation-mq-topbar {
   color: white;
   padding: 12px 0 12px 0;
   padding-left: 15px;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Delius Swash Caps", cursive;
   font-size: 0.8125rem;
   font-weight: normal;
   text-transform: none;
-  background: #a61e36;
+  background: #bc0322;
 }
 /* line 313, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button {
@@ -4882,7 +4885,7 @@ meta.foundation-mq-topbar {
 @media only screen and (min-width: 40.063em) {
   /* line 431, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar {
-    background: #a61e36;
+    background: #bc0322;
     *zoom: 1;
     overflow: visible;
   }
@@ -4917,7 +4920,7 @@ meta.foundation-mq-topbar {
   }
   /* line 449, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar.expanded {
-    background: #a61e36;
+    background: #bc0322;
   }
 
   /* line 452, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
@@ -4955,7 +4958,7 @@ meta.foundation-mq-topbar {
   .top-bar-section li:not(.has-form) a:not(.button) {
     padding: 0 15px;
     line-height: 45px;
-    background: #a61e36;
+    background: #bc0322;
   }
   /* line 485, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -5033,12 +5036,12 @@ meta.foundation-mq-topbar {
     line-height: 1;
     white-space: nowrap;
     padding: 12px 15px;
-    background: #a61e36;
+    background: #bc0322;
   }
   /* line 556, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li:not(.has-form) a:not(.button) {
     color: white;
-    background: #a61e36;
+    background: #bc0322;
   }
   /* line 560, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section .dropdown li:not(.has-form):hover > a:not(.button) {
@@ -5059,14 +5062,14 @@ meta.foundation-mq-topbar {
   .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
     border-bottom: none;
     border-top: none;
-    border-right: solid 1px #c92441;
+    border-right: solid 1px #e50429;
     clear: none;
     height: 45px;
     width: 0;
   }
   /* line 588, ../../../../bower_components/foundation/scss/foundation/components/_top-bar.scss */
   .top-bar-section .has-form {
-    background: #a61e36;
+    background: #bc0322;
     padding: 0 15px;
     height: 45px;
   }
@@ -5406,7 +5409,7 @@ p aside {
 /* Default header styles */
 /* line 229, ../../../../bower_components/foundation/scss/foundation/components/_type.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Rock Salt", cursive;
   font-weight: normal;
   font-style: normal;
   color: #222222;
@@ -6181,27 +6184,32 @@ th.hide-for-touch {
 }
 
 /*******hack foundation top bar*******/
-/* line 6, ../scss/css.scss */
+/* line 7, ../scss/css.scss */
 .top-bar .name {
   line-height: 45px;
 }
-/* line 8, ../scss/css.scss */
+/* line 9, ../scss/css.scss */
 .top-bar .name a {
   color: #FFF;
   padding: 0 1rem;
 }
 
-/* line 14, ../scss/css.scss */
+/* line 15, ../scss/css.scss */
+.title-top-bar {
+  font-size: 0.75rem;
+}
+
+/* line 19, ../scss/css.scss */
 .full-width {
   max-width: 100%;
 }
 
-/* line 18, ../scss/css.scss */
+/* line 23, ../scss/css.scss */
 .width-100 {
   width: 100%;
 }
 
-/* line 22, ../scss/css.scss */
+/* line 27, ../scss/css.scss */
 span.logo-small-tiers {
   width: 40px;
   height: 40px;
@@ -6209,55 +6217,75 @@ span.logo-small-tiers {
   display: inline-block;
 }
 
-/* line 28, ../scss/css.scss */
+/* line 33, ../scss/css.scss */
 .image-facebook {
   background-image: url("../../images/logotiers.png");
   background-position: 0;
 }
 
-/* line 32, ../scss/css.scss */
+/* line 37, ../scss/css.scss */
 .image-google {
   background-image: url("../../images/logotiers.png");
   background-position: 80px;
 }
 
-/* line 36, ../scss/css.scss */
+/* line 41, ../scss/css.scss */
 .image-twitter {
   background-image: url("../../images/logotiers.png");
   background-position: 40px;
 }
 
-/* line 40, ../scss/css.scss */
+/* line 45, ../scss/css.scss */
 .padding-top-10 {
   padding-top: 10px;
 }
 
-/* line 48, ../scss/css.scss */
-h1.title-mini {
-  font-size: 1.35rem;
+/* line 53, ../scss/css.scss */
+h1.headerpagehome {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 }
 
-/* line 51, ../scss/css.scss */
+/* line 54, ../scss/css.scss */
+h1.title-mini {
+  font-size: 1.82rem;
+}
+
+/* line 55, ../scss/css.scss */
 h2.title-mini {
   font-size: 1.25rem;
 }
 
-/* line 54, ../scss/css.scss */
+/* line 58, ../scss/css.scss */
 h3.title-mini {
-  font-size: 1.15rem;
+  font-size: 1.45rem;
+  font-weight: bold;
 }
 
-/* line 57, ../scss/css.scss */
+/* line 62, ../scss/css.scss */
 .case-home {
   padding: 1rem;
+  margin: 0 0;
 }
 
-/* line 60, ../scss/css.scss */
+/* line 66, ../scss/css.scss */
+.case-home-p {
+  padding: 2rem 3rem;
+  margin: 0 0;
+  font-size: 1.25rem;
+}
+
+/* line 74, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 64, ../scss/css.scss */
+/* line 78, ../scss/css.scss */
 .bg-vichi {
-  background-image: url("../../images/butchery2.jpg");
+  background-image: url("../../images/butchery3.png");
+}
+
+/* line 81, ../scss/css.scss */
+.bold {
+  font-weight: bold;
 }

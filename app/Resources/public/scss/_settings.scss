@@ -41,7 +41,7 @@
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: 'Delius Swash Caps', cursive;//'Merriweather', serif;//"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -118,7 +118,7 @@ $secondary-color: #F47070;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: 'Rock Salt', cursive;//'News Cycle', sans-serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1168,7 +1168,7 @@ $secondary-color: #F47070;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #A61E36;
+$topbar-bg-color: #BC0322;//#A61E36;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1180,9 +1180,9 @@ $topbar-bg-color: #A61E36;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #A61E36;
-// $topbar-dropdown-link-color: #fff;
-$topbar-dropdown-link-bg: #A61E36;
+$topbar-dropdown-bg: #BC0322;
+ $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-link-bg: #BC0322;
 // $topbar-dropdown-link-weight: normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;

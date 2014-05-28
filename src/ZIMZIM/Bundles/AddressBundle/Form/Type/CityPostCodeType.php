@@ -20,10 +20,10 @@ class CityPostCodeType extends AbstractType
             array(
                 'attr' => array(
                     'placeholder' => 'form.address.citypostcodetype.citypostcode.placeholder',
-                    'class' => 'autocomplete'
+                    'class' => 'autocomplete text-center'
                 )
             )
-        )->add('submit', 'submit', array('label' => 'button.find'));
+        );
     }
 
     /**

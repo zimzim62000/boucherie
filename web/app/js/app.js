@@ -106,10 +106,8 @@ function autocompletecity(e, input) {
         if (submit) {
             $form.submit();
         } else {
-            console.log(rechercheKey);
             $container = $('div.container-autocompletecity');
             $container.find('div').each(function (i, div) {
-                console.log(i);
                 $(div).removeClass('current');
                 if (rechercheKey == i) {
                     $(div).addClass('current');
