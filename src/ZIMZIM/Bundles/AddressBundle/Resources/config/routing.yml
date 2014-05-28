@@ -1,0 +1,3 @@
+ZIMZIMBundlesAddressBundle_zimzim_address_citypostcode:
+    resource: "@ZIMZIMBundlesAddressBundle/Resources/config/routing/citypostcode.yml"
+    prefix:   /citypostcode/

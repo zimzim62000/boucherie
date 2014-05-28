@@ -1,0 +1,17 @@
+<div id="form_city_post_code">
+    {{ form_start(form) }}
+    <div class="row collapse padding-top">
+        <div class="medium-4 columns">
+            <span class="prefix">
+                {{ 'views.opinion.homepage.index.inputvile'|trans }}
+            </span>
+        </div>
+        <div class="medium-6 columns">
+                {{ form_widget(form.citypostcode) }}
+        </div>
+        <div class="medium-2 columns">
+            {{ form_widget(form.submit) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>

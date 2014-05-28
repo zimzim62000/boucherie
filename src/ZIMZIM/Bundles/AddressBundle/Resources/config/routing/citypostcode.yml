@@ -1,0 +1,9 @@
+zimzim_address_citypostcode_createform:
+    pattern:  /createform
+    defaults: { _controller: "ZIMZIMBundlesAddressBundle:CityPostCode:createFindCityPostCodeForm" }
+    requirements: { _method: get }
+zimzim_address_citypostcode_findcitypostcode:
+    pattern:  /findcitypostcode
+    defaults: { _controller: ZIMZIMBundlesAddressBundle:CityPostCode:findCityOrPostCode }
+    requirements:
+        _method: POST

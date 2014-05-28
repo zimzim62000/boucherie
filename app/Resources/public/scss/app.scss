@@ -153,8 +153,42 @@ span.title {
     transition
 /**********************/
 
-.animate1s{
-    transition-property: clip;
-    transition-duration: 2s;
-    transition-timing-fonction: linear;
+
+/************* autocompletecity  **********/
+div.container-autocompletecity{
+    position: relative;
+    width:100%;
+    display:block;
+    //animation: heightmoveup linear 0.5s 1;
+}
+div.autocompletecity{
+    position: relative;
+    color: $primary-color;
+    font-weight: bold;
+    width:100%; display:block;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    animation: rotateleft linear 0.5s 1;
+}
+div.autocompletecity.current{
+    background: rgba(255, 255, 255, 0.7);
+}
+div.autocompletecity:hover{
+    background: rgba(255, 255, 255, 0.7);
+}
+@keyframes heightmoveup {
+    0% {
+        @include scaleY(0);
+    }
+    100% {
+        @include scaleY(1);
+    }
+}
+@keyframes rotateleft {
+    0% {
+        @include rotate(180deg);
+    }
+    100% {
+        @include rotate(0deg);
+    }
 }

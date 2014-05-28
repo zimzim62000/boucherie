@@ -4,6 +4,7 @@ button:
     create: Créer
     show: Voir
     delete: supprimer
+    find: "rechercher"
 link:
     return: "Retour à la liste"
 views:

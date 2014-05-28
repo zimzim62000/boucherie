@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * CityPostcode
  *
  * @ORM\Table(name="butchery_city_postcode")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="CityPostCodeRepository")
  */
 class CityPostCode{
 
@@ -181,5 +181,17 @@ class CityPostCode{
     }
 
 
+    public function getData(){
+
+        return array(
+            'id' => $this->getId(),
+            'city' => $this->getCity(),
+            'cp' => $this->getCp(),
+            'county' => $this->getCounty(),
+            'region' => $this->getRegion(),
+            'longitude' => $this->getLongitude(),
+            'latitude' => $this->getLatitude()
+        );
+    }
 
 }

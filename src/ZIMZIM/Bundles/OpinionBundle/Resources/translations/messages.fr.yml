@@ -6,7 +6,12 @@ views:
         homepage:
             index:
                 title: "Trouver la meilleure boucherie, partager vos meilleures adresses"
-                titlebis: "la meilleure boucherie.com site de partage et d'échange sur nos chères boucheries. "
+                titlebis: "la meilleure boucherie.com site de partage et d'échange sur nos chères boucheries."
+                metadescription: >
+                    la meilleure boucherie.com, trouvez la meilleure viande prés de chez vous au meilleure prix.
+                    Trouver la meilleure boucherie, partager vos meilleures adresses
+                    la meilleure boucherie.com site de partage et d'échange sur nos chères boucheries
+                    Trouver la meilleure boucherie prés de chez vous.
                 description: >
                     Avec la meilleure boucherie.com, trouvez la meilleure viande prés de chez vous au meilleure prix.
                     Connaissez-vous La meilleure boucherie de votre ville ?
@@ -14,6 +19,7 @@ views:
                 findp: "Avec la meilleure boucherie.com vous allez connaitre les meilleures boucheries prés de chez vous. les boucherie de vos amis sont elles meilleures que la votre ?"
                 share: "Partager nous vos meilleures viandes"
                 sharep: "Sur la meilleure boucherie.com vos avis se partage aussi sur les réseaux sociaux. Donnez l'occasion à vos amis de goutez la bonne viande que vous venez de dégustez."
+                inputvile: "Ville ou code postal"
 form:
     opinion:
         opinionleveltype:

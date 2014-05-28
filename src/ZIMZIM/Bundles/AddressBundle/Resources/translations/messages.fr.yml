@@ -9,3 +9,6 @@ form:
                 label: "Code postal :"
             country:
                 label: "Pays :"
+        citypostcodetype:
+            citypostcode:
+                placeholder: "ex: Arras, 62000, st etienne"
