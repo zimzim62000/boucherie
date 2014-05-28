@@ -58,6 +58,7 @@ h2.title-mini{
 h3.title-mini{
     font-size: 1.45rem;
     font-weight: bold;
+    padding-top: 2rem;
 }
 .case-home{
     padding: 1rem;
@@ -80,4 +81,10 @@ label.input-up{
 }
 .bold{
     font-weight: bold;
+}
+.no-margin > input{
+    //margin: 0 0;
+    //border: none;
+    //box-shadow: rgba(0, 0, 0, 0.9);
+    //background: #FEFFFE;
 }

@@ -47,6 +47,7 @@ class CityPostCodeController extends ZimzimController
                      $value,
                      $value
                  ) as $entity) {
+            $entity->setCity(ucfirst(strtolower($entity->getCity())));;
             $entities[] = $entity->getData();
         };
 

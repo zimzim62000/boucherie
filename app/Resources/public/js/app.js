@@ -94,7 +94,7 @@ function autocompletecity(e, input) {
                         var height = $input.css('height');
                         for (var i in entities) {
                             var entity = entities[i];
-                            var name = entity.city + ' :' + entity.cp;
+                            var name = entity.city + '   ' + entity.cp;
                             var barre = '<div onClick="$(' + $input.attr('id') + ').val($(this).attr(\'dataref\')); $(\'.container-autocompletecity\').remove();" dataref="ref :' + name + '" class="autocompletecity text-center" style="line-height: ' + height + '; height: ' + height + '  ">' + name + '</div>';
                             $container.append(barre);
                         }

@@ -4,9 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Merriweather|News+Cycle);
-@import url(http://fonts.googleapis.com/css?family=Pacifico|Playball|Bangers|Gloria+Hallelujah|Rock+Salt);
-@import url(http://fonts.googleapis.com/css?family=Pacifico|Playball|Bangers|Gloria+Hallelujah|Rock+Salt|Delius+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=Rock+Salt|Delius+Swash+Caps);
 /* line 9, ../../../../bower_components/foundation/scss/normalize.scss */
 html {
   font-family: sans-serif;
@@ -6260,32 +6258,33 @@ h2.title-mini {
 h3.title-mini {
   font-size: 1.45rem;
   font-weight: bold;
+  padding-top: 2rem;
 }
 
-/* line 62, ../scss/css.scss */
+/* line 63, ../scss/css.scss */
 .case-home {
   padding: 1rem;
   margin: 0 0;
 }
 
-/* line 66, ../scss/css.scss */
+/* line 67, ../scss/css.scss */
 .case-home-p {
   padding: 2rem 3rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
 
-/* line 74, ../scss/css.scss */
+/* line 75, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 78, ../scss/css.scss */
+/* line 79, ../scss/css.scss */
 .bg-vichi {
   background-image: url("../../images/butchery3.png");
 }
 
-/* line 81, ../scss/css.scss */
+/* line 82, ../scss/css.scss */
 .bold {
   font-weight: bold;
 }
