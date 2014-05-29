@@ -39,16 +39,21 @@ function findForm($element) {
     return findForm($element.parent());
 }
 
+function scroolTo(ancre, delay)
+{
+    $(document.body).animate({
+        'scrollTop':   $(ancre).offset().top
+    }, delay);
+}
+
 
 /*******************\
  Function autocomplete city
  \*******************/
-var rechercheKeyGlobal = 0;
 
 function autocompletecity(e, input) {
 
     var $input = $(input);
-    var rechercheKey = rechercheKeyGlobal;
     var search = false;
 
     var regexNumber = new RegExp(/^[0-9]{1,99}$/g);
@@ -63,16 +68,6 @@ function autocompletecity(e, input) {
         }
     }
 
-    var submit = true;
-    if (e.keyCode == 38) {
-        submit = false;
-        rechercheKey--;
-    }
-    if (e.keyCode == 40) {
-        submit = false;
-        rechercheKey++;
-    }
-
     if (search) {
         $form = findForm($input);
         if (!$form.hasClass('form-ajax')) {
@@ -84,40 +79,18 @@ function autocompletecity(e, input) {
                     url: $form[0].action,
                     data: $data,
                     success: function (feedback) {
-                        $('.container-autocompletecity').remove();
-                        var entities = JSON.parse(feedback);
-                        var $parent = $input.parent();
-                        $parent.css('position', 'relative');
-                        $parent.append('<div class="container-autocompletecity"></div>');
-                        $container = $('div.container-autocompletecity', $parent);
-                        $input.css('margin', '0');
-                        var height = $input.css('height');
-                        for (var i in entities) {
-                            var entity = entities[i];
-                            var name = entity.city + '   ' + entity.cp;
-                            var barre = '<div onClick="$(' + $input.attr('id') + ').val($(this).attr(\'dataref\')); $(\'.container-autocompletecity\').remove();" dataref="ref :' + name + '" class="autocompletecity text-center" style="line-height: ' + height + '; height: ' + height + '  ">' + name + '</div>';
-                            $container.append(barre);
-                        }
+                        ajaxSuccess(feedback);
                     }
                 });
                 return false;
             });
         }
-        if (submit) {
+
             $form.submit();
-        } else {
-            $container = $('div.container-autocompletecity');
-            $container.find('div').each(function (i, div) {
-                $(div).removeClass('current');
-                if (rechercheKey == i) {
-                    $(div).addClass('current');
-                }
-            });
-        }
+
     } else {
-        $('.container-autocompletecity').remove();
+        $('#container-autocompletecity').empty();
     }
-    rechercheKeyGlobal = rechercheKey;
 }
 
 

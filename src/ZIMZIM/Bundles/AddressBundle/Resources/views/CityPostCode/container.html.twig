@@ -1,0 +1,5 @@
+<div id="container-autocompletecity">
+    {% for entity in entities %}
+        {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:line.html.twig' with {'entity' : entity } %}
+    {% endfor %}
+</div>

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "03c2bcf1a0a643ec9ed9723047f06903",
+    "hash": "336d89a85b4794f920ba974f54d82aef",
     "packages": [
         {
             "name": "apy/datagrid-bundle",
@@ -65,6 +65,32 @@
                 "source": "https://github.com/acseo/APYDataGridBundle/tree/master"
             },
             "time": "2014-03-13 16:09:49"
+        },
+        {
+            "name": "beberlei/DoctrineExtensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/DoctrineExtensions.git",
+                "reference": "5e4ec9c3ec3434151e1c73144b4ab87ae30aefbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/DoctrineExtensions/zipball/5e4ec9c3ec3434151e1c73144b4ab87ae30aefbc",
+                "reference": "5e4ec9c3ec3434151e1c73144b4ab87ae30aefbc",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "DoctrineExtensions": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2013-12-20 22:02:19"
         },
         {
             "name": "doctrine/annotations",
@@ -914,12 +940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "b1304871830f9059b22118a3ab93d1e8cdd3674f"
+                "reference": "047620d39f6fe5ff96ecd49d674e6e501dbec2ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/b1304871830f9059b22118a3ab93d1e8cdd3674f",
-                "reference": "b1304871830f9059b22118a3ab93d1e8cdd3674f",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/047620d39f6fe5ff96ecd49d674e6e501dbec2ec",
+                "reference": "047620d39f6fe5ff96ecd49d674e6e501dbec2ec",
                 "shasum": ""
             },
             "require": {
@@ -984,7 +1010,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2014-05-21 20:42:38"
+            "time": "2014-05-28 21:36:40"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -2886,12 +2912,8 @@
             "time": "2014-05-16 12:34:51"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "doctrine/doctrine-fixtures-bundle": 20,
@@ -2903,12 +2925,11 @@
         "apy/datagrid-bundle": 20,
         "white-october/pagerfanta-bundle": 20,
         "jasny/twig-extensions": 20,
-        "egeloen/ordered-form-bundle": 20
+        "egeloen/ordered-form-bundle": 20,
+        "beberlei/doctrineextensions": 20
     },
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

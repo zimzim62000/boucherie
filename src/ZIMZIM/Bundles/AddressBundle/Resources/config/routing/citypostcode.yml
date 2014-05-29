@@ -7,3 +7,7 @@ zimzim_address_citypostcode_findcitypostcode:
     defaults: { _controller: ZIMZIMBundlesAddressBundle:CityPostCode:findCityOrPostCode }
     requirements:
         _method: POST
+zimzim_address_citypostcode_show:
+    pattern:  /{unik}/show/
+    defaults: { _controller: "ZIMZIMBundlesAddressBundle:CityPostCode:showCityPostCodeByUnik" }
+    requirements: { _method: get }

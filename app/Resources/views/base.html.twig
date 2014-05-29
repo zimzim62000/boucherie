@@ -26,22 +26,25 @@
     <body>
     {% block body %}
         {% block container %}
-            {% block nav %}
-                {% include '::navbar.html.twig' %}
-            {% endblock nav %}
-            {% block flashMessage %}
-                {% for flashMessage in app.session.flashbag.get('success') %}
-                    <div class="row full-width">
-                        <div class="large-12 columns text-center alert-box success">
-                            <h4>{{ flashMessage|trans }}</h4>
+            <div class="container" id="container"">
+                {% block nav %}
+                    {% include '::navbar.html.twig' %}
+                {% endblock nav %}
+                {% block flashMessage %}
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="row full-width">
+                            <div class="large-12 columns text-center alert-box success">
+                                <h4>{{ flashMessage|trans }}</h4>
+                            </div>
                         </div>
-                    </div>
-                {% endfor %}
-            {% endblock flashMessage %}
-            {% block page %}
-            {% endblock page %}
+                    {% endfor %}
+                {% endblock flashMessage %}
+                {% block page %}
+                {% endblock page %}
+            </div>
         {% endblock container %}
         {% block footer %}
+            {% include '::footer.html.twig' %}
         {% endblock footer %}
     {% endblock body %}
     {% block javascripts %}

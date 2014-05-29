@@ -32,6 +32,8 @@ views:
                 title3: "Ou "
                 login: "connexion"
                 register: "inscription"
+    footer:
+        title: la meilleure boucherie . com
 grid:
     filter:
         disabled: "Cacher"

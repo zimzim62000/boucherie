@@ -6238,53 +6238,79 @@ span.logo-small-tiers {
   padding-top: 10px;
 }
 
-/* line 53, ../scss/css.scss */
+/* line 49, ../scss/css.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 52, ../scss/css.scss */
+div.container {
+  hight: auto;
+  min-height: 100%;
+  padding-bottom: 150px;
+}
+
+/* line 58, ../scss/css.scss */
+footer.footer {
+  background: #bc0322;
+  height: 150px;
+  margin-top: -150px;
+  clear: both;
+  max-width: 100%;
+}
+/* line 64, ../scss/css.scss */
+footer.footer h4 {
+  color: #FFF;
+  padding: 2rem;
+}
+
+/* line 70, ../scss/css.scss */
 h1.headerpagehome {
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
-/* line 54, ../scss/css.scss */
+/* line 71, ../scss/css.scss */
 h1.title-mini {
   font-size: 1.82rem;
 }
 
-/* line 55, ../scss/css.scss */
+/* line 72, ../scss/css.scss */
 h2.title-mini {
   font-size: 1.25rem;
 }
 
-/* line 58, ../scss/css.scss */
+/* line 75, ../scss/css.scss */
 h3.title-mini {
   font-size: 1.45rem;
   font-weight: bold;
   padding-top: 2rem;
 }
 
-/* line 63, ../scss/css.scss */
+/* line 80, ../scss/css.scss */
 .case-home {
   padding: 1rem;
   margin: 0 0;
 }
 
-/* line 67, ../scss/css.scss */
+/* line 84, ../scss/css.scss */
 .case-home-p {
-  padding: 2rem 3rem;
+  padding: 2rem 0.25rem 2rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
 
-/* line 75, ../scss/css.scss */
+/* line 92, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 79, ../scss/css.scss */
+/* line 96, ../scss/css.scss */
 .bg-vichi {
   background-image: url("../../images/butchery3.png");
 }
 
-/* line 82, ../scss/css.scss */
+/* line 99, ../scss/css.scss */
 .bold {
   font-weight: bold;
 }

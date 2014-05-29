@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * CityPostcode
  *
- * @ORM\Table(name="butchery_city_postcode")
+ * @ORM\Table(name="butchery_city_postcode", indexes={@ORM\Index(name="unik_idx", columns={"unik"})})
  * @ORM\Entity(repositoryClass="CityPostCodeRepository")
  */
 class CityPostCode{
@@ -67,6 +67,18 @@ class CityPostCode{
      * @ORM\Column(name="latitude", type="string", length=255)
      */
     private $latitude;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="unik", type="string", length=255, unique=true)
+     */
+    private $unik;
+
+    /**
+     * @var KM
+     */
+    private $distance;
 
     /**
      * @param string $city
@@ -180,6 +192,38 @@ class CityPostCode{
         return $this->region;
     }
 
+    /**
+     * @param string $unik
+     */
+    public function setUnik($unik)
+    {
+        $this->unik = $unik;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUnik()
+    {
+        return $this->unik;
+    }
+
+    /**
+     * @param \ZIMZIM\Bundles\AddressBundle\Entity\KM $distance
+     */
+    public function setDistance($distance)
+    {
+        $this->distance = $distance;
+    }
+
+    /**
+     * @return \ZIMZIM\Bundles\AddressBundle\Entity\KM
+     */
+    public function getDistance()
+    {
+        return $this->distance;
+    }
+
 
     public function getData(){
 
@@ -190,7 +234,8 @@ class CityPostCode{
             'county' => $this->getCounty(),
             'region' => $this->getRegion(),
             'longitude' => $this->getLongitude(),
-            'latitude' => $this->getLatitude()
+            'latitude' => $this->getLatitude(),
+            'unik' => $this->getUnik()
         );
     }
 

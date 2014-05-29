@@ -47,7 +47,24 @@ span.logo-small-tiers{
 }
 
 html, body{
+    height: 100%;
+}
+div.container{
+    hight: auto;
+    min-height: 100%;
+    padding-bottom: 150px;
+}
 
+footer.footer{
+    background: $topbar-bg-color;
+    height: 150px;
+    margin-top: -150px;
+    clear:both;
+    max-width: 100%;
+    h4{
+        color: #FFF;
+        padding: 2rem;
+    }
 }
 
 h1.headerpagehome{padding-top:3rem;padding-bottom: 2rem;}
@@ -65,7 +82,7 @@ h3.title-mini{
     margin: 0 0;
 }
 .case-home-p{
-  padding: 2rem 3rem;
+  padding: 2rem 0.25rem 2rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
@@ -88,3 +105,5 @@ label.input-up{
     //box-shadow: rgba(0, 0, 0, 0.9);
     //background: #FEFFFE;
 }
+
+

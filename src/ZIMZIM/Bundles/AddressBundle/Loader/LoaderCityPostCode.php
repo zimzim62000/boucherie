@@ -40,6 +40,7 @@ class LoaderCityPostCode
                         $citypostcode->setRegion($data[8]);
                         $citypostcode->setLatitude($data[12]);
                         $citypostcode->setLongitude($data[11]);
+                        $citypostcode->setUnik(urlencode(strtolower($data[6].' '.$data[0].' '.$data[1])));
                         $om->persist($citypostcode);
                     }
                 }

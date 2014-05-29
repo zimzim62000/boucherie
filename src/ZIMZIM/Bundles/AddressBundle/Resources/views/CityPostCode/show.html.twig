@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+
+{% if entities[0][0].city is defined %}
+    {% set headertitle =  'views.address.citypostcode.show.title'|trans({'%city%': entities[0][0].city|lower }) %}
+{% else %}
+    {% set headertitle = 'views.address.citypostcode.show.noresulttitle'|trans %}
+{% endif %}
+
+{% block title %}
+    {{ headertitle }}
+{% endblock title %}
+
+{% block page %}
+
+    <div class="row">
+        <div class="small-12 large-12 columns">
+            <h1 class="text-center title headerpagehome">{{ headertitle }}</h1>
+            <p class="text-center title">{{ 'views.address.citypostcode.show.ptitle'|trans }}<p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-12">
+            {% for entity in entities %}
+                <h3><small>{{ entity.distance }} {{ entity[0].city }} {{ entity[0].cp }}</small></h3>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock page %}

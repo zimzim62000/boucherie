@@ -10,6 +10,10 @@ services:
         class: ZIMZIM\Bundles\AddressBundle\Form\Type\CityPostCodeType
         tags:
             - { name: form.type, alias: zimzim_address_type_citypostcodetype }
+    zimzim_address.type.citypostcode.autocomplete.type:
+        class: ZIMZIM\Bundles\AddressBundle\Form\Type\AutoCompleteType
+        tags:
+            - { name: form.type, alias: zimzim_address_type_autocompletetype }
     zimzim_address.loader.loader_city_postcode:
         class: ZIMZIM\Bundles\AddressBundle\Loader\LoaderCityPostCode
         arguments: [ %zimzim_citypostcode_filename%,  @zimzim_address.entity.city_postcode]

@@ -3,6 +3,7 @@
 namespace ZIMZIM\Bundles\AddressBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use ZIMZIM\Controller\ZimzimController;
 
 class CityPostCodeController extends ZimzimController
@@ -35,26 +36,53 @@ class CityPostCodeController extends ZimzimController
 
         $form->handleRequest($request);
 
-        $data = $form->getData();
+        if ($form->isValid()) {
+            $data = $form->getData();
 
-        $value = $data['citypostcode'];
+            $value = $data['citypostcode'];
 
-        $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();
 
-        $entities = array();
+            $entities = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByPostCodeOrCity(
+                $value,
+                $value
+            );
 
-        foreach ($em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByPostCodeOrCity(
-                     $value,
-                     $value
-                 ) as $entity) {
-            $entity->setCity(ucfirst(strtolower($entity->getCity())));;
-            $entities[] = $entity->getData();
-        };
-
-        die(json_encode($entities));
-
+            die(json_encode(
+                array(
+                    array(
+                        'id' => 'container-autocompletecity',
+                        'template' => $this->renderView(
+                                'ZIMZIMBundlesAddressBundle:CityPostCode:container.html.twig',
+                                array(
+                                    'entities' => $entities
+                                )
+                            )
+                    )
+                )
+            ));
+        }
+        die(json_encode(
+            array()
+        ));
     }
 
+    public function showCityPostCodeByUnikAction($unik)
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $entity = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findOneBy(array('unik' => $unik));
+
+        if (!$entity) {
+            throw new NotFoundHttpException('No city found ...');
+        }
+
+        $entities = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByUnikAndDistance(
+            $entity,
+            15,
+            10
+        );
+
+        return $this->render('ZIMZIMBundlesAddressBundle:CityPostCode:show.html.twig', array('entities' => $entities));
+    }
 }
-

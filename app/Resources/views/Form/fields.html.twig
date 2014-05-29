@@ -174,3 +174,11 @@
 </div>
 {% endspaceless %}
 {% endblock centaure_bundles_opinion_required_widget %}
+
+
+{% block zimzim_address_type_autocompletetype_widget %}
+    {% spaceless %}
+        {{ form_widget(form) }}
+        {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:container.html.twig' with {'entities' : [] } %}
+    {% endspaceless %}
+{% endblock zimzim_address_type_autocompletetype_widget %}

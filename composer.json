@@ -29,7 +29,8 @@
         "apy/datagrid-bundle": "dev-master",
         "white-october/pagerfanta-bundle": "1.0.*@dev",
         "jasny/twig-extensions": "dev-master",
-        "egeloen/ordered-form-bundle": "1.0.*@dev"
+        "egeloen/ordered-form-bundle": "1.0.*@dev",
+        "beberlei/DoctrineExtensions": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

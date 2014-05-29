@@ -18,3 +18,7 @@ views:
             form:
                 inputvile:
                     label:  "Saississez votre ville ou code postal"
+            show:
+                title: "La meilleure boucherie à %city%"
+                noresulttitle: "La meilleure boucherie.com"
+                ptitle: "Voici, nos boucheries près de chez vous..."

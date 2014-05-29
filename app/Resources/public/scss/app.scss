@@ -155,25 +155,23 @@ span.title {
 
 
 /************* autocompletecity  **********/
-div.container-autocompletecity{
+#container-autocompletecity{
     position: relative;
     width:100%;
     display:block;
-    //animation: heightmoveup linear 0.5s 1;
 }
 div.autocompletecity{
     position: relative;
     font-weight: bold;
     width:100%; display:block;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
+    height: 1.50rem;
+    line-height: 1.50rem;
     animation: rotateleft linear 0.5s 1;
 }
-div.autocompletecity.current{
-    background: rgba(255, 255, 255, 0.7);
-}
-div.autocompletecity:hover{
-    background: rgba(255, 255, 255, 0.7);
+div.autocompletecity > a:hover{
+    background: $topbar-bg-color;
+    color: #FFF;
 }
 @keyframes heightmoveup {
     0% {

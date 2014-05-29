@@ -10,14 +10,11 @@
 
 {% block page %}
     <div class="row">
-        <div class="medium-12 small-9 small-centered columns text-center padding-top">
+        <div class="medium-12 columns text-center padding-top">
             <h1 class="title-mini headerpagehome">{{ 'views.opinion.homepage.index.title'|trans }}</h1>
             <h2 class="title-mini">{{ 'views.opinion.homepage.index.titlebis'|trans }}</h2>
         </div>
     </div>
-
-    {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:form.html.twig' with {'form': form} %}
-
     <div class="full-width  bg-vichi">
         <div class="row">
             <div class="medium-6 columns case-home text-center ">
@@ -33,8 +30,10 @@
 
     <div class="row">
         <div class="large-6 large-centered medium-9 medium-centered columns ">
-            <p class="padding-top">{{ 'views.opinion.homepage.index.description'|trans }}</p>
+            <p class="case-home">{{ 'views.opinion.homepage.index.description'|trans }}</p>
         </div>
     </div>
+
+    {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:form.html.twig' with {'form': form} %}
 
 {% endblock page %}

@@ -19,7 +19,8 @@ module.exports = function(grunt){
                         'web/app/js/modernizr.js',
                         'web/app/js/app.js',
                         'web/app/js/foundation.min.js',
-                        'web/app/js/foundation.topbar.js'
+                        'web/app/js/foundation.topbar.js',
+                        'web/app/js/ga.js'
                     ]
                 }
             }
@@ -41,7 +42,7 @@ module.exports = function(grunt){
         },
 
         jshint: {
-            all: ['app/Resources/public/js/*.js']
+            all: ['app/Resources/public/js/app.js']
         },
 
         copy: {
