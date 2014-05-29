@@ -12,7 +12,9 @@ views:
                  title: "Connectez-vous"
         registration:
             register:
-                 title: "Inscrivez-vous"
+                title: "Inscrivez-vous"
+            confirmed:
+                title: "Bienvenue sur la meilleure boucherie.com"
         profile:
             edit:
                 title: "Modifier mes informations"
