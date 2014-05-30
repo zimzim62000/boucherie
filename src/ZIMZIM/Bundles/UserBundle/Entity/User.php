@@ -121,6 +121,7 @@ class User extends BaseUser
         parent::__construct();
 
         $this->opinions = new ArrayCollection();
+        //$this->butchery = new ArrayCollection();
     }
 
     /**

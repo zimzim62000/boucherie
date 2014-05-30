@@ -2,16 +2,8 @@ var ZimZim = function () {
 
     this.init = function () {
         var _self = this;
-
-        _self.initautocomplete();
     };
 
-    this.initautocomplete = function () {
-        $('input.autocomplete').each(function (i, input) {
-            var $input = $(input);
-            $input.attr('onKeyUp', 'autocompletecity(event, this);');
-        });
-    };
 };
 (function ($) {
     var zimzim = new ZimZim();
@@ -39,10 +31,9 @@ function findForm($element) {
     return findForm($element.parent());
 }
 
-function scroolTo(ancre, delay)
-{
+function scroolTo(ancre, delay) {
     $(document.body).animate({
-        'scrollTop':   $(ancre).offset().top
+        'scrollTop': $(ancre).offset().top
     }, delay);
 }
 
@@ -70,14 +61,15 @@ function autocompletecity(e, input) {
 
     if (search) {
         $form = findForm($input);
-        if (!$form.hasClass('form-ajax')) {
-            $form.addClass('form-ajax');
+        if (!$form.hasClass('form-bind')) {
+            $form.addClass('form-bind');
             $form.submit(function () {
                 $data = $form.serialize();
+                $action = $form[0].action;
                 $.ajax({
                     type: $form[0].method,
-                    url: $form[0].action,
-                    data: $data,
+                    url: $action,
+                    data: $data+'&ajax=1',
                     success: function (feedback) {
                         ajaxSuccess(feedback);
                     }
@@ -85,9 +77,7 @@ function autocompletecity(e, input) {
                 return false;
             });
         }
-
-            $form.submit();
-
+        $form.submit();
     } else {
         $('#container-autocompletecity').empty();
     }

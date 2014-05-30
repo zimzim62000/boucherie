@@ -8,7 +8,6 @@ use ZIMZIM\Controller\ZimzimController;
 
 class CityPostCodeController extends ZimzimController
 {
-
     /**
      * Creates a form to create a CityPostCode entity.
      *
@@ -17,15 +16,13 @@ class CityPostCodeController extends ZimzimController
     private function createFindCityPostCodeForm()
     {
         $form = $this->createForm(
-            'zimzim_address_type_citypostcodetype',
+            'zimzim_address_type_citypostcodelinktype',
             null,
             array(
                 'action' => $this->generateUrl('zimzim_address_citypostcode_findcitypostcode'),
                 'method' => 'POST',
             )
         );
-        $form->add('submit', 'submit', array('label' => 'button.find'));
-
         return $form;
     }
 

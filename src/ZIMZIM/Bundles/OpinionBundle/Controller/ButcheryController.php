@@ -64,6 +64,9 @@ class ButcheryController extends ZimzimController
             return $this->redirect($this->generateUrl('zimzim_opinion_butchery_show', array('id' => $entity->getId())));
         }
 
+        echo '<br />form get data<br />';
+        var_dump($request->request);
+
         return $this->render(
             'ZIMZIMBundlesOpinionBundle:Butchery:new.html.twig',
             array(

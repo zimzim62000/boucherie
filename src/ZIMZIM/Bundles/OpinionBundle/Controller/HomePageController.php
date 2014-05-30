@@ -15,7 +15,7 @@ class HomePageController extends ZimzimController
     private function createFindCityPostCodeForm()
     {
         $form = $this->createForm(
-            'zimzim_address_type_citypostcodetype',
+            'zimzim_address_type_citypostcodelinktype',
             null,
             array(
                 'action' => $this->generateUrl('zimzim_address_citypostcode_findcitypostcode'),

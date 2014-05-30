@@ -5,6 +5,7 @@ namespace ZIMZIM\Bundles\OpinionBundle\DataFixtures\ORM;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use ZIMZIM\Bundles\AddressBundle\Entity\Address;
 use ZIMZIM\Bundles\OpinionBundle\Entity\Butchery;
 
 class LoadButcheryData extends AbstractFixture implements OrderedFixtureInterface
@@ -18,8 +19,17 @@ class LoadButcheryData extends AbstractFixture implements OrderedFixtureInterfac
         $butchery->setTypeMeat($this->getReference('TypeMeat1'));
         $butchery->setTypeButchery($this->getReference('TypeButchery1'));
         $this->addReference('Butchery1', $butchery);
-        $om->persist($butchery);
 
+        $citypostcode = $om->getRepository('ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode')->findOneBy(
+            array('city' => 'arras')
+        );
+
+        $address = new Address();
+        $address->setAddress('22 rue du général de gaulle');
+        $address->setCitypostcode($citypostcode);
+        $butchery->setAddress($address);
+
+        $om->persist($butchery);
         $om->flush();
     }
 

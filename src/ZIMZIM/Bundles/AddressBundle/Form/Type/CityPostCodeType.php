@@ -2,29 +2,56 @@
 
 namespace ZIMZIM\Bundles\AddressBundle\Form\Type;
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use ZIMZIM\Bundles\AddressBundle\Form\DataTransformer\CityPostCodeTransformer;
 
 class CityPostCodeType extends AbstractType
 {
+    private $transformer;
+    private $em;
+
+    public function __construct(EntityManager $em, CityPostCodeTransformer $transformer)
+    {
+        $this->transformer = $transformer;
+        $this->em = $em;
+    }
+
     /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add(
-            'citypostcode',
-            'zimzim_address_type_autocompletetype',
-            array(
-                'attr' => array(
-                    'placeholder' => 'form.address.citypostcodetype.citypostcode.placeholder',
-                    'class' => 'autocomplete text-center',
-                    'onKeyUp' => 'autocompletecity(event, this)'
-                )
-            )
+
+        $builder->addEventListener(
+            FormEvents::PRE_SUBMIT,
+            function (FormEvent $event) {
+                $form = $event->getForm();
+                $data = $event->getData();
+                echo 'pre submit';
+                var_dump($data);
+                //var_dump($form->getParent()->getData());
+                //var_dump($form->getParent()->getParent()->getData());
+            }
         );
+
+        $builder->add(
+            'stringcitypostcode',
+            'zimzim_address_type_autocompletecitypostcodetype'
+            )
+            ->add(
+                'citypostcode',
+                'choice'
+            )
+            ->add('ajax', 'hidden', array('data' => 0, 'attr' => array('id' => 'autocomplete-ajax')))
+            ->addModelTransformer($this->transformer);
+
+
     }
 
     /**
@@ -32,9 +59,8 @@ class CityPostCodeType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(
-            array('attr' => array('class' => '', 'onSubmit' => 'return false;'))
-        );
+
+        $resolver->setDefaults(array());
     }
 
     /**
