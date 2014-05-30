@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ZIMZIM\Bundles\AddressBundle\Entity\Traits\AddressTrait;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Butchery
@@ -30,6 +31,7 @@ class Butchery
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
@@ -37,7 +39,7 @@ class Butchery
     /**
      * @var \ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery
      *
-     * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery")
+     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeButchery")
      * @ORM\JoinColumn(name="id_type_butchery", referencedColumnName="id")
      */
     private $typeButchery;
@@ -45,7 +47,7 @@ class Butchery
     /**
      * @var \ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat
      *
-     * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat")
+     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\TypeMeat")
      * @ORM\JoinColumn(name="id_type_meat", referencedColumnName="id")
      */
     private $typeMeat;
@@ -68,7 +70,7 @@ class Butchery
      * @var \ZIMZIM\Bundles\UserBundle\Entity\User
      *
      * @ORM\OneToOne(targetEntity="ZIMZIM\Bundles\UserBundle\Entity\User", inversedBy="butchery")
-     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id", nullable=true)
      */
     private $user;
 

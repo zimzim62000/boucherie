@@ -30,26 +30,12 @@ class Address
     private $address;
 
     /**
-     * @var string
+     * @var CityPostCode
      *
-     * @ORM\Column(name="city", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode", inversedBy="address")
+     * @ORM\JoinColumn(name="id_citypostcode", referencedColumnName="id")
      */
-    private $city;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="cp", type="string", length=25, nullable=true)
-     */
-    private $cp;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="country", type="string", length=255, nullable=true)
-     */
-    private $country;
-
+    private $citypostcode;
 
     /**
      * Get id
@@ -85,71 +71,21 @@ class Address
     }
 
     /**
-     * Set city
-     *
-     * @param string $city
-     * @return Address
+     * @param \ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode $citypostcode
      */
-    public function setCity($city)
+    public function setCitypostcode($citypostcode)
     {
-        $this->city = $city;
-
-        return $this;
+        $this->citypostcode = $citypostcode;
     }
 
     /**
-     * Get city
-     *
-     * @return string 
+     * @return \ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode
      */
-    public function getCity()
+    public function getCitypostcode()
     {
-        return $this->city;
+        return $this->citypostcode;
     }
 
-    /**
-     * Set cp
-     *
-     * @param string $cp
-     * @return Address
-     */
-    public function setCp($cp)
-    {
-        $this->cp = $cp;
 
-        return $this;
-    }
 
-    /**
-     * Get cp
-     *
-     * @return string 
-     */
-    public function getCp()
-    {
-        return $this->cp;
-    }
-
-    /**
-     * Set country
-     *
-     * @param string $country
-     * @return Address
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string 
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
 }

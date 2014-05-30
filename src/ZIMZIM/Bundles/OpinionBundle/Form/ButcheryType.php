@@ -41,7 +41,9 @@ class ButcheryType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => 'ZIMZIM\Bundles\OpinionBundle\Entity\Butchery',
-                'attr' => array()
+                'attr' => array(
+                    'novalidate' => 'novalidate'
+                )
             )
         );
     }

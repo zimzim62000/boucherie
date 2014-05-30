@@ -6,14 +6,28 @@ services:
         class: ZIMZIM\Bundles\AddressBundle\Form\AddressType
         tags:
             - { name: form.type, alias: zimzim_address_address }
-    zimzim_address.type.citypostcode.form.type:
+    zimzim_address.type.citypostcodelink.type:
+        class: ZIMZIM\Bundles\AddressBundle\Form\Type\CityPostCodeLinkType
+        tags:
+            - { name: form.type, alias: zimzim_address_type_citypostcodelinktype }
+    zimzim_address.type.citypostcode.type:
         class: ZIMZIM\Bundles\AddressBundle\Form\Type\CityPostCodeType
+        arguments: [  @doctrine.orm.entity_manager, @zimzim_address.type.citypostcode.citypostcode.transformer ]
         tags:
             - { name: form.type, alias: zimzim_address_type_citypostcodetype }
-    zimzim_address.type.citypostcode.autocomplete.type:
-        class: ZIMZIM\Bundles\AddressBundle\Form\Type\AutoCompleteType
+    zimzim_address.type.citypostcode.autocompletelinkcity.type:
+        class: ZIMZIM\Bundles\AddressBundle\Form\Type\AutoCompleteCityLinkType
         tags:
-            - { name: form.type, alias: zimzim_address_type_autocompletetype }
+            - { name: form.type, alias: zimzim_address_type_autocompletecitylinktype }
+    zimzim_address.type.citypostcode.autocompletecitypostcode.type:
+        class: ZIMZIM\Bundles\AddressBundle\Form\Type\AutoCompleteCityPostCodeType
+        tags:
+            - { name: form.type, alias: zimzim_address_type_autocompletecitypostcodetype }
+
+    zimzim_address.type.citypostcode.citypostcode.transformer:
+        class: ZIMZIM\Bundles\AddressBundle\Form\DataTransformer\CityPostCodeTransformer
+        arguments: [ @doctrine.orm.entity_manager ]
+
     zimzim_address.loader.loader_city_postcode:
         class: ZIMZIM\Bundles\AddressBundle\Loader\LoaderCityPostCode
         arguments: [ %zimzim_citypostcode_filename%,  @zimzim_address.entity.city_postcode]

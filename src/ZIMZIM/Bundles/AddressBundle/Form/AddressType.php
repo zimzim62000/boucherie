@@ -2,6 +2,7 @@
 
 namespace ZIMZIM\Bundles\AddressBundle\Form;
 
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
@@ -18,18 +19,7 @@ class AddressType extends AbstractType
     {
         $builder
             ->add('address', null, array('label' => 'form.address.addresstype.address.label', 'required' => false))
-            ->add('city', null, array('label' => 'form.address.addresstype.city.label', 'required' => false))
-            ->add('cp', null, array('label' => 'form.address.addresstype.cp.label', 'required' => false))
-            ->add('country', null, array('label' => 'form.address.addresstype.country.label', 'required' => false));
-
-        $builder->addEventListener(
-            FormEvents::PRE_SUBMIT,
-            function (FormEvent $event) {
-                $address = $event->getData();
-                $form = $event->getForm();
-
-            }
-        );
+            ->add('citypostcode', 'zimzim_address_type_citypostcodetype', array( 'attr' => array('label-inline' => 'label-inline' )));
     }
 
     /**
@@ -39,7 +29,7 @@ class AddressType extends AbstractType
     {
         $resolver->setDefaults(
             array(
-                'data_class' => 'ZIMZIM\Bundles\AddressBundle\Entity\Address'
+                'data_class' => 'ZIMZIM\Bundles\AddressBundle\Entity\Address',
             )
         );
     }

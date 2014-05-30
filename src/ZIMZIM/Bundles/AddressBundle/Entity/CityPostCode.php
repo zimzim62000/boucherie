@@ -2,6 +2,7 @@
 
 namespace ZIMZIM\Bundles\AddressBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -79,6 +80,18 @@ class CityPostCode{
      * @var KM
      */
     private $distance;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="ZIMZIM\Bundles\AddressBundle\Entity\Address", mappedBy="citypostcode")
+     */
+    private $address;
+
+
+    public function __construct(){
+        $this->address = new ArrayCollection();
+    }
 
     /**
      * @param string $city
@@ -223,6 +236,24 @@ class CityPostCode{
     {
         return $this->distance;
     }
+
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+
 
 
     public function getData(){
