@@ -21,3 +21,5 @@ views:
                 title: "La meilleure boucherie à %city%"
                 noresulttitle: "La meilleure boucherie.com"
                 ptitle: "Voici, nos boucheries près de chez vous..."
+                numberbutchery: "Il y a %number% boucherie dans cette ville"
+                km: Km

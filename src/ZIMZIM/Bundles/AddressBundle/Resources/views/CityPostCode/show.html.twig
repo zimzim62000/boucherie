@@ -21,10 +21,22 @@
     </div>
 
     <div class="row">
-        <div class="medium-12">
-            {% for entity in entities %}
-                <h3><small>{{ entity.distance }} {{ entity[0].city }} {{ entity[0].cp }}</small></h3>
-            {% endfor %}
-        </div>
+        {% for entity in entities %}
+            <div class="medium-6 columns text-center">
+                <h4>{{ entity[0].city }} {{ entity[0].cp }}</h4>
+            </div>
+            <div class="medium-2 columns text-center">
+                {% if entity.distance > 0 %}
+                    <p class="case-home-p">{{ entity.distance }}{{ 'views.address.citypostcode.show.km'|trans }}</p>
+                {% endif %}
+            </div>
+            {% if  entity[0].address|length != 0 %}
+                <div class="medium-4 columns text-center">
+                    <p class="case-home-p">{{ 'views.address.citypostcode.show.numberbutchery'|trans({'%number%': entity[0].address|length}) }}</p>
+                </div>
+                {% for address in entity[0].address %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
     </div>
 {% endblock page %}

@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Butchery
  *
  * @ORM\Table(name="butchery_butchery")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ButcheryRepository")
  */
 class Butchery
 {

@@ -74,12 +74,23 @@ class CityPostCodeController extends ZimzimController
             throw new NotFoundHttpException('No city found ...');
         }
 
-        $entities = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByUnikAndDistance(
+        $citiespostcode = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByUnikAndDistance(
             $entity,
             15,
             10
         );
 
-        return $this->render('ZIMZIMBundlesAddressBundle:CityPostCode:show.html.twig', array('entities' => $entities));
+        $tabAdress = array();
+        foreach($citiespostcode as $entity){
+            if(count($entity[0]->getAddress())){
+                $tabAdress[] = $entity[0]->getAddress();
+            }
+        }
+
+        $butcheries = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findByAddress($tabAdress);
+
+        var_dump($butcheries);
+
+        return $this->render('ZIMZIMBundlesAddressBundle:CityPostCode:show.html.twig', array('entities' => $citiespostcode));
     }
 }
