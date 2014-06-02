@@ -226,6 +226,10 @@ class ButcheryController extends ZimzimController
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            echo '<pre>';
+            var_dump($entity);
+            echo '</pre>';
+            //die('rereerrere');
             $this->updateSuccess();
             $em->flush();
 

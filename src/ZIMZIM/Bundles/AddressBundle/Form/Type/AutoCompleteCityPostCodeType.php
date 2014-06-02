@@ -4,7 +4,6 @@ namespace ZIMZIM\Bundles\AddressBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\Routing\Router;
 
 class AutoCompleteCityPostCodeType extends AbstractType
 {

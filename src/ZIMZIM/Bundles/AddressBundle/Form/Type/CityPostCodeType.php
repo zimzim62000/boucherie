@@ -32,17 +32,25 @@ class CityPostCodeType extends AbstractType
         $builder->add(
             'stringcitypostcode',
             'zimzim_address_type_autocompletecitypostcodetype'
-        )->addModelTransformer($this->transformer);
-        /*
+        );
+
         $builder->addEventListener(
-            FormEvents::PRE_SUBMIT,
+            FormEvents::PRE_SET_DATA,
+            function (FormEvent $event) {
+                $data = $event->getData();
+                echo 'pre set data<br />';
+                var_dump($data);
+            }
+        );
+
+        $builder->get('stringcitypostcode')->addEventListener(
+            FormEvents::POST_SUBMIT,
             function (FormEvent $event) {
                 $form = $event->getForm();
-                $data = $event->getData();
-                $value = $data['stringcitypostcode'];
-
+                $value = $event->getData();
+                echo 'value form :' . $value . ' yep yep ';
                 if (!empty($value)) {
-                    $form->add(
+                    $form->getParent()->add(
                         'citypostcode',
                         'entity',
                         array(
@@ -56,7 +64,9 @@ class CityPostCodeType extends AbstractType
                     );
                 }
             }
-        );*/
+        );
+
+        $builder->get('stringcitypostcode')->addModelTransformer($this->transformer);
     }
 
     /**
