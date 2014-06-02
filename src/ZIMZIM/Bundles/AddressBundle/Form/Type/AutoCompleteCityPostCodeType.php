@@ -7,6 +7,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class AutoCompleteCityPostCodeType extends AbstractType
 {
+
     /**
      * @param OptionsResolverInterface $resolver
      */

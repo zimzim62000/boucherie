@@ -3,6 +3,7 @@
 namespace ZIMZIM\Bundles\AddressBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Address
@@ -25,6 +26,7 @@ class Address
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="address", type="string", length=255, nullable=true)
      */
     private $address;
@@ -32,7 +34,9 @@ class Address
     /**
      * @var CityPostCode
      *
-     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode", inversedBy="address")
+     * @Assert\NotBlank()
+     *
+     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode", inversedBy="address", cascade={"persist"})
      * @ORM\JoinColumn(name="id_citypostcode", referencedColumnName="id")
      */
     private $citypostcode;

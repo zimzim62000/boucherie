@@ -19,7 +19,16 @@ class AddressType extends AbstractType
     {
         $builder
             ->add('address', null, array('label' => 'form.address.addresstype.address.label', 'required' => false))
-            ->add('citypostcode', 'zimzim_address_type_citypostcodetype', array( 'attr' => array('label-inline' => 'label-inline' )));
+            ->add(
+                'citypostcode',
+                'zimzim_address_type_citypostcodetype',
+                array(
+                    'attr' => array('label-inline' => 'label-inline'),
+                    'error_mapping' => array(
+                        '.' => 'stringcitypostcode',
+                    ),
+                )
+            );
     }
 
     /**
@@ -30,6 +39,9 @@ class AddressType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => 'ZIMZIM\Bundles\AddressBundle\Entity\Address',
+                'attr' => array(
+                    'novalidate' => 'novalidate'
+                ),
             )
         );
     }

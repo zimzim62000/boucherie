@@ -179,6 +179,7 @@
 {% block zimzim_address_type_autocompletecitylinktype_widget %}
     {% spaceless %}
         {{ form_widget(form) }}
+        {{ form_errors(form) }}
         {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:container.html.twig' with {'entities' : [] } %}
     {% endspaceless %}
 {% endblock zimzim_address_type_autocompletecitylinktype_widget %}

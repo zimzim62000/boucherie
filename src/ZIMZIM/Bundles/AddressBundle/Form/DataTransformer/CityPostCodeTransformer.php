@@ -23,17 +23,12 @@ class CityPostCodeTransformer implements DataTransformerInterface
         $this->em = $entityManager;
     }
 
-    public function transform($value)
+    public function transform($cityPostCode)
     {
-        echo '<br />transfor<pre>';
-        \Doctrine\Common\Util\Debug::dump($value);
-        echo '</pre>';
-        if (isset($value) && count($value)) {
-            $entity = $this->em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->find($value->getId());
-
+        if (isset($cityPostCode) && $cityPostCode instanceof CityPostCode) {
             return array(
-                'citypostcode' => $value->getId(),
-                'stringcitypostcode' => $entity->__toString()
+                'citypostcode' => $cityPostCode->getId(),
+                'stringcitypostcode' => $cityPostCode->__toString()
             );
         }
 
@@ -43,12 +38,9 @@ class CityPostCodeTransformer implements DataTransformerInterface
 
     public function reverseTransform($value)
     {
-        echo '<br />reverse transform<pre>';
-        \Doctrine\Common\Util\Debug::dump($value);
-        echo '</pre>';
-        if (isset($value)) {
+        if (isset($value) && count($value)) {
 
-            return new CityPostCode();
+            return $value['citypostcode'];
         }
 
         return null;

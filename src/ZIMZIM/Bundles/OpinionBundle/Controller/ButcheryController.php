@@ -225,11 +225,24 @@ class ButcheryController extends ZimzimController
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
+        if ($request->isXmlHttpRequest()) {
+
+            die(json_encode(
+                array(
+                    array(
+                        'id' => 'form-zimzim-opinion-butchery',
+                        'template' => $this->renderView(
+                                'ZIMZIMBundlesOpinionBundle:Butchery:form.html.twig',
+                                array(
+                                    'form' => $editForm->createView(),
+                                )
+                            )
+                    )
+                )
+            ));
+        }
+
         if ($editForm->isValid()) {
-            echo '<pre>';
-            var_dump($entity);
-            echo '</pre>';
-            //die('rereerrere');
             $this->updateSuccess();
             $em->flush();
 

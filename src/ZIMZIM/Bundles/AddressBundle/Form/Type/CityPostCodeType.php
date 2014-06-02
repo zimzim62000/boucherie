@@ -7,9 +7,12 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode;
 use ZIMZIM\Bundles\AddressBundle\Entity\CityPostCodeRepository;
 use ZIMZIM\Bundles\AddressBundle\Form\DataTransformer\CityPostCodeTransformer;
+use ZIMZIM\Bundles\AddressBundle\Form\DataTransformer\TestTransformer;
 
 class CityPostCodeType extends AbstractType
 {
@@ -34,39 +37,51 @@ class CityPostCodeType extends AbstractType
             'zimzim_address_type_autocompletecitypostcodetype'
         );
 
+        $addSelectCityPostCode = function (FormInterface $form, $value) {
+
+            $form->add(
+                'citypostcode',
+                'entity',
+                array(
+                    'label' => 'NomDuLabel',
+                    'class' => 'ZIMZIMBundlesAddressBundle:CityPostCode',
+                    'query_builder' => function (CityPostCodeRepository $er) use ($value) {
+                            return $er->findByPostCodeOrCity($value, $value, true);
+                        },
+                    'required' => true,
+                )
+            );
+
+        };
+
         $builder->addEventListener(
             FormEvents::PRE_SET_DATA,
-            function (FormEvent $event) {
+            function (FormEvent $event) use ($addSelectCityPostCode) {
+                $form = $event->getForm();
                 $data = $event->getData();
-                echo 'pre set data<br />';
-                var_dump($data);
+                if ($data instanceof CityPostCode) {
+                    if (null !== $data->getId()) {
+                        $entity = $this->em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->find(
+                            $data->getId()
+                        );
+                        $addSelectCityPostCode($form, $entity->getCity());
+                    }
+                }
             }
         );
 
         $builder->get('stringcitypostcode')->addEventListener(
             FormEvents::POST_SUBMIT,
-            function (FormEvent $event) {
+            function (FormEvent $event) use ($addSelectCityPostCode) {
                 $form = $event->getForm();
                 $value = $event->getData();
-                echo 'value form :' . $value . ' yep yep ';
-                if (!empty($value)) {
-                    $form->getParent()->add(
-                        'citypostcode',
-                        'entity',
-                        array(
-                            'label' => 'NomDuLabel',
-                            'class' => 'ZIMZIMBundlesAddressBundle:CityPostCode',
-                            'query_builder' => function (CityPostCodeRepository $er) use ($value) {
-                                    return $er->findByPostCodeOrCity($value, $value, true);
-                                },
-                            'required' => true
-                        )
-                    );
+                if(!empty($value)){
+                    $addSelectCityPostCode($form->getParent(), $value);
                 }
             }
         );
 
-        $builder->get('stringcitypostcode')->addModelTransformer($this->transformer);
+        $builder->addModelTransformer($this->transformer);
     }
 
     /**

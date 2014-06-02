@@ -4,6 +4,8 @@ namespace ZIMZIM\Bundles\AddressBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * CityPostcode
@@ -26,12 +28,16 @@ class CityPostCode{
     /**
      * @var string
      *
+     * @Assert\NotBlank()
+     *
      * @ORM\Column(name="cp", type="string", length=255)
      */
     private $cp;
 
     /**
      * @var string
+     *
+     * @Assert\NotBlank()
      *
      * @ORM\Column(name="city", type="string", length=255)
      */
