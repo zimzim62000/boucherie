@@ -37,15 +37,18 @@ class CityPostCodeType extends AbstractType
             'zimzim_address_type_autocompletecitypostcodetype'
         );
 
-        $addSelectCityPostCode = function (FormInterface $form, $value) {
+        $addSelectCityPostCode = function (FormInterface $form, $value, $id = false) {
 
             $form->add(
                 'citypostcode',
                 'entity',
                 array(
-                    'label' => 'NomDuLabel',
+                    'label' => 'form.address.citypostcodetype.citypostcode.label',
                     'class' => 'ZIMZIMBundlesAddressBundle:CityPostCode',
-                    'query_builder' => function (CityPostCodeRepository $er) use ($value) {
+                    'query_builder' => function (CityPostCodeRepository $er) use ($value, $id) {
+                            if($id){
+                                return $er->createQueryBuilder('c')->where('c.id = :id')->setParameter('id', $value);
+                            }
                             return $er->findByPostCodeOrCity($value, $value, true);
                         },
                     'required' => true,
@@ -61,10 +64,7 @@ class CityPostCodeType extends AbstractType
                 $data = $event->getData();
                 if ($data instanceof CityPostCode) {
                     if (null !== $data->getId()) {
-                        $entity = $this->em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->find(
-                            $data->getId()
-                        );
-                        $addSelectCityPostCode($form, $entity->getCity());
+                        $addSelectCityPostCode($form, $data->getId(), true);
                     }
                 }
             }

@@ -42,7 +42,8 @@ class ButcheryType extends AbstractType
             array(
                 'data_class' => 'ZIMZIM\Bundles\OpinionBundle\Entity\Butchery',
                 'attr' => array(
-                )
+                ),
+                'cascade_validation' => true
             )
         );
     }

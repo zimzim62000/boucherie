@@ -39,7 +39,8 @@ class {{ form_class }} extends AbstractType
             'data_class' => '{{ namespace }}\Entity{{ entity_namespace ? '\\' ~ entity_namespace : '' }}\{{ entity_class }}',
             'attr' => array(
 
-            )
+            ),
+            'cascade_validation' => true
         ));
     }
 

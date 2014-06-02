@@ -2,16 +2,15 @@ form:
     address:
         addresstype:
             address:
-                label: "Rue :"
-            city:
-                label: "Ville :"
-            cp:
-                label: "Code postal :"
-            country:
-                label: "Pays :"
+                label: "Numéro et rue :"
+            citypostcode:
+                label: ""
+        autocompletecitypostcodetype:
+                label: "recherche par ville ou code postal"
         citypostcodetype:
             citypostcode:
                 placeholder: "ex: Arras, 64210, ..."
+                label: "ville ou code postal"
 views:
     address:
         citypostcode:

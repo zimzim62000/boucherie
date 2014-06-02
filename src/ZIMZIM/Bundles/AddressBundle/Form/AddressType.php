@@ -27,6 +27,7 @@ class AddressType extends AbstractType
                     'error_mapping' => array(
                         '.' => 'stringcitypostcode',
                     ),
+                    'label'=> 'form.address.addresstype.citypostcode.label'
                 )
             );
     }
@@ -40,7 +41,6 @@ class AddressType extends AbstractType
             array(
                 'data_class' => 'ZIMZIM\Bundles\AddressBundle\Entity\Address',
                 'attr' => array(
-                    'novalidate' => 'novalidate'
                 ),
             )
         );
