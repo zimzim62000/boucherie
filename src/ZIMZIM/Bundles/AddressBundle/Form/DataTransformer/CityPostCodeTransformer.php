@@ -15,10 +15,15 @@ class CityPostCodeTransformer implements DataTransformerInterface{
 
     public function transform($value)
     {
-        var_dump($value);echo 'transform';
+        echo '<pre>';
+        \Doctrine\Common\Util\Debug::dump($value);
+        echo '</pre>';
         if(isset($value)){
-            $entities = $this->em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findByPostCodeOrCity();
-            return array('citypostcode' => $value->getId());
+            $entity = $this->em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->find($value->getId());
+            return array(
+                'citypostcode' => $value->getId(),
+                'stringcitypostcode' => $entity->__toString()
+            );
         }
         return null;
 }
@@ -26,9 +31,12 @@ class CityPostCodeTransformer implements DataTransformerInterface{
 
 public function reverseTransform($value)
 {
-    var_dump($value);echo 'reversetransform';
-    if(isset($value)){
-        return $value;
+    echo '<br />reverstransfor<pre>';
+    \Doctrine\Common\Util\Debug::dump($value);
+    echo '</pre>';
+    if(isset($value) && count($value)){
+
+        return $value['citypostcode'];
     }
     return null;
 }

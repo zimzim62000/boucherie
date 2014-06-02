@@ -7,7 +7,7 @@ use Doctrine\ORM\Query\ResultSetMapping;
 
 class CityPostCodeRepository extends EntityRepository
 {
-    public function findByPostCodeOrCity($city, $postcode)
+    public function findByPostCodeOrCity($city, $postcode, $queryBuilder = false)
     {
 
         $city = $city . '%';
@@ -18,7 +18,12 @@ class CityPostCodeRepository extends EntityRepository
             ->setParameter('city', $city)
             ->setParameter('postcode', $postcode);
 
-        return $query->getQuery()->setMaxResults(10)->getResult();
+        if($queryBuilder){
+            $return = $query->setMaxResults(10);
+        }else{
+            $return = $query->getQuery()->setMaxResults(10)->getResult();
+        }
+        return $return;
     }
 
 

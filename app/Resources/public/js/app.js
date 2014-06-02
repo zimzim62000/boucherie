@@ -37,10 +37,13 @@ function scroolTo(ancre, delay) {
     }, delay);
 }
 
-
 /*******************\
  Function autocomplete city
  \*******************/
+
+function searchIdAjax($element) {
+    return $('input.form-input-ajax-autocomplete');
+}
 
 function autocompletecity(e, input) {
 
@@ -58,26 +61,20 @@ function autocompletecity(e, input) {
             search = true;
         }
     }
-
     if (search) {
         $form = findForm($input);
-        if (!$form.hasClass('form-bind')) {
-            $form.addClass('form-bind');
-            $form.submit(function () {
-                $data = $form.serialize();
-                $action = $form[0].action;
-                $.ajax({
-                    type: $form[0].method,
-                    url: $action,
-                    data: $data + '&ajax=1',
-                    success: function (feedback) {
-                        ajaxSuccess(feedback);
-                    }
-                });
-                return false;
-            });
-        }
-        $form.submit();
+        $inputajax = searchIdAjax($form);
+        $data = $form.serialize();
+        $action = $form[0].action;
+        $.ajax({
+            type: $form[0].method,
+            url: $action,
+            data: $data,
+            success: function (feedback) {
+                ajaxSuccess(feedback);
+            }
+        });
+        return false;
     } else {
         $('#container-autocompletecity').empty();
     }

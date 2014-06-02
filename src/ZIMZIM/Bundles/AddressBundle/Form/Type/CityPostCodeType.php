@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use ZIMZIM\Bundles\AddressBundle\Entity\CityPostCodeRepository;
 use ZIMZIM\Bundles\AddressBundle\Form\DataTransformer\CityPostCodeTransformer;
 
 class CityPostCodeType extends AbstractType
@@ -28,30 +29,34 @@ class CityPostCodeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
+        $builder->add(
+            'stringcitypostcode',
+            'zimzim_address_type_autocompletecitypostcodetype'
+        )->addModelTransformer($this->transformer);
+        /*
         $builder->addEventListener(
             FormEvents::PRE_SUBMIT,
             function (FormEvent $event) {
                 $form = $event->getForm();
                 $data = $event->getData();
-                echo 'pre submit';
-                var_dump($data);
-                //var_dump($form->getParent()->getData());
-                //var_dump($form->getParent()->getParent()->getData());
+                $value = $data['stringcitypostcode'];
+
+                if (!empty($value)) {
+                    $form->add(
+                        'citypostcode',
+                        'entity',
+                        array(
+                            'label' => 'NomDuLabel',
+                            'class' => 'ZIMZIMBundlesAddressBundle:CityPostCode',
+                            'query_builder' => function (CityPostCodeRepository $er) use ($value) {
+                                    return $er->findByPostCodeOrCity($value, $value, true);
+                                },
+                            'required' => true
+                        )
+                    );
+                }
             }
-        );
-
-        $builder->add(
-            'stringcitypostcode',
-            'zimzim_address_type_autocompletecitypostcodetype'
-            )
-            ->add(
-                'citypostcode',
-                'choice'
-            )
-            ->add('ajax', 'hidden', array('data' => 0, 'attr' => array('id' => 'autocomplete-ajax')))
-            ->addModelTransformer($this->transformer);
-
-
+        );*/
     }
 
     /**

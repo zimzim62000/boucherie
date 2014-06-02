@@ -18,7 +18,8 @@ class AutoCompleteCityPostCodeType extends AbstractType
                     'placeholder' => 'form.address.citypostcodetype.citypostcode.placeholder',
                     'class' => 'text-center',
                     'onKeyUp' => 'autocompletecity(event, this);'
-                )
+                ),
+                'mapped' => false
             ));
     }
 

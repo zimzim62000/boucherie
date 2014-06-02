@@ -16,8 +16,7 @@ class CityPostCodeLinkType extends AbstractType
     {
         $builder->add(
             'citypostcode',
-            'zimzim_address_type_autocompletecitylinktype',
-            array()
+            'zimzim_address_type_autocompletecitylinktype'
         );
     }
 

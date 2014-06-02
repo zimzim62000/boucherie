@@ -54,18 +54,33 @@ class ButcheryController extends ZimzimController
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        if ($request->isXmlHttpRequest()) {
+
+            die(json_encode(
+                array(
+                    array(
+                        'id' => 'form-zimzim-opinion-butchery',
+                        'template' => $this->renderView(
+                                'ZIMZIMBundlesOpinionBundle:Butchery:form.html.twig',
+                                array(
+                                    'form' => $form->createView(),
+                                )
+                            )
+                    )
+                )
+            ));
+        }
+
         if ($form->isValid()) {
 
             $this->createSuccess();
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('zimzim_opinion_butchery_show', array('id' => $entity->getId())));
         }
-
-        echo '<br />form get data<br />';
-        var_dump($request->request);
 
         return $this->render(
             'ZIMZIMBundlesOpinionBundle:Butchery:new.html.twig',

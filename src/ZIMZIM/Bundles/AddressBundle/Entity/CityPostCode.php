@@ -81,6 +81,11 @@ class CityPostCode{
      */
     private $distance;
 
+
+    public function __toString(){
+        return $this->city.' '.$this->cp;
+    }
+
     /**
      * @var ArrayCollection
      *
