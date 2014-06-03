@@ -1,8 +1,8 @@
 {% extends '::base.html.twig' %}
 
 
-{% if entities[0][0].city is defined %}
-    {% set headertitle =  'views.address.citypostcode.show.title'|trans({'%city%': entities[0][0].city|lower }) %}
+{% if entities[0].address.citypostcode.city is defined %}
+    {% set headertitle =  'views.address.citypostcode.show.title'|trans({'%city%': entities[0].address.citypostcode.city|lower }) %}
 {% else %}
     {% set headertitle = 'views.address.citypostcode.show.noresulttitle'|trans %}
 {% endif %}
@@ -19,24 +19,24 @@
             <p class="text-center title">{{ 'views.address.citypostcode.show.ptitle'|trans }}<p>
         </div>
     </div>
-
     <div class="row">
         {% for entity in entities %}
-            <div class="medium-6 columns text-center">
-                <h4>{{ entity[0].city }} {{ entity[0].cp }}</h4>
+            <div class="medium-12 columns text-center">
+                <h4><a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik})  }}">{{ entity.name }}</a></h4>
+                {#
+                <p class="text-left">
+                    {{ 'views.address.citypostcode.show.meat'|trans }} {{ entity.typemeat.name }}
+                    {{ 'views.address.citypostcode.show.butchery'|trans }} {{ entity.typebutchery.name }}
+                </p>
+                #}
             </div>
-            <div class="medium-2 columns text-center">
-                {% if entity.distance > 0 %}
-                    <p class="case-home-p">{{ entity.distance }}{{ 'views.address.citypostcode.show.km'|trans }}</p>
-                {% endif %}
+            <div class="medium-10 columns">
+                <p>{{ entity.text }}</p>
             </div>
-            {% if  entity[0].address|length != 0 %}
-                <div class="medium-4 columns text-center">
-                    <p class="case-home-p">{{ 'views.address.citypostcode.show.numberbutchery'|trans({'%number%': entity[0].address|length}) }}</p>
-                </div>
-                {% for address in entity[0].address %}
-                {% endfor %}
-            {% endif %}
+            <div class="medium-2 columns">
+                <p class="text-right">{{ entity.address.citypostcode.city }}</p>
+                <p class="text-right">{{ entity.address.citypostcode.cp }}</p>
+            </div>
         {% endfor %}
     </div>
 {% endblock page %}

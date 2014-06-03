@@ -7,12 +7,16 @@ use Doctrine\ORM\Mapping as ORM;
 use ZIMZIM\Bundles\AddressBundle\Entity\Traits\AddressTrait;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Butchery
  *
  * @ORM\Table(name="butchery_butchery")
  * @ORM\Entity(repositoryClass="ButcheryRepository")
+ *
+ * @ORM\HasLifecycleCallbacks
+ * @UniqueEntity("unik")
  */
 class Butchery
 {
@@ -74,8 +78,16 @@ class Butchery
      */
     private $user;
 
+    /**
+     * @var string unique
+     *
+     * @ORM\Column(name="unik", type="string", length=255, unique=true, nullable=false)
+     */
+    private $unik;
 
-    public function __construct(){
+
+    public function __construct()
+    {
         $this->opinions = new ArrayCollection();
     }
 
@@ -99,7 +111,7 @@ class Butchery
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -122,7 +134,7 @@ class Butchery
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -146,7 +158,7 @@ class Butchery
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -259,8 +271,49 @@ class Butchery
         return $this->user;
     }
 
-    public function __toString(){
+    public function __toString()
+    {
+
         return $this->name;
     }
 
+    /**
+     * @param string $unik
+     */
+    public function setUnik($unik)
+    {
+        $this->unik = $unik;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUnik()
+    {
+        return $this->unik;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function createUnik()
+    {
+        $this->unik = urlencode(strtolower(str_replace(' ', '-', $this->name)));
+        if (null !== $this->getAddress()) {
+            if (null !== $this->getAddress()->getCitypostcode()) {
+                if (null !== $this->getAddress()->getCitypostcode()->getCity()) {
+                    $this->unik = urlencode(
+                        strtolower(
+                            str_replace(' ', '-', $this->unik . '-' . $this->getAddress()->getCitypostcode()->getCity())
+                        )
+                    );
+                }
+            }
+        }
+
+        return $this;
+    }
 }

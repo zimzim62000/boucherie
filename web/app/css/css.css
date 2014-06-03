@@ -4396,6 +4396,44 @@ ul.pagination li {
   border-radius: 3px;
 }
 
+/* line 91, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav {
+  display: block;
+  margin: 0;
+  padding: 0.875rem 0;
+  list-style-type: none;
+  list-style-position: inside;
+  font-family: "Delius Swash Caps", cursive;
+}
+/* line 62, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav li {
+  margin: 0 0 0.4375rem 0;
+  font-size: 0.875rem;
+}
+/* line 66, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav li a:not(.button) {
+  display: block;
+  color: #a61e36;
+}
+/* line 70, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
+  color: #dd4560;
+}
+/* line 73, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav li.active > a:first-child:not(.button) {
+  color: #dd4560;
+  font-weight: normal;
+  font-family: "Delius Swash Caps", cursive;
+}
+/* line 79, ../../../../bower_components/foundation/scss/foundation/components/_side-nav.scss */
+.side-nav li.divider {
+  border-top: 1px solid;
+  height: 0;
+  padding: 0;
+  list-style: none;
+  border-top-color: white;
+}
+
 /* line 93, ../../../../bower_components/foundation/scss/foundation/components/_tables.scss */
 table {
   background: white;
@@ -6271,46 +6309,51 @@ h1.headerpagehome {
 }
 
 /* line 71, ../scss/css.scss */
+ul.headerpagehome {
+  padding-top: 3rem;
+}
+
+/* line 72, ../scss/css.scss */
 h1.title-mini {
   font-size: 1.82rem;
 }
 
-/* line 72, ../scss/css.scss */
+/* line 73, ../scss/css.scss */
 h2.title-mini {
   font-size: 1.25rem;
 }
 
-/* line 75, ../scss/css.scss */
+/* line 76, ../scss/css.scss */
 h3.title-mini {
   font-size: 1.45rem;
   font-weight: bold;
   padding-top: 2rem;
 }
 
-/* line 80, ../scss/css.scss */
+/* line 81, ../scss/css.scss */
 .case-home {
   padding: 1rem;
   margin: 0 0;
 }
 
-/* line 84, ../scss/css.scss */
+/* line 85, ../scss/css.scss */
 .case-home-p {
   padding: 2rem 0.25rem 2rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
 
-/* line 92, ../scss/css.scss */
+/* line 93, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 96, ../scss/css.scss */
+/* line 97, ../scss/css.scss */
 .bg-vichi {
   background-image: url("../../images/butchery3.png");
 }
 
-/* line 99, ../scss/css.scss */
+/* line 100, ../scss/css.scss */
 .bold {
   font-weight: bold;
 }

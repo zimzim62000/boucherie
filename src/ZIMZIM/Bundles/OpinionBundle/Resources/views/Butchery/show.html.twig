@@ -1,58 +1,54 @@
 {% extends '::base.html.twig' %}
 
-
 {% block title %}
-    {{ 'zimzim_opinion_butchery.index.title'|trans }}
+    {{ 'views.opinion.butchery.show.title'|trans({'%name%': entity.name}) }}
 {% endblock title %}
 
 {% block page %}
     <div class="row">
-        <div class="small-12 large-12 columns">
-            <h1 class="text-center title">Entity</h1>
+        <div class="medium-2 columns text-left">
+            {% set indexcurrent = 1 %}
+            {% block menupage %}
+                <ul class="side-nav headerpagehome">
+                    <li {% if indexcurrent == 1 %} class="active" {% endif %}>
+                        <a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik}) }}">
+                            {{ 'views.opinion.butchery.show.home'|trans }}
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li {% if indexcurrent == 2 %} class="active" {% endif %}>
+                        <a href="{{ path('zimzim_opinion_butchery_showopinion', {'unik': entity.unik}) }}">
+                            {{ 'views.opinion.butchery.show.opinion'|trans }}
+                        </a>
+                    </li>
+                    <li {% if indexcurrent == 3 %} class="active" {% endif %}>
+                        <a href="{{ path('zimzim_opinion_butchery_showsales', {'unik': entity.unik}) }}">
+                            {{ 'views.opinion.butchery.show.sale'|trans }}
+                        </a>
+                    </li>
+                </ul>
+            {% endblock menupage %}
         </div>
-    </div>
-    <div class="row">
-        <div class="small-12 large-12 columns">
-            <table class="width-100 panel">
-                <tbody>
-                    <tr>
-                        <th>Id</th>
-                            <td>{{ entity.id }}</td>
-                    </tr>
-                    <tr>
-                        <th>Name</th>
-                            <td>{{ entity.name }}</td>
-                    </tr>
-                    <tr>
-                        <th>Text</th>
-                            <td>{{ entity.text }}</td>
-                    </tr>
-                    <tr>
-                        <th>Createdat</th>
-                            <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
-                    </tr>
-                    <tr>
-                        <th>Updatedat</th>
-                            <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="medium-10 columns text-center">
+            {% block pagepage %}
+                <div class="row">
+                    <div class="medium-12 columns">
+                        <h1 class="title-mini headerpagehome">
+                            <a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik}) }}">
+                                {{ entity.name }}
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="medium-10 columns">
+                        <p>{{ entity.text }}</p>
+                    </div>
+                    <div class="medium-2 columns">
+                        <p class="text-right">{{ entity.address.citypostcode.city }}</p>
 
-                        <div class="row">
-    <div class="small-12 large-4 columns text-center">
-        <a class="tiny button" href="{{ path('zimzim_opinion_butchery') }}">
-            {{ 'link.return'|trans }}
-        </a>
-    </div>
-    <div class="small-12 large-4 columns text-center">
-        <a class="tiny button" href="{{ path('zimzim_opinion_butchery_edit', { 'id': entity.id }) }}">
-            {{ 'button.update'|trans }}
-        </a>
-    </div>
-    <div class="small-12 large-4 columns text-center">
-        {{ form(delete_form) }}
-    </div>
-</div>
+                        <p class="text-right">{{ entity.address.citypostcode.cp }}</p>
+                    </div>
+                </div>
+            {% endblock pagepage %}
         </div>
     </div>
 {% endblock %}

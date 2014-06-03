@@ -23,3 +23,5 @@ views:
                 ptitle: "Voici, nos boucheries près de chez vous..."
                 numberbutchery: "Il y a %number% boucherie dans cette ville"
                 km: Km
+                meat: viande
+                butchery: Boucherie

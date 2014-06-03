@@ -6,7 +6,7 @@ ZIMZIM\Bundles\UserBundle\Entity\User:
             email: ~
             lastLogin: ~
             roles: ~
-            address.city: ~
+            address.citypostcode.city: ~
         groupBy: ~
         filterable: ~
     Columns:
@@ -41,11 +41,11 @@ ZIMZIM\Bundles\UserBundle\Entity\User:
             operatorsVisible: false
             source: true
             filter: select
-        address.city:
+        address.citypostcode.city:
             filterable: true
             visible: true
-            id: address.city
-            field: address.city
+            id: address.citypostcode.city
+            field: address.citypostcode.city
             title: address.city
             operatorsVisible: false
             source: true

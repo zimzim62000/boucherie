@@ -23,6 +23,7 @@ class CityPostCodeController extends ZimzimController
                 'method' => 'POST',
             )
         );
+
         return $form;
     }
 
@@ -35,8 +36,36 @@ class CityPostCodeController extends ZimzimController
 
         if ($form->isValid()) {
             $data = $form->getData();
-
-            $value = $data['citypostcode'];
+            $value = str_replace(
+                array(
+                    'à', 'â', 'ä', 'á', 'ã', 'å',
+                    'î', 'ï', 'ì', 'í',
+                    'ô', 'ö', 'ò', 'ó', 'õ', 'ø',
+                    'ù', 'û', 'ü', 'ú',
+                    'é', 'è', 'ê', 'ë',
+                    'ç', 'ÿ', 'ñ',
+                    'À', 'Â', 'Ä', 'Á', 'Ã', 'Å',
+                    'Î', 'Ï', 'Ì', 'Í',
+                    'Ô', 'Ö', 'Ò', 'Ó', 'Õ', 'Ø',
+                    'Ù', 'Û', 'Ü', 'Ú',
+                    'É', 'È', 'Ê', 'Ë',
+                    'Ç', 'Ÿ', 'Ñ'
+                ),
+                array(
+                    'a', 'a', 'a', 'a', 'a', 'a',
+                    'i', 'i', 'i', 'i',
+                    'o', 'o', 'o', 'o', 'o', 'o',
+                    'u', 'u', 'u', 'u',
+                    'e', 'e', 'e', 'e',
+                    'c', 'y', 'n',
+                    'A', 'A', 'A', 'A', 'A', 'A',
+                    'I', 'I', 'I', 'I',
+                    'O', 'O', 'O', 'O', 'O', 'O',
+                    'U', 'U', 'U', 'U',
+                    'E', 'E', 'E', 'E',
+                    'C', 'Y', 'N'
+                ),
+                $data['citypostcode']);
 
             $em = $this->getDoctrine()->getManager();
 
@@ -79,18 +108,18 @@ class CityPostCodeController extends ZimzimController
             15,
             10
         );
+        $cityPostCodes = array_map(
+            function ($tab) {
+                return $tab[0];
+            },
+            $citiespostcode
+        );
 
-        $tabAdress = array();
-        foreach($citiespostcode as $entity){
-            if(count($entity[0]->getAddress())){
-                $tabAdress[] = $entity[0]->getAddress();
-            }
-        }
+        $butcheries = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findByCityPostCode($cityPostCodes);
 
-        $butcheries = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findByAddress($tabAdress);
-
-        var_dump($butcheries);
-
-        return $this->render('ZIMZIMBundlesAddressBundle:CityPostCode:show.html.twig', array('entities' => $citiespostcode));
+        return $this->render(
+            'ZIMZIMBundlesAddressBundle:CityPostCode:show.html.twig',
+            array('entities' => $butcheries)
+        );
     }
 }

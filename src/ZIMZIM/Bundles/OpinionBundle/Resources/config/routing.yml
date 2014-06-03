@@ -12,7 +12,7 @@ ZIMZIMBundlesOpinionBundle_zimzim_opinion_typemeat:
 
 ZIMZIMBundlesOpinionBundle_zimzim_opinion_butchery:
     resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/butchery.yml"
-    prefix:   /butchery/
+    prefix:   /boucherie/
 
 ZIMZIMBundlesOpinionBundle_zimzim_opinion_opinion:
     resource: "@ZIMZIMBundlesOpinionBundle/Resources/config/routing/opinion.yml"

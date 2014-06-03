@@ -20,6 +20,18 @@ views:
                 share: "Partager nous vos meilleures viandes"
                 sharep: "Sur la meilleure boucherie.com vos avis se partagent aussi sur les réseaux sociaux. Donnez l'occasion à vos amis de goûter la bonne viande que vous venez de déguster."
                 inputvile: "Ville ou code postal"
+        butchery:
+            show:
+                title: "la meilleure boucherie.com présente la boucherie %name%"
+                home: "La boucherie"
+                opinion: "les avis"
+                sale: "l'offre du jour"
+            showopinion:
+                title: "Les avis sur la boucherie %name%, la meilleure boucherie.com"
+                titlesmall: "Les avis sur la boucherie %name%"
+            showsales:
+                title: "Les offres du jours sur la boucherie %name%, la meilleure boucherie.com"
+                titlesmall: "Les offres du jours de la boucherie %name%"
 form:
     opinion:
         opinionleveltype:

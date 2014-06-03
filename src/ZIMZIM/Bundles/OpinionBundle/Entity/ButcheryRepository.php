@@ -8,14 +8,13 @@ use Doctrine\ORM\EntityRepository;
 class  ButcheryRepository extends EntityRepository
 {
 
-    public function findByAddress(array $address){
+    public function findByCityPostCode($address){
 
-        var_dump($address);
-        $address = implode(',', $address);
-
+        $ids = array_map(function($entity){return $entity->getId();}, $address);
         $query = $this->createQueryBuilder('b');
-        $query->where('b.address IN (:address)')
-            ->setParameter('address', $address);
+        $query->innerJoin('b.address','a');
+        $query->add('where', $query->expr()->in('a.citypostcode', ':ids'))
+            ->setParameter('ids', $ids);
         return $query->getQuery()->setMaxResults(10)->getResult();
     }
 }
