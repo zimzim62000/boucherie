@@ -73,28 +73,6 @@ class OpinionController extends ZimzimController
         );
     }
 
-    /**
-     * Creates a form to create a Opinion entity.
-     *
-     * @param Opinion $entity The entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
-    private function createCreateForm(Opinion $entity)
-    {
-        $form = $this->createForm(
-            new OpinionType(),
-            $entity,
-            array(
-                'action' => $this->generateUrl('zimzim_opinion_opinion_create'),
-                'method' => 'POST',
-            )
-        );
-
-        $form->add('submit', 'submit', array('label' => 'button.create'));
-
-        return $form;
-    }
 
     /**
      * Displays a form to create a new Opinion entity.
@@ -263,5 +241,28 @@ class OpinionController extends ZimzimController
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'button.delete'))
             ->getForm();
+    }
+
+    /**
+     * Creates a form to create a Opinion entity.
+     *
+     * @param Opinion $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateForm(Opinion $entity)
+    {
+        $form = $this->createForm(
+            new OpinionType(),
+            $entity,
+            array(
+                'action' => $this->generateUrl('zimzim_opinion_opinion_create'),
+                'method' => 'POST',
+            )
+        );
+
+        $form->add('submit', 'submit', array('label' => 'button.create'));
+
+        return $form;
     }
 }

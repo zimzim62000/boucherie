@@ -3,6 +3,7 @@
 namespace ZIMZIM\Bundles\OpinionBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use ZIMZIM\Bundles\OpinionBundle\Entity\Opinion;
 use ZIMZIM\Controller\ZimzimController;
 
 use ZIMZIM\Bundles\OpinionBundle\Entity\Butchery;
@@ -311,71 +312,69 @@ class ButcheryController extends ZimzimController
     }
 
 
-
     /**
      * Finds and displays a Butchery entity.
      *
      */
-    public function displayNameAction($unik)
+    public function showButcheryAction(Request $request, $unik)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findOneBy(array('unik' =>$unik));
+        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findOneBy(array('unik' => $unik));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Butchery entity.');
         }
+
+        $opinion = new Opinion();
+        $user = false;
+        $myopinion = false;
+        if (true === $this->get('security.context')->isGranted('ROLE_USER')) {
+
+            $user = $this->get('security.context')->getToken()->getUser();
+
+            $myopinion = $em->getRepository('ZIMZIMBundlesOpinionBundle:Opinion')->findOneBy(
+                array('user' => $user, 'butchery' => $entity)
+            );
+
+            $opinion->setButchery($entity);
+            $opinion->setUser($user);
+
+        }
+
+        $form = $this->createForm(
+            'zimzim_bundles_opinionbundle_opiniontype',
+            $opinion,
+            array(
+                'action' => $this->generateUrl('zimzim_opinion_butchery_showbutchery', array('unik' => $unik)),
+                'method' => 'POST'
+            )
+        );
+
+        if($request->getMethod() === 'POST'){
+
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $this->createSuccess();
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($entity);
+                $em->flush();
+
+                return $this->redirect($this->generateUrl('zimzim_opinion_butchery_showbutchery', array('unik' => $unik)));
+            }
+        }
+
 
         return $this->render(
             'ZIMZIMBundlesOpinionBundle:Butchery:show.html.twig',
             array(
                 'entity' => $entity,
+                'form' => $form->createView(),
+                'user' => $user,
+                'myopinion' => $myopinion
             )
         );
     }
-
-    /**
-     * Finds and displays a Butchery entity with opinion.
-     *
-     */
-    public function showOpinionAction($unik)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findOneBy(array('unik' =>$unik));
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Butchery entity.');
-        }
-
-        return $this->render(
-            'ZIMZIMBundlesOpinionBundle:Butchery:showopinion.html.twig',
-            array(
-                'entity' => $entity,
-            )
-        );
-    }
-
-    /**
-     * Finds and displays a Butchery entity.
-     *
-     */
-    public function showSalesAction($unik)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findOneBy(array('unik' =>$unik));
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Butchery entity.');
-        }
-
-        return $this->render(
-            'ZIMZIMBundlesOpinionBundle:Butchery:showsales.html.twig',
-            array(
-                'entity' => $entity,
-            )
-        );
-    }
-
 }

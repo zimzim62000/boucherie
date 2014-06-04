@@ -22,3 +22,7 @@ services:
         class: ZIMZIM\Bundles\OpinionBundle\Form\ButcheryType
         tags:
             - { name: form.type, alias: zimzim_bundles_opinionbundle_butcherytype }
+    zimzim_bundles_opinion.opiniontype:
+        class: ZIMZIM\Bundles\OpinionBundle\Form\OpinionType
+        tags:
+            - { name: form.type, alias: zimzim_bundles_opinionbundle_opiniontype }

@@ -12,7 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * User
  *
  * @ORM\Table(name="butchery_user")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class User extends BaseUser

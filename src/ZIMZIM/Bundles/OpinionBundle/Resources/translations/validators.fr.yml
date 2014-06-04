@@ -1,0 +1,4 @@
+form:
+    opinion:
+        opiniontype:
+            uniqueentity: "Vous ne pouvez enregistrer qu'un seul commentaire par boucherie"

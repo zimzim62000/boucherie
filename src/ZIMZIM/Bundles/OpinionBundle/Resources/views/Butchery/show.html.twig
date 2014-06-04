@@ -6,49 +6,93 @@
 
 {% block page %}
     <div class="row">
-        <div class="medium-2 columns text-left">
-            {% set indexcurrent = 1 %}
-            {% block menupage %}
-                <ul class="side-nav headerpagehome">
-                    <li {% if indexcurrent == 1 %} class="active" {% endif %}>
-                        <a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik}) }}">
-                            {{ 'views.opinion.butchery.show.home'|trans }}
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li {% if indexcurrent == 2 %} class="active" {% endif %}>
-                        <a href="{{ path('zimzim_opinion_butchery_showopinion', {'unik': entity.unik}) }}">
-                            {{ 'views.opinion.butchery.show.opinion'|trans }}
-                        </a>
-                    </li>
-                    <li {% if indexcurrent == 3 %} class="active" {% endif %}>
-                        <a href="{{ path('zimzim_opinion_butchery_showsales', {'unik': entity.unik}) }}">
-                            {{ 'views.opinion.butchery.show.sale'|trans }}
-                        </a>
-                    </li>
-                </ul>
-            {% endblock menupage %}
+        <div class="medium-2 columns text-left" id="menu">
+            <ul class="side-nav headerpagehome">
+                <li class="active" onClick="butcherytabs(this, 'main-page');">
+                    <a href="#">
+                        {{ 'views.opinion.butchery.show.home'|trans }}
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li class="" onClick="butcherytabs(this, 'opinion-page');">
+                    <a href="#">
+                        {{ 'views.opinion.butchery.show.opinion'|trans }}
+                    </a>
+                </li>
+                <li class="" onClick="butcherytabs(this, 'offer-page');">
+                    <a href="#">
+                        {{ 'views.opinion.butchery.show.sale'|trans }}
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="medium-10 columns text-center">
-            {% block pagepage %}
-                <div class="row">
-                    <div class="medium-12 columns">
-                        <h1 class="title-mini headerpagehome">
-                            <a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik}) }}">
-                                {{ entity.name }}
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="medium-10 columns">
-                        <p>{{ entity.text }}</p>
-                    </div>
-                    <div class="medium-2 columns">
-                        <p class="text-right">{{ entity.address.citypostcode.city }}</p>
+        <div class="medium-10 columns text-center" id="container-butchery-page">
 
-                        <p class="text-right">{{ entity.address.citypostcode.cp }}</p>
-                    </div>
-                </div>
-            {% endblock pagepage %}
+            {% include 'ZIMZIMBundlesOpinionBundle:Butchery:include/main-page.html.twig' %}
+
+            {% include 'ZIMZIMBundlesOpinionBundle:Butchery:include/opinion-page.html.twig' %}
+
+            {% include 'ZIMZIMBundlesOpinionBundle:Butchery:include/offer-page.html.twig' %}
+
         </div>
     </div>
+    {% if user %}
+        <div class="row" id="form-opinion">
+            <div class="medium-6 columns text-left">
+                <a href="javascript:void(0);"
+                   onClick="$('#form_add_opinion').addClass('heightmoveup');$('#form_add_opinion').removeClass('scaleY0');"
+                   class="tiny button">
+                    {{ 'views.opinion.butchery.show.newopinion'|trans }}
+                </a>
+            </div>
+            <div class="medium-6 columns text-center animate scaleY0" id="form_add_opinion">
+                <h3 class="title-mini">
+                    {{ 'views.opinion.butchery.show.formopinion'|trans({'%name%': entity.name}) }}
+                </h3>
+                {{ form(form) }}
+            </div>
+        </div>
+    {% else %}
+        <div class="row" id="form-opinion">
+            <div class="medium-6 columns text-left">
+                <a href="javascript:void(0);"
+                   onClick="$('#form_add_opinion').addClass('heightmoveup');$('#form_add_opinion').removeClass('scaleY0');"
+                   class="tiny button">
+                    {{ 'views.opinion.butchery.show.newopinion'|trans }}
+                </a>
+            </div>
+            <div class="medium-6 columns text-center animate scaleY0" id="form_add_opinion">
+                <p class="case-home-p">
+                    {{ 'views.opinion.butchery.show.needlogin'|trans }}
+                </p>
+                <a href="{{ path('hwi_oauth_connect') }}" class="tiny button round">
+                    {{ 'views.opinion.butchery.show.login'|trans }}
+                </a>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        function butcherytabs(li, index) {
+            var $li = $(li);
+            var $ul = $li.parent();
+            var $container = $('#container-butchery-page');
+            $('li', $ul).each(function (i, li) {
+                $(li).removeClass('active');
+            });
+            $li.addClass('active');
+            $container.children().each(function (i, div) {
+                var $div = $(div);
+                var $header = $div.find('h1.headerpagehome').addClass('animate').addClass('scaleY0').removeClass('heightmoveup');
+                $div.css('display', 'none');
+            });
+
+            $('#' + index).find('h1.headerpagehome').addClass('heightmoveup').removeClass('scaleY0');
+            $('#' + index).css('display', 'block');
+        }
+    </script>
+{% endblock javascripts %}

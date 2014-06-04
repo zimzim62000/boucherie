@@ -173,6 +173,14 @@ div.autocompletecity > a:hover{
     background: $topbar-bg-color;
     color: #FFF;
 }
+
+.animate.heightmoveup{
+    animation: heightmoveup linear 0.5s 1;
+}
+.scaleY0{
+    @include scaleY(0);
+}
+
 @keyframes heightmoveup {
     0% {
         @include scaleY(0);

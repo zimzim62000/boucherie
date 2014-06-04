@@ -29,17 +29,8 @@ zimzim_opinion_butchery_delete:
     defaults: { _controller: "ZIMZIMBundlesOpinionBundle:Butchery:delete" }
     requirements: { _method: post|delete }
 
-zimzim_opinion_butchery_displayname:
+zimzim_opinion_butchery_showbutchery:
     pattern:  /{unik}/
-    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:Butchery:displayname" }
-    requirements: { _method: get }
+    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:Butchery:showbutchery" }
+    requirements: { _method: get|post }
 
-zimzim_opinion_butchery_showopinion:
-    pattern:  /{unik}/showopinion
-    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:Butchery:showopinion" }
-    requirements: { _method: get }
-
-zimzim_opinion_butchery_showsales:
-    pattern:  /{unik}/showsales
-    defaults: { _controller: "ZIMZIMBundlesOpinionBundle:Butchery:showsales" }
-    requirements: { _method: get }

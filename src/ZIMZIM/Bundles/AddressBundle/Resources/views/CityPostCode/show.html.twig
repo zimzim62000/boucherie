@@ -22,7 +22,7 @@
     <div class="row">
         {% for entity in entities %}
             <div class="medium-12 columns text-center">
-                <h4><a href="{{ path('zimzim_opinion_butchery_displayname', {'unik': entity.unik})  }}">{{ entity.name }}</a></h4>
+                <h4><a href="{{ path('zimzim_opinion_butchery_showbutchery', {'unik': entity.unik})  }}">{{ entity.name }}</a></h4>
                 {#
                 <p class="text-left">
                     {{ 'views.address.citypostcode.show.meat'|trans }} {{ entity.typemeat.name }}

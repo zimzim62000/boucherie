@@ -26,12 +26,14 @@ views:
                 home: "La boucherie"
                 opinion: "les avis"
                 sale: "l'offre du jour"
-            showopinion:
-                title: "Les avis sur la boucherie %name%, la meilleure boucherie.com"
-                titlesmall: "Les avis sur la boucherie %name%"
-            showsales:
-                title: "Les offres du jours sur la boucherie %name%, la meilleure boucherie.com"
-                titlesmall: "Les offres du jours de la boucherie %name%"
+                newopinion: "Je donne mon avis"
+                formopinion: "Mon avis sur la boucherie %name%"
+                needlogin: "Désolé.... mais vous avez besoin de vous identifiez pour poster votre opinion sur cette boucherie"
+                login: "Me connecter"
+                showopinion:
+                    titlesmall: "Les avis sur la boucherie %name%"
+                showsales:
+                    titlesmall: "Les offres du jours de la boucherie %name%"
 form:
     opinion:
         opinionleveltype:
@@ -47,3 +49,8 @@ form:
         typemeattype:
             name:
                 label: "Type de viande"
+        opiniontype:
+            opinionLevel:
+                label: "Note de la boucherie"
+            test:
+                label: "Dites nous tous sur cette boucherie"

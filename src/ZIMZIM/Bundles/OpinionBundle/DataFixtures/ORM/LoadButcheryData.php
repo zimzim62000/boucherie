@@ -21,7 +21,7 @@ class LoadButcheryData extends AbstractFixture implements OrderedFixtureInterfac
         $this->addReference('Butchery1', $butchery);
 
         $citypostcode = $om->getRepository('ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode')->findOneBy(
-            array('city' => 'arras')
+            array('city' => 'arras', 'cp' => '62000')
         );
 
         $address = new Address();
@@ -35,6 +35,6 @@ class LoadButcheryData extends AbstractFixture implements OrderedFixtureInterfac
 
     public function getOrder()
     {
-        return 5;
+        return 6;
     }
 }

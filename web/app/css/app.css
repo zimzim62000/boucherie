@@ -303,15 +303,28 @@ div.autocompletecity > a:hover {
   color: #FFF;
 }
 
+/* line 177, ../scss/app.scss */
+.animate.heightmoveup {
+  -webkit-animation: heightmoveup linear 0.5s 1;
+  animation: heightmoveup linear 0.5s 1;
+}
+
+/* line 180, ../scss/app.scss */
+.scaleY0 {
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
 @-webkit-keyframes heightmoveup {
-  /* line 177, ../scss/app.scss */
+  /* line 185, ../scss/app.scss */
   0% {
     -webkit-transform: scaleY(0);
     -ms-transform: scaleY(0);
     transform: scaleY(0);
   }
 
-  /* line 180, ../scss/app.scss */
+  /* line 188, ../scss/app.scss */
   100% {
     -webkit-transform: scaleY(1);
     -ms-transform: scaleY(1);
@@ -320,14 +333,14 @@ div.autocompletecity > a:hover {
 }
 
 @keyframes heightmoveup {
-  /* line 177, ../scss/app.scss */
+  /* line 185, ../scss/app.scss */
   0% {
     -webkit-transform: scaleY(0);
     -ms-transform: scaleY(0);
     transform: scaleY(0);
   }
 
-  /* line 180, ../scss/app.scss */
+  /* line 188, ../scss/app.scss */
   100% {
     -webkit-transform: scaleY(1);
     -ms-transform: scaleY(1);
@@ -336,14 +349,14 @@ div.autocompletecity > a:hover {
 }
 
 @-webkit-keyframes rotateleft {
-  /* line 185, ../scss/app.scss */
+  /* line 193, ../scss/app.scss */
   0% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
-  /* line 188, ../scss/app.scss */
+  /* line 196, ../scss/app.scss */
   100% {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -352,14 +365,14 @@ div.autocompletecity > a:hover {
 }
 
 @keyframes rotateleft {
-  /* line 185, ../scss/app.scss */
+  /* line 193, ../scss/app.scss */
   0% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
-  /* line 188, ../scss/app.scss */
+  /* line 196, ../scss/app.scss */
   100% {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);

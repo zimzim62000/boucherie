@@ -4,12 +4,15 @@ namespace ZIMZIM\Bundles\OpinionBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity as UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Opinion
  *
  * @ORM\Table(name="butchery_opinion")
  * @ORM\Entity
+ * @UniqueEntity(fields = {"user", "butchery"}, message="form.opinion.opiniontype.uniqueentity")
  */
 class Opinion
 {
@@ -25,33 +28,42 @@ class Opinion
     /**
      * @var \ZIMZIM\Bundles\UserBundle\Entity\User
      *
+     * @Assert\NotBlank()
+     *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\UserBundle\Entity\User", inversedBy="opinions")
-     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_user", referencedColumnName="id", nullable=false)
      */
     private $user;
 
     /**
      * @var \ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel
      *
+     * @Assert\NotBlank()
+     *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\OpinionLevel")
-     * @ORM\JoinColumn(name="id_opinion_level", referencedColumnName="id")
+     * @ORM\JoinColumn(name="id_opinion_level", referencedColumnName="id", nullable=false)
      */
     private $opinionLevel;
 
     /**
      * @var \ZIMZIM\Bundles\OpinionBundle\Entity\Butchery
      *
+     * @Assert\NotBlank()
+     *
      * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Butchery", inversedBy="opinions")
-     * @ORM\JoinColumn(name="id_butchery", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="id_butchery", referencedColumnName="id", nullable=false)
      */
     private $butchery;
 
     /**
      * @var String
      *
-     * @ORM\Column(name="text", type="text", nullable=true)
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="text", type="text", nullable=false)
      */
     private $text;
+
 
     /**
      * @var \DateTime
@@ -194,7 +206,4 @@ class Opinion
     {
         return $this->text;
     }
-
-
-
 }
