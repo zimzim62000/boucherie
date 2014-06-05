@@ -1,0 +1,20 @@
+<div class="text-center {% if errors|length ==0 %}hide{% endif %}" id="form-add-opinion">
+    {% if user %}
+        <h3 class="title-mini text-center">
+            {{ 'views.opinion.butchery.show.formopinion'|trans({'%name%': entity.name}) }}
+        </h3>
+        {{ form(form) }}
+    {% else %}
+        <p class="case-home-p text-center">
+            {{ 'views.opinion.butchery.show.needlogin'|trans }}
+        </p>
+        <a href="{{ path('hwi_oauth_connect') }}" class="tiny button round text-center">
+            {{ 'views.opinion.butchery.show.login'|trans }}
+        </a>
+    {% endif %}
+    <div class="text-right">
+        <small onClick="$('#form-add-opinion').fadeOut();">
+            {{ 'button.close'|trans }}
+        </small>
+    </div>
+</div>

@@ -174,14 +174,33 @@ div.autocompletecity > a:hover{
     color: #FFF;
 }
 
-.animate.heightmoveup{
-    animation: heightmoveup linear 0.5s 1;
-}
-.scaleY0{
-    @include scaleY(0);
+@keyframes rotateleft {
+    0% {
+        @include rotate(180deg);
+    }
+    100% {
+        @include rotate(0deg);
+    }
 }
 
-@keyframes heightmoveup {
+/******************************\
+        zimzim tabs
+\*****************************/
+
+div.zimzim-tabs{
+    transform-origin: 0 0;
+    display:none;
+}
+div.zimzim-tabs.active{
+    display: block;
+}
+.animate.scaleYopen{
+    animation: scaleYopen linear 0.75s 1;
+}
+.animate.scaleYclose{
+    animation: scaleYclose linear 0.75s 1;
+}
+@keyframes scaleYopen {
     0% {
         @include scaleY(0);
     }
@@ -189,11 +208,12 @@ div.autocompletecity > a:hover{
         @include scaleY(1);
     }
 }
-@keyframes rotateleft {
+
+@keyframes scaleYclose {
     0% {
-        @include rotate(180deg);
+        @include scaleY(1);
     }
     100% {
-        @include rotate(0deg);
+        @include scaleY(0);
     }
 }

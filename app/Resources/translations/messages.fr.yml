@@ -5,6 +5,7 @@ button:
     show: Voir
     delete: supprimer
     find: "rechercher"
+    close: "Fermer"
 link:
     return: "Retour à la liste"
 views:

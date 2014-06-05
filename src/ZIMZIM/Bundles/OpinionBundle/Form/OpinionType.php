@@ -57,7 +57,9 @@ class OpinionType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => 'ZIMZIM\Bundles\OpinionBundle\Entity\Opinion',
-                'attr' => array(),
+                'attr' => array(
+                    'class' => 'custompanel'
+                ),
                 'error_mapping' => array(
                     '.' => 'text',
                 )

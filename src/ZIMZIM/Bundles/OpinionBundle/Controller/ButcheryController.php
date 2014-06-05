@@ -373,7 +373,8 @@ class ButcheryController extends ZimzimController
                 'entity' => $entity,
                 'form' => $form->createView(),
                 'user' => $user,
-                'myopinion' => $myopinion
+                'myopinion' => $myopinion,
+                'errors' => $form->getErrors()
             )
         );
     }

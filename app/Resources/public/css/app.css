@@ -303,60 +303,15 @@ div.autocompletecity > a:hover {
   color: #FFF;
 }
 
-/* line 177, ../scss/app.scss */
-.animate.heightmoveup {
-  -webkit-animation: heightmoveup linear 0.5s 1;
-  animation: heightmoveup linear 0.5s 1;
-}
-
-/* line 180, ../scss/app.scss */
-.scaleY0 {
-  -webkit-transform: scaleY(0);
-  -ms-transform: scaleY(0);
-  transform: scaleY(0);
-}
-
-@-webkit-keyframes heightmoveup {
-  /* line 185, ../scss/app.scss */
-  0% {
-    -webkit-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    transform: scaleY(0);
-  }
-
-  /* line 188, ../scss/app.scss */
-  100% {
-    -webkit-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-  }
-}
-
-@keyframes heightmoveup {
-  /* line 185, ../scss/app.scss */
-  0% {
-    -webkit-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    transform: scaleY(0);
-  }
-
-  /* line 188, ../scss/app.scss */
-  100% {
-    -webkit-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-  }
-}
-
 @-webkit-keyframes rotateleft {
-  /* line 193, ../scss/app.scss */
+  /* line 178, ../scss/app.scss */
   0% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
-  /* line 196, ../scss/app.scss */
+  /* line 181, ../scss/app.scss */
   100% {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -365,17 +320,109 @@ div.autocompletecity > a:hover {
 }
 
 @keyframes rotateleft {
-  /* line 193, ../scss/app.scss */
+  /* line 178, ../scss/app.scss */
   0% {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
-  /* line 196, ../scss/app.scss */
+  /* line 181, ../scss/app.scss */
   100% {
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
+  }
+}
+
+/******************************\
+        zimzim tabs
+\*****************************/
+/* line 190, ../scss/app.scss */
+div.zimzim-tabs {
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  display: none;
+}
+
+/* line 194, ../scss/app.scss */
+div.zimzim-tabs.active {
+  display: block;
+}
+
+/* line 197, ../scss/app.scss */
+.animate.scaleYopen {
+  -webkit-animation: scaleYopen linear 0.75s 1;
+  animation: scaleYopen linear 0.75s 1;
+}
+
+/* line 200, ../scss/app.scss */
+.animate.scaleYclose {
+  -webkit-animation: scaleYclose linear 0.75s 1;
+  animation: scaleYclose linear 0.75s 1;
+}
+
+@-webkit-keyframes scaleYopen {
+  /* line 204, ../scss/app.scss */
+  0% {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+
+  /* line 207, ../scss/app.scss */
+  100% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scaleYopen {
+  /* line 204, ../scss/app.scss */
+  0% {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+
+  /* line 207, ../scss/app.scss */
+  100% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+@-webkit-keyframes scaleYclose {
+  /* line 213, ../scss/app.scss */
+  0% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  /* line 216, ../scss/app.scss */
+  100% {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+}
+
+@keyframes scaleYclose {
+  /* line 213, ../scss/app.scss */
+  0% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+
+  /* line 216, ../scss/app.scss */
+  100% {
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
   }
 }

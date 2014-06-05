@@ -6219,33 +6219,64 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
+/* line 5, ../scss/css.scss */
+form.custompanel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #f2f2f2;
+}
+/* line 52, ../../../../bower_components/foundation/scss/foundation/components/_panels.scss */
+form.custompanel > :first-child {
+  margin-top: 0;
+}
+/* line 53, ../../../../bower_components/foundation/scss/foundation/components/_panels.scss */
+form.custompanel > :last-child {
+  margin-bottom: 0;
+}
+/* line 58, ../../../../bower_components/foundation/scss/foundation/components/_panels.scss */
+form.custompanel h1, form.custompanel h2, form.custompanel h3, form.custompanel h4, form.custompanel h5, form.custompanel h6, form.custompanel p {
+  color: #333333;
+}
+/* line 62, ../../../../bower_components/foundation/scss/foundation/components/_panels.scss */
+form.custompanel h1, form.custompanel h2, form.custompanel h3, form.custompanel h4, form.custompanel h5, form.custompanel h6 {
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+/* line 64, ../../../../bower_components/foundation/scss/foundation/components/_panels.scss */
+form.custompanel h1.subheader, form.custompanel h2.subheader, form.custompanel h3.subheader, form.custompanel h4.subheader, form.custompanel h5.subheader, form.custompanel h6.subheader {
+  line-height: 1.4;
+}
+
 /*******hack foundation top bar*******/
-/* line 7, ../scss/css.scss */
+/* line 11, ../scss/css.scss */
 .top-bar .name {
   line-height: 45px;
 }
-/* line 9, ../scss/css.scss */
+/* line 13, ../scss/css.scss */
 .top-bar .name a {
   color: #FFF;
   padding: 0 1rem;
 }
 
-/* line 15, ../scss/css.scss */
+/* line 19, ../scss/css.scss */
 .title-top-bar {
   font-size: 0.75rem;
 }
 
-/* line 19, ../scss/css.scss */
+/* line 23, ../scss/css.scss */
 .full-width {
   max-width: 100%;
 }
 
-/* line 23, ../scss/css.scss */
+/* line 27, ../scss/css.scss */
 .width-100 {
   width: 100%;
 }
 
-/* line 27, ../scss/css.scss */
+/* line 31, ../scss/css.scss */
 span.logo-small-tiers {
   width: 40px;
   height: 40px;
@@ -6253,42 +6284,42 @@ span.logo-small-tiers {
   display: inline-block;
 }
 
-/* line 33, ../scss/css.scss */
+/* line 37, ../scss/css.scss */
 .image-facebook {
   background-image: url("../../images/logotiers.png");
   background-position: 0;
 }
 
-/* line 37, ../scss/css.scss */
+/* line 41, ../scss/css.scss */
 .image-google {
   background-image: url("../../images/logotiers.png");
   background-position: 80px;
 }
 
-/* line 41, ../scss/css.scss */
+/* line 45, ../scss/css.scss */
 .image-twitter {
   background-image: url("../../images/logotiers.png");
   background-position: 40px;
 }
 
-/* line 45, ../scss/css.scss */
+/* line 49, ../scss/css.scss */
 .padding-top-10 {
   padding-top: 10px;
 }
 
-/* line 49, ../scss/css.scss */
+/* line 53, ../scss/css.scss */
 html, body {
   height: 100%;
 }
 
-/* line 52, ../scss/css.scss */
+/* line 56, ../scss/css.scss */
 div.container {
   hight: auto;
   min-height: 100%;
   padding-bottom: 150px;
 }
 
-/* line 58, ../scss/css.scss */
+/* line 62, ../scss/css.scss */
 footer.footer {
   background: #bc0322;
   height: 150px;
@@ -6296,64 +6327,82 @@ footer.footer {
   clear: both;
   max-width: 100%;
 }
-/* line 64, ../scss/css.scss */
+/* line 68, ../scss/css.scss */
 footer.footer h4 {
   color: #FFF;
   padding: 2rem;
 }
 
-/* line 70, ../scss/css.scss */
+/* line 74, ../scss/css.scss */
 h1.headerpagehome {
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
-/* line 71, ../scss/css.scss */
+/* line 75, ../scss/css.scss */
 ul.headerpagehome {
   padding-top: 3rem;
 }
 
-/* line 72, ../scss/css.scss */
+/* line 76, ../scss/css.scss */
 h1.title-mini {
   font-size: 1.82rem;
 }
 
-/* line 73, ../scss/css.scss */
+/* line 77, ../scss/css.scss */
 h2.title-mini {
   font-size: 1.25rem;
 }
 
-/* line 76, ../scss/css.scss */
+/* line 80, ../scss/css.scss */
 h3.title-mini {
   font-size: 1.45rem;
   font-weight: bold;
   padding-top: 2rem;
 }
 
-/* line 81, ../scss/css.scss */
+/* line 85, ../scss/css.scss */
 .case-home {
   padding: 1rem;
   margin: 0 0;
 }
 
-/* line 85, ../scss/css.scss */
+/* line 89, ../scss/css.scss */
 .case-home-p {
   padding: 2rem 0.25rem 2rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
 
-/* line 93, ../scss/css.scss */
+/* line 97, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 97, ../scss/css.scss */
+/* line 101, ../scss/css.scss */
 .bg-vichi {
   background-image: url("../../images/butchery3.png");
 }
 
-/* line 100, ../scss/css.scss */
+/* line 104, ../scss/css.scss */
 .bold {
   font-weight: bold;
+}
+
+/* line 109, ../scss/css.scss */
+ul.side-nav li {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0;
+}
+
+/* line 114, ../scss/css.scss */
+ul.side-nav li.active {
+  font-weight: bold;
+}
+
+/* line 117, ../scss/css.scss */
+ul.side-nav li:hover {
+  border-left: #a61e36 SOLID 2px;
+  border-right: #a61e36 SOLID 2px;
 }

@@ -2,6 +2,10 @@
 @import "normalize";
 @import "foundation";
 
+form.custompanel {
+    @include panel();
+}
+
 /*******hack foundation top bar*******/
 
 .top-bar .name{
@@ -100,11 +104,17 @@ label.input-up{
 .bold{
     font-weight: bold;
 }
-.no-margin > input{
-    //margin: 0 0;
-    //border: none;
-    //box-shadow: rgba(0, 0, 0, 0.9);
-    //background: #FEFFFE;
+
+
+ul.side-nav li{
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    padding: 0.5rem 0;
 }
-
-
+ul.side-nav li.active{
+    font-weight: bold;
+}
+ul.side-nav li:hover{
+    border-left: $primary-color SOLID 2px;
+    border-right: $primary-color SOLID 2px;
+}
