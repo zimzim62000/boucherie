@@ -8,18 +8,40 @@ views:
                 title: "Trouver la meilleure boucherie, partager vos meilleures adresses"
                 titlebis: "la meilleure boucherie.com site de partage et d'échange sur nos chères boucheries."
                 metadescription: >
-                    la meilleure boucherie.com, trouvez la meilleure viande près de chez vous au meilleure prix.
                     Trouver la meilleure boucherie, partager vos meilleures adresses
-                    la meilleure boucherie.com site de partage et d'échange sur nos chères boucheries
-                    Trouver la meilleure boucherie prés de chez vous.
-                description: >
                     Avec la meilleure boucherie.com, trouvez la meilleure viande près de chez vous au meilleure prix.
                     Connaissez-vous La meilleure boucherie de votre ville ?
+                description: >
+                    Avec la meilleure boucherie.com, trouvez la meilleure viande près de chez vous au meilleure prix.
+                    <br /><strong>Connaissez-vous La meilleure boucherie de votre ville ?</strong>
                 find: "Trouver la meilleure boucherie près de chez vous."
                 findp: "Avec la meilleure boucherie.com vous allez connaitre les meilleures boucheries près de chez vous. les boucherie de vos amis sont elles meilleures que la votre ?"
                 share: "Partager nous vos meilleures viandes"
                 sharep: "Sur la meilleure boucherie.com vos avis se partagent aussi sur les réseaux sociaux. Donnez l'occasion à vos amis de goûter la bonne viande que vous venez de déguster."
                 inputvile: "Ville ou code postal"
+                infoplus: >
+                    Sur la meilleure boucherie, vous pouvez aussi regarder les offres et les bonnes affaires des bouchers de votre ville.
+                    En effet, les bouchers peuvent renseigné toutes les informations utiles à leur activité. Une page administrable leur est dédié.
+                    ( horaire, arrivage, promotions ). Sur <strong>la meilleure boucherie</strong> entrer en contact avec votre boucher
+                    pour demander des informations, être au courant des nouveautés et passer commande pour vous faire gagner du temps!
+                nowebsite: "Votre boucherie n'a pas de site internet ?"
+                soregister: >
+                    Avec la meilleure boucherie .com, Amis bouchers disposés d'une page web pour présenter votre activité,
+                    horaires et coordonées de votre boucherie.
+                    Mais ce n'est pas tout... <br /><strong>Avec la meilleure boucherie . com</strong> importer des photos pour décorer votre page web,
+                    choisisser votre URL ( http://www.la-meilleure-boucherie.com/boucherie/<strong>lenomquevousaurezdécidez</strong> )
+                    , gérer vos animations commerciales( promotions, arrivages...), récuperer les commandes à préparer du jours et
+                     surtous rester en contact avec vos clients. <br /><strong>N'hésitez pas c'est totalement gratuit !</strong>
+                     La meilleure boucherie . com, c'est le service de partage et d'actualité sur votre boucherie préférée.
+                bestopinion: "Alors... Quelle est La meilleure boucherie ?"
+                3derniere: "Les 3 dernières meilleures boucheries partagés par nos utilisateurs"
+                count: "%count% personnes ont partager leur avis sur cette boucherie"
+                date: "Partager le :"
+                lastbutchery: "La dernière boucherie inscrite... vous en pensez quoi ?"
+                giveopinion: "Je partage mon avis"
+                bestbycity: "La meilleure boucherie par ville :"
+                bestcity: "La meilleure boucherie de "
+                anchorcity: "Je ne trouve pas ma ville !"
         butchery:
             show:
                 title: "la meilleure boucherie.com présente la boucherie %name%"

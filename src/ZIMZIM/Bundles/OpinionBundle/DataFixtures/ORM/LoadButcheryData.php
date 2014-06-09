@@ -28,6 +28,23 @@ class LoadButcheryData extends AbstractFixture implements OrderedFixtureInterfac
         $address->setAddress('22 rue du général de gaulle');
         $address->setCitypostcode($citypostcode);
         $butchery->setAddress($address);
+        $om->persist($butchery);
+
+        $butchery = new Butchery();
+        $butchery->setName('Oué gros la boucherie de gouy');
+        $butchery->setText('The best of the best butchery for ever The best of the best butchery for eve');
+        $butchery->setTypeMeat($this->getReference('TypeMeat1'));
+        $butchery->setTypeButchery($this->getReference('TypeButchery1'));
+        $this->addReference('Butchery2', $butchery);
+
+        $citypostcode = $om->getRepository('ZIMZIM\Bundles\AddressBundle\Entity\CityPostCode')->findOneBy(
+            array('unik' => 'gouy+sous+bellonne+62112+62383')
+        );
+
+        $address = new Address();
+        $address->setAddress('1758 rue de republique');
+        $address->setCitypostcode($citypostcode);
+        $butchery->setAddress($address);
 
         $om->persist($butchery);
         $om->flush();

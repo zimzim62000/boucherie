@@ -24,7 +24,7 @@ class LoaderCityPostCode
 
     public function load(ObjectManager $om)
     {
-
+        $tabmain = array();
         $i = 0;
         while (($data = fgetcsv($this->file, 2048, ",")) !== false) {
 
@@ -41,6 +41,15 @@ class LoaderCityPostCode
                         $citypostcode->setLatitude($data[12]);
                         $citypostcode->setLongitude($data[11]);
                         $citypostcode->setUnik(urlencode(strtolower($data[6].' '.$data[0].' '.$data[1])));
+
+                        $main = false;
+                        if(!in_array($data[0], $tabmain)){
+                            if(preg_match("/^[0-9]{2}000$/i", $data[0])){
+                                $main = true;
+                                $tabmain[] = $data[0];
+                            }
+                        }
+                        $citypostcode->setMain($main);
                         $om->persist($citypostcode);
                     }
                 }

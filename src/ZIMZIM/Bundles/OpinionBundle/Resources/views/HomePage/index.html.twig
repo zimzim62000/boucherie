@@ -5,13 +5,14 @@
 {% endblock title %}
 
 {% block metadescription %}
-    {{ 'views.opinion.homepage.index.description'|trans }}
+    {{ 'views.opinion.homepage.index.metadescription'|trans }}
 {% endblock metadescription %}
 
 {% block page %}
     <div class="row">
         <div class="medium-12 columns text-center padding-top">
             <h1 class="title-mini headerpagehome">{{ 'views.opinion.homepage.index.title'|trans }}</h1>
+
             <h2 class="title-mini">{{ 'views.opinion.homepage.index.titlebis'|trans }}</h2>
         </div>
     </div>
@@ -19,10 +20,12 @@
         <div class="row">
             <div class="medium-6 columns case-home text-center ">
                 <h3 class="title-mini">{{ 'views.opinion.homepage.index.find'|trans }}</h3>
+
                 <p class="case-home-p bold text-justify">{{ 'views.opinion.homepage.index.findp'|trans }}</p>
             </div>
             <div class="medium-6 columns case-home text-center ">
                 <h3 class="title-mini">{{ 'views.opinion.homepage.index.share'|trans }}</h3>
+
                 <p class="case-home-p bold text-justify">{{ 'views.opinion.homepage.index.sharep'|trans }}</p>
             </div>
         </div>
@@ -30,10 +33,141 @@
 
     <div class="row">
         <div class="large-6 large-centered medium-9 medium-centered columns ">
-            <p class="case-home">{{ 'views.opinion.homepage.index.description'|trans }}</p>
+            <p class="case-home">{{ 'views.opinion.homepage.index.description'|trans|raw }}</p>
         </div>
     </div>
 
     {% include 'ZIMZIMBundlesAddressBundle:CityPostCode:form.html.twig' with {'form': form} %}
+
+    <div class="row">
+        <div class="large-9 large-centered medium-9 medium-centered columns ">
+            <p class="case-home-p">
+                {{ 'views.opinion.homepage.index.infoplus'|trans|raw }}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-12 medium-centered columns">
+            <h3 class="text-center padding-top">
+                {{ 'views.opinion.homepage.index.nowebsite'|trans }}
+            </h3>
+
+            <p class="case-home text-justify">
+                {{ 'views.opinion.homepage.index.soregister'|trans|raw }}
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-12 columns  text-center">
+            <h2 class="title primarycolor headerpagehome">
+                {{ 'views.opinion.homepage.index.bestopinion'|trans }}
+            </h2>
+
+            <p class="text-right nopadding nomargin">
+                <small>
+                    {{ 'views.opinion.homepage.index.3derniere'|trans }}
+                </small>
+            </p>
+        </div>
+    </div>
+
+    <div class="pagehome-opinions">
+        {% for opinion in opinions %}
+            <div class="row">
+                <div class="pagehome-opinion medium-12"
+                     onClick="$(location).attr('href', '{{ path('zimzim_opinion_butchery_showbutchery' ,{'unik': opinion.butchery.unik}) }}');">
+                    <div class="row">
+                        <div class="medium-3 columns text-center">
+                            <p class="case-home">
+                                {{ opinion.opinionlevel.name }}<br/>
+                                {{ 'views.opinion.homepage.index.date'|trans }} {{ opinion.createdAt|date('d/m/Y') }}
+                            </p>
+                        </div>
+                        <div class="medium-6 columns text-center">
+                            <h3 class="title">
+                                {{ opinion.butchery.name }}
+                            </h3>
+                        </div>
+                        <div class="medium-3 columns text-center">
+                            <p class="case-home">
+                                {{ opinion.butchery.address.citypostcode.county }}<br/>
+                                {{ opinion.butchery.address.citypostcode.city }}<br/>
+                                {{ opinion.butchery.address.citypostcode.cp }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="medium-4 columns">
+                            <p class="case-home">
+                                {{ 'views.opinion.homepage.index.count'|trans({'%count%': opinion.butchery.opinions|length }) }}
+                            </p>
+                        </div>
+                        <div class="medium-8 columns text-justify">
+                            <p class="case-home">
+                                {{ opinion.text }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="invisible">
+        {% endfor %}
+    </div>
+
+    <div class="row">
+        <div class="medium-12 columns text-center">
+            <h3 class="title-mini headerpagehome">
+                {{ 'views.opinion.homepage.index.lastbutchery'|trans }}
+            </h3>
+        </div>
+    </div>
+
+    {% if butchery %}
+        <div class="row">
+            <div class="medium-6 medium-centered columns text-center bg-vichi borderprimary">
+                <h4>{{ butchery.name }}</h4>
+
+                <p class="case-home bold">
+                    {{ butchery.address.citypostcode.county }} - {{ butchery.address.citypostcode.city }} -
+                    {{ butchery.address.citypostcode.cp }}
+                </p>
+
+                <p class="case-home-p">
+                    <a href="{{ path('zimzim_opinion_butchery_showbutchery', {'unik': butchery.unik}) }}"
+                       class="medium button round">
+                        {{ 'views.opinion.homepage.index.giveopinion'|trans }}
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+
+
+    <div class="row">
+        <div class="large-9 large-centered medium-9 medium-centered columns ">
+            <h4 class="title-mini text-center">
+                {{ 'views.opinion.homepage.index.bestbycity'|trans }}
+            </h4>
+            <ul class="no-bullet small-block-grid-1 medium-block-grid-2">
+                {% for citypostcode in citypostcodes %}
+                    <li class="text-center ">
+                        <a href="{{ path('zimzim_address_citypostcode_show', {'unik': citypostcode.unik}) }}">
+                            {{ 'views.opinion.homepage.index.bestcity'|trans }} {{ citypostcode.city }} {{ citypostcode.cp }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="medium-12 columns text-center">
+            <h4 onClick="scrollTo('#form_city_post_code', 0800);$('input[type=text]', '#form_city_post_code').focus();" class="button medium round">
+                {{ 'views.opinion.homepage.index.anchorcity'|trans }}
+            </h4>
+        </div>
+    </div>
 
 {% endblock page %}

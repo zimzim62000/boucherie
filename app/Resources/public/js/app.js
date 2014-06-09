@@ -31,8 +31,8 @@ function findForm($element) {
     return findForm($element.parent());
 }
 
-function scroolTo(ancre, delay) {
-    $(document.body).animate({
+function scrollTo(ancre, delay) {
+    $('html, body').animate({
         'scrollTop': $(ancre).offset().top
     }, delay);
 }

@@ -87,6 +87,13 @@ class CityPostCode{
      */
     private $distance;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="main", type="boolean")
+     */
+    private $main;
+
 
     public function __toString(){
         return $this->city.' '.$this->cp;
@@ -264,6 +271,24 @@ class CityPostCode{
         return $this->address;
     }
 
+    /**
+     * @param string $main
+     */
+    public function setMain($main)
+    {
+        $this->main = $main;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMain()
+    {
+        return $this->main;
+    }
+
 
 
 
@@ -280,5 +305,6 @@ class CityPostCode{
             'unik' => $this->getUnik()
         );
     }
+
 
 }
