@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Opinion
  *
  * @ORM\Table(name="butchery_opinion")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="OpinionRepository")
  * @UniqueEntity(fields = {"user", "butchery"}, message="form.opinion.opiniontype.uniqueentity")
  */
 class Opinion
@@ -50,7 +50,7 @@ class Opinion
      *
      * @Assert\NotBlank()
      *
-     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Butchery", inversedBy="opinions")
+     * @ORM\ManyToOne(targetEntity="ZIMZIM\Bundles\OpinionBundle\Entity\Butchery", inversedBy="opinions", cascade={"persist"} )
      * @ORM\JoinColumn(name="id_butchery", referencedColumnName="id", nullable=false)
      */
     private $butchery;

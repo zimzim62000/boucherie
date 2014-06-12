@@ -22,15 +22,31 @@ class HomePageController extends ZimzimController
                 'method' => 'POST',
             )
         );
+
         return $form;
     }
 
-    public function indexAction(Request $request)
+    public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $opinions = $em->getRepository('ZIMZIMBundlesOpinionBundle:Opinion')->findLastOpinionGroupByButchery();
+
+        $butchery = $em->getRepository('ZIMZIMBundlesOpinionBundle:Butchery')->findOneBy(array(), array('createdAt' => 'DESC'));
+
+        $citypostcodes = $em->getRepository('ZIMZIMBundlesAddressBundle:CityPostCode')->findBy(array('main' => 1), array('city' => 'ASC'));
+
         $form = $this->createFindCityPostCodeForm();
 
         return $this->render(
-            'ZIMZIMBundlesOpinionBundle:HomePage:index.html.twig', array('form' => $form->createView()));
+            'ZIMZIMBundlesOpinionBundle:HomePage:index.html.twig',
+            array(
+                'form'          => $form->createView(),
+                'opinions'      => $opinions,
+                'butchery'      => $butchery,
+                'citypostcodes'  => $citypostcodes
+            )
+        );
     }
 }
 

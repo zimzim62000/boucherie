@@ -359,7 +359,7 @@ class ButcheryController extends ZimzimController
 
                 $this->createSuccess();
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($entity);
+                $em->persist($opinion);
                 $em->flush();
 
                 return $this->redirect($this->generateUrl('zimzim_opinion_butchery_showbutchery', array('unik' => $unik)));

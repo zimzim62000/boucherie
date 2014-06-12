@@ -1,9 +1,16 @@
 @import "settings";
 @import "normalize";
 @import "foundation";
+@import "compass/css3";
+
+$urlvichy: '../../images/butchery3.png';
 
 form.custompanel {
     @include panel();
+}
+
+.primarycolor{
+    color: $primary-color;
 }
 
 /*******hack foundation top bar*******/
@@ -14,6 +21,13 @@ form.custompanel {
         color: #FFF;
         padding: 0 1rem;
     }
+}
+
+.nopadding{
+    padding: 0;
+}
+.nomargin{
+    margin: 0;
 }
 
 .title-top-bar{
@@ -82,6 +96,15 @@ h3.title-mini{
     font-weight: bold;
     padding-top: 2rem;
 }
+h3.title-mini{
+    padding: 1.5rem;
+}
+h3.headerpagehome, h2.headerpagehome{
+    padding: 2rem;
+}
+h4.title-mini{
+    padding: 1.5rem;
+}
 .case-home{
     padding: 1rem;
     margin: 0 0;
@@ -99,7 +122,7 @@ label.input-up{
 }
 
 .bg-vichi{
-    background-image: url('../../images/butchery3.png');
+    background-image: url($urlvichy);
 }
 .bold{
     font-weight: bold;
@@ -117,4 +140,38 @@ ul.side-nav li.active{
 ul.side-nav li:hover{
     border-left: $primary-color SOLID 2px;
     border-right: $primary-color SOLID 2px;
+}
+
+div.pagehome-opinion:hover{
+    border: 1px SOLID transparent;
+    background-color: $topbar-bg-color;
+    @include single-transition(all, 0600ms linear);
+    color: #FFFFFF;
+    cursor: pointer;
+    h3{
+        color: #FFFFFF;
+        @include single-transition(all, 0600ms linear);
+    }
+}
+div.pagehome-opinion{
+    padding-top:2rem;
+    background: #FFFFFF;
+    @include single-transition(all, 0600ms linear);
+    color: #000000;
+    border: 1px SOLID $topbar-bg-color;
+    h3{
+        color: #000000;
+        font-size: 1.4775rem;
+        @include single-transition(all, 0600ms linear);
+    }
+}
+
+hr.invisible{
+    border: none;
+    margin:0;
+    padding:1rem;
+}
+
+.borderprimary{
+    border: 1px SOLID $primary-color;
 }

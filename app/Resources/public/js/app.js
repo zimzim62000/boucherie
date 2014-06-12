@@ -31,8 +31,8 @@ function findForm($element) {
     return findForm($element.parent());
 }
 
-function scroolTo(ancre, delay) {
-    $(document.body).animate({
+function scrollTo(ancre, delay) {
+    $('html, body').animate({
         'scrollTop': $(ancre).offset().top
     }, delay);
 }
@@ -80,4 +80,41 @@ function autocompletecity(e, input) {
     }
 }
 
+/********************\
+    zimzimtabs
+\********************/
+
+var tabsanimate = 0;
+var tabsinterval = false;
+
+var zimzimtabs = function (element, tabindex) {
+    if ($('#' + tabindex).hasClass('active') === false) {
+        $('li.zimzim-li-tabs').removeClass('active');
+        $(element).addClass('active');
+        var index = tabindex;
+        var _self = this;
+        if (false === tabsinterval) {
+            _self.animatetabs(index);
+            tabsinterval = setInterval(function () {
+                _self.animatetabs(index);
+            }, 0750);
+        }
+    }
+};
+
+var animatetabs = function (index) {
+    if (tabsanimate === 0) {
+        $('div.zimzim-tabs.active').addClass('animate scaleYclose');
+    }
+    if (tabsanimate === 1) {
+        $('div.zimzim-tabs').removeClass('animate scaleYclose active');
+        $('#' + index).addClass('animate scaleYopen active');
+    }
+    if (tabsanimate === 2) {
+        tabsanimate = -1;
+        clearInterval(tabsinterval);
+        tabsinterval = false;
+    }
+    tabsanimate++;
+};
 

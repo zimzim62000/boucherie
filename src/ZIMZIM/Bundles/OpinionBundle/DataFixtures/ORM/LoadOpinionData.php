@@ -13,10 +13,32 @@ class LoadOpinionData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $om)
     {
         $opinion = new Opinion();
-        $opinion->setText('My first opinion for ever');
+        $opinion->setText('My Sur la meilleure boucherie opinion for ever');
         $opinion->setButchery($this->getReference('Butchery1'));
         $opinion->setOpinionLevel($this->getReference('level5'));
         $opinion->setUser($this->getReference('zimzim'));
+        $om->persist($opinion);
+
+        $opinion = new Opinion();
+        $opinion->setText('My first opinion for Sur la meilleure boucherie');
+        $opinion->setButchery($this->getReference('Butchery2'));
+        $opinion->setOpinionLevel($this->getReference('level4'));
+        $opinion->setUser($this->getReference('zimzim'));
+        $om->persist($opinion);
+
+
+        $opinion = new Opinion();
+        $opinion->setText('My first Sur la meilleure boucherie for ever');
+        $opinion->setButchery($this->getReference('Butchery1'));
+        $opinion->setOpinionLevel($this->getReference('level5'));
+        $opinion->setUser($this->getReference('boby'));
+        $om->persist($opinion);
+
+        $opinion = new Opinion();
+        $opinion->setText('hola que tale in ma cassa');
+        $opinion->setButchery($this->getReference('Butchery2'));
+        $opinion->setOpinionLevel($this->getReference('level2'));
+        $opinion->setUser($this->getReference('boby'));
         $om->persist($opinion);
 
         $om->flush();

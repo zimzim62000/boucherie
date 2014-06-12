@@ -6219,7 +6219,7 @@ th.hide-for-touch {
   display: table-cell !important;
 }
 
-/* line 5, ../scss/css.scss */
+/* line 8, ../scss/css.scss */
 form.custompanel {
   border-style: solid;
   border-width: 1px;
@@ -6250,33 +6250,48 @@ form.custompanel h1.subheader, form.custompanel h2.subheader, form.custompanel h
   line-height: 1.4;
 }
 
+/* line 12, ../scss/css.scss */
+.primarycolor {
+  color: #a61e36;
+}
+
 /*******hack foundation top bar*******/
-/* line 11, ../scss/css.scss */
+/* line 18, ../scss/css.scss */
 .top-bar .name {
   line-height: 45px;
 }
-/* line 13, ../scss/css.scss */
+/* line 20, ../scss/css.scss */
 .top-bar .name a {
   color: #FFF;
   padding: 0 1rem;
 }
 
-/* line 19, ../scss/css.scss */
+/* line 26, ../scss/css.scss */
+.nopadding {
+  padding: 0;
+}
+
+/* line 29, ../scss/css.scss */
+.nomargin {
+  margin: 0;
+}
+
+/* line 33, ../scss/css.scss */
 .title-top-bar {
   font-size: 0.75rem;
 }
 
-/* line 23, ../scss/css.scss */
+/* line 37, ../scss/css.scss */
 .full-width {
   max-width: 100%;
 }
 
-/* line 27, ../scss/css.scss */
+/* line 41, ../scss/css.scss */
 .width-100 {
   width: 100%;
 }
 
-/* line 31, ../scss/css.scss */
+/* line 45, ../scss/css.scss */
 span.logo-small-tiers {
   width: 40px;
   height: 40px;
@@ -6284,42 +6299,42 @@ span.logo-small-tiers {
   display: inline-block;
 }
 
-/* line 37, ../scss/css.scss */
+/* line 51, ../scss/css.scss */
 .image-facebook {
   background-image: url("../../images/logotiers.png");
   background-position: 0;
 }
 
-/* line 41, ../scss/css.scss */
+/* line 55, ../scss/css.scss */
 .image-google {
   background-image: url("../../images/logotiers.png");
   background-position: 80px;
 }
 
-/* line 45, ../scss/css.scss */
+/* line 59, ../scss/css.scss */
 .image-twitter {
   background-image: url("../../images/logotiers.png");
   background-position: 40px;
 }
 
-/* line 49, ../scss/css.scss */
+/* line 63, ../scss/css.scss */
 .padding-top-10 {
   padding-top: 10px;
 }
 
-/* line 53, ../scss/css.scss */
+/* line 67, ../scss/css.scss */
 html, body {
   height: 100%;
 }
 
-/* line 56, ../scss/css.scss */
+/* line 70, ../scss/css.scss */
 div.container {
   hight: auto;
   min-height: 100%;
   padding-bottom: 150px;
 }
 
-/* line 62, ../scss/css.scss */
+/* line 76, ../scss/css.scss */
 footer.footer {
   background: #bc0322;
   height: 150px;
@@ -6327,82 +6342,150 @@ footer.footer {
   clear: both;
   max-width: 100%;
 }
-/* line 68, ../scss/css.scss */
+/* line 82, ../scss/css.scss */
 footer.footer h4 {
   color: #FFF;
   padding: 2rem;
 }
 
-/* line 74, ../scss/css.scss */
+/* line 88, ../scss/css.scss */
 h1.headerpagehome {
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
-/* line 75, ../scss/css.scss */
+/* line 89, ../scss/css.scss */
 ul.headerpagehome {
   padding-top: 3rem;
 }
 
-/* line 76, ../scss/css.scss */
+/* line 90, ../scss/css.scss */
 h1.title-mini {
   font-size: 1.82rem;
 }
 
-/* line 77, ../scss/css.scss */
+/* line 91, ../scss/css.scss */
 h2.title-mini {
   font-size: 1.25rem;
 }
 
-/* line 80, ../scss/css.scss */
+/* line 94, ../scss/css.scss */
 h3.title-mini {
   font-size: 1.45rem;
   font-weight: bold;
   padding-top: 2rem;
 }
 
-/* line 85, ../scss/css.scss */
+/* line 99, ../scss/css.scss */
+h3.title-mini {
+  padding: 1.5rem;
+}
+
+/* line 102, ../scss/css.scss */
+h3.headerpagehome, h2.headerpagehome {
+  padding: 2rem;
+}
+
+/* line 105, ../scss/css.scss */
+h4.title-mini {
+  padding: 1.5rem;
+}
+
+/* line 108, ../scss/css.scss */
 .case-home {
   padding: 1rem;
   margin: 0 0;
 }
 
-/* line 89, ../scss/css.scss */
+/* line 112, ../scss/css.scss */
 .case-home-p {
   padding: 2rem 0.25rem 2rem;
   margin: 0 0;
   font-size: 1.25rem;
 }
 
-/* line 97, ../scss/css.scss */
+/* line 120, ../scss/css.scss */
 .padding-top {
   padding: 2rem 0;
 }
 
-/* line 101, ../scss/css.scss */
+/* line 124, ../scss/css.scss */
 .bg-vichi {
   background-image: url("../../images/butchery3.png");
 }
 
-/* line 104, ../scss/css.scss */
+/* line 127, ../scss/css.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 109, ../scss/css.scss */
+/* line 132, ../scss/css.scss */
 ul.side-nav li {
   font-size: 1.25rem;
   line-height: 1.25rem;
   padding: 0.5rem 0;
 }
 
-/* line 114, ../scss/css.scss */
+/* line 137, ../scss/css.scss */
 ul.side-nav li.active {
   font-weight: bold;
 }
 
-/* line 117, ../scss/css.scss */
+/* line 140, ../scss/css.scss */
 ul.side-nav li:hover {
   border-left: #a61e36 SOLID 2px;
   border-right: #a61e36 SOLID 2px;
+}
+
+/* line 145, ../scss/css.scss */
+div.pagehome-opinion:hover {
+  border: 1px SOLID transparent;
+  background-color: #bc0322;
+  -webkit-transition: all 600ms linear;
+  -moz-transition: all 600ms linear;
+  -o-transition: all 600ms linear;
+  transition: all 600ms linear;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+/* line 151, ../scss/css.scss */
+div.pagehome-opinion:hover h3 {
+  color: #FFFFFF;
+  -webkit-transition: all 600ms linear;
+  -moz-transition: all 600ms linear;
+  -o-transition: all 600ms linear;
+  transition: all 600ms linear;
+}
+
+/* line 156, ../scss/css.scss */
+div.pagehome-opinion {
+  padding-top: 2rem;
+  background: #FFFFFF;
+  -webkit-transition: all 600ms linear;
+  -moz-transition: all 600ms linear;
+  -o-transition: all 600ms linear;
+  transition: all 600ms linear;
+  color: #000000;
+  border: 1px SOLID #bc0322;
+}
+/* line 162, ../scss/css.scss */
+div.pagehome-opinion h3 {
+  color: #000000;
+  font-size: 1.4775rem;
+  -webkit-transition: all 600ms linear;
+  -moz-transition: all 600ms linear;
+  -o-transition: all 600ms linear;
+  transition: all 600ms linear;
+}
+
+/* line 169, ../scss/css.scss */
+hr.invisible {
+  border: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* line 175, ../scss/css.scss */
+.borderprimary {
+  border: 1px SOLID #a61e36;
 }
